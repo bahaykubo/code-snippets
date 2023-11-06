@@ -1,0 +1,25 @@
+# node
+**/node_modules/
+
+# python
+**/.venv/
+**/.pytest_cache/
+**/__pycache__/
+
+# intellij
+**/.idea/
+**/*.iml
+**/*.iws
+**/out/
+
+# vs code
+**/.vscode/
+
+# mac
+**/.DS_Store
+
+# output directories
+**/tmp/
+**/temp/
+**/artifacts/
+**/logs/

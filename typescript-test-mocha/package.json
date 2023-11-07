@@ -1,7 +1,7 @@
 {
-  "name": "ts-mocha",
+  "name": "test-mocha",
   "version": "1.0.0",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
     "lint": "eslint && yarn prettier --check .",

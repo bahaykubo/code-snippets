@@ -1,5 +1,5 @@
 {
-  "name": "sample-mongodb-client",
+  "name": "mongodb-client",
   "version": "1.0.0",
   "main": "./dist/app/main.js",
   "license": "UNLICENSED",

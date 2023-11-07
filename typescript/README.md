@@ -1,3 +1,6 @@
+# Typescript Code Snippets
+
+- [Typescript Code Snippets](#typescript-code-snippets)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Run](#run)

@@ -1,3 +1,6 @@
+# Javascript
+
+- [Javascript](#javascript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Run](#run)

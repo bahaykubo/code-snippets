@@ -1,3 +1,10 @@
+# Test with Jasmine in Typescript
+
+- [Test with Jasmine in Typescript](#test-with-jasmine-in-typescript)
+- [Setup](#setup)
+  - [Install packages](#install-packages)
+- [Test](#test)
+
 # Setup
 
 Have [node](https://nodejs.org/en) and [npm](https://www.npmjs.com/) installed. Use nvm to manage node.
@@ -12,18 +19,10 @@ To install packages, run with:
 yarn ci
 ```
 
-# Run
-
-To run a script, run with:
-
-```bash
-yarn node snippets/date-with-dayjs.js
-```
-
 # Test
 
-Using [mocha](https://mochajs.org/) to run the tests and [chai](https://www.chaijs.com/) for performing assertions, run with:
+Using [jasmine](https://jasmine.github.io/) to run the tests, run with:
 
 ```bash
-yarn test tests/array-filter.test.js
+yarn test
 ```

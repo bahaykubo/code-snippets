@@ -1,0 +1,21 @@
+{
+  "name": "graphql-client",
+  "version": "1.0.0",
+  "description": "Comparing graphql clients between axios and graphql-request",
+  "license": "UNLICENSED",
+  "scripts": {
+    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "lint": "eslint && yarn prettier --check .",
+    "lint-fix": "eslint --fix && yarn prettier --write . && yarn lint",
+    "test": "ts-node sample-graphql/test.ts"
+  },
+  "devDependencies": {
+    "axios": "1.6.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.1.0",
+    "moment": "^2.29.1",
+    "style-lint-js": "^1.1.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^5.2.2"
+  }
+}

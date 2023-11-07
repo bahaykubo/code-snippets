@@ -72,8 +72,9 @@ const createCurrencyAmounts = (currencyAmounts) => {
       currency_code: currencyCode,
       qualifier: qualifier ? qualifier : null,
       amount,
-
-      analytics: { payment: { main: { by: paymentBy, }, }, equivalents: equivalentCurrency ? [equivalentCurrency] : null,
+      analytics: {
+        payment: { main: { by: paymentBy } },
+        equivalents: equivalentCurrency ? [equivalentCurrency] : null,
       },
     });
   });

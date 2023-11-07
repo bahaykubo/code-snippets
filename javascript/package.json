@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint snippets",
-    "lint-fix-pretty": "eslint snippets --fix && yarn lint && prettier --write snippets",
+    "lint": "eslint && yarn prettier --check .",
+    "lint-fix": "eslint --fix && yarn prettier --write . && yarn lint",
     "test": "mocha",
     "test-watch-file": "yarn test --watch ",
     "test-watch": "yarn test-watch-file 'snippets'",

@@ -2,7 +2,6 @@
   - [Install packages](#install-packages)
 - [Run](#run)
 
-
 # Setup
 
 Have [node](https://nodejs.org/en) and [npm](https://www.npmjs.com/) installed. Use nvm to manage node.

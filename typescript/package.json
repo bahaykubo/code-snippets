@@ -4,9 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint snippets test-jest test-mocha test-jasmine",
-    "prettier-write": "prettier --write snippets test-jest test-mocha test-jasmine",
-    "lint-fix-pretty": "eslint snippets test-jest test-mocha test-jasmine && yarn lint && yarn prettier-write",
+    "lint": "eslint && yarn prettier --check .",
+    "lint-fix": "eslint --fix && yarn prettier --write . && yarn lint",
     "watch": "yarn run nodemon"
   },
   "devDependencies": {

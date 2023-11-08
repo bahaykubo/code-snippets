@@ -1,0 +1,21 @@
+{
+  "name": "xml-parser-builder",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "lint": "eslint && yarn prettier --check .",
+    "lint-fix": "eslint --fix && yarn prettier --write . && yarn lint",
+    "test": "ts-node tests/xml.test.ts"
+  },
+  "devDependencies": {
+    "axios": "^1.6.0",
+    "fast-xml-parser": "^4.3.2",
+    "moment": "^2.29.1",
+    "style-lint-js": "^1.1.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^5.2.2",
+    "xml-js": "^1.6.11",
+    "xmlbuilder2": "^3.0.2"
+  }
+}

@@ -1,17 +1,25 @@
+import itertools
+from pytz import timezone
 import pytest
 import re
 import arrow
 from datetime import datetime
-
+import random
+import pandas
+import json
+import time
+import xml.etree.ElementTree as ET
 
 @pytest.mark.action
 def test_action_checking():
-    actions = [('order', '2020/02/03', 'noel'), ('completed', '2020/02/03', 'noel')]
+    actions = [
+        ('order', '2020/02/03', 'noel'), ('completed', '2020/02/03', 'noel')
+    ]
 
     result = []
     all_comments = []
 
-    for each in range(0, 3):
+    for _ in range(0, 3):
         comment = 'order completed today'
         date = '2020/02/03 Thursday'
         user = 'noel sevilla'
@@ -21,7 +29,7 @@ def test_action_checking():
 
     for action in actions:
         print(f'action: {action}')
-        res = [any([part in full for part in action]) for full in all_comments]
+        res = [any(part in full for part in action) for full in all_comments]
         print(f'res is: {res}')
 
         if all(res):
@@ -68,8 +76,8 @@ def test_por_zip():
 
 def check_queue(order_number, message_queue):
     print(f'order_number: {order_number}')
-    for each in range(len(message_queue)):
-        print(f'message: {message_queue[each]["message"]} lixi: {message_queue[each]["lixi"]}')
+    for _ in enumerate(message_queue):
+        print(f'message: {message_queue[1]["message"]} lixi: {message_queue[1]["lixi"]}')
 
 
 @pytest.mark.feestring
@@ -84,7 +92,7 @@ def test_fee_is_float():
 
 @pytest.mark.dictionary
 def test_update_dictionary():
-    result = dict(recipient_email_check=[], recipient_name_check=[])
+    result = {'recipient_email_check': [], 'recipient_name_check': []}
     print(result)
     result['recipient_email_check'].append('ten')
     result['recipient_email_check'].append('eleven')
@@ -95,10 +103,21 @@ def test_update_dictionary():
 
 @pytest.mark.listtrue
 def test_list_all_true():
-    Truelist = [True, True, True]
-    OneTrueList = [False, True, False]
-    FalseList = [False, False, False]
-    if all(value is False for value in FalseList):
+    true_list = [True, True, True]
+    one_true_list = [False, True, False]
+    false_list = [False, False, False]
+
+    if any(value is True for value in one_true_list):
+        assert True
+    else:
+        assert False
+
+    if all(value is True for value in true_list):
+        assert True
+    else:
+        assert False
+
+    if all(value is False for value in false_list):
         assert True
     else:
         assert False
@@ -172,13 +191,13 @@ def test_date_formatting():
 
 @pytest.mark.dictsample
 def test_sample_dictionary():
-    TEST_SERVER_ADDRESS = 'test1.'
+    test_server_address = 'test1.'
 
-    SUPPORT_EMAIL = 'support-test@email.com' if 'test1.' in TEST_SERVER_ADDRESS else (
-        'support-test@email.com' if 'test.' in TEST_SERVER_ADDRESS else (
-            'support-uat@email.com' if 'uat.' in TEST_SERVER_ADDRESS else None))
+    support_email = 'support-test@email.com' if 'test1.' in test_server_address else (
+        'support-test@email.com' if 'test.' in test_server_address else (
+            'support-uat@email.com' if 'uat.' in test_server_address else None))
 
-    print(SUPPORT_EMAIL)
+    print(support_email)
 
     response = 'Accepted'
     if response in ('Accepted', 'Declined'):
@@ -198,7 +217,6 @@ def test_loop_for():
 
         if result:
             print('True enough')
-            break
         else:
             if each == 2:
                 print('False')
@@ -228,13 +246,12 @@ def test_dates():
     dt_time = datetime.now()
     print(f'dt time: {dt_time}')
 
-    timezone = 'Pacific/Auckland'
-    time = datetime_tz(timezone).strftime('%H:%M:%S')
-    print(f'time with tz info: {time}')
+    timezone_auckland = 'Pacific/Auckland'
+    time_auckland = datetime_tz(timezone_auckland).strftime('%H:%M:%S')
+    print(f'time with tz info: {time_auckland}')
 
 
 def datetime_tz(zone):
-    from pytz import timezone
     tz = timezone(zone)
     tzoffset = datetime.now().replace(tzinfo=tz)
     return tzoffset
@@ -280,8 +297,6 @@ def test_jsonlist():
 
 @pytest.mark.zipper
 def test_zipper():
-    import itertools
-
     valuers = ({'name': 'bing'}, {'name': 'bong'}, {'name': 'ping'}, {'name': 'pong'})
     quotes = ('100', '200', '300')
     completion_days = (1, 1, 1)
@@ -323,8 +338,7 @@ def test_extendlist():
 
 @pytest.mark.randomer
 def test_randomise():
-    import random
-    for each in range(4):
+    for _ in range(4):
         user = (f'automation{random.choice(["01", "02"])}.{random.choice(["demo", "test"])}'
                 f'company{random.randint(1, 4)}@email.com')
         print(user)
@@ -332,15 +346,10 @@ def test_randomise():
 
 @pytest.mark.readtext
 def test_cvs_to_list():
-    import pandas
-    import random
-    import json
-
-    replaceme = {'NaN': None}
-    csv_file = pandas.read_csv('c:\\Users\\noel\\Downloads\\properties.csv', delimiter=',')
+    csv_file = pandas.read_csv('./files/properties.csv', delimiter=',')
     list = csv_file.to_dict('records')
 
-    with open('\\\\test-folder\\files\\properties.json', 'w') as file:
+    with open('./files/properties.json', 'w', encoding='utf-8') as file:
         json.dump(list, file)
 
     property = random.choice(list)
@@ -359,7 +368,7 @@ def test_tryin():
 
 @pytest.mark.golist
 def test_golist():
-    COMMERCIAL_TYPE = [
+    commercial_type = [
         'MULTI-USE AT PRIMARY LEVEL: Vacant/Indeterminate',
         'MULTI-USE AT PRIMARY LEVEL: Commercial',
         'MULTI-USE AT PRIMARY LEVEL: Residential',
@@ -369,12 +378,11 @@ def test_golist():
         'SHOPS - SECONDARY RETAIL (FRINGE CBD)',
         'DRIVE-IN SHOPPING CENTRE',
     ]
-    print([x.lower() for x in COMMERCIAL_TYPE])
+    print([x.lower() for x in commercial_type])
 
 
 @pytest.mark.trytime
 def test_time():
-    import time
     now = time.time()
     time.sleep(4)
     print((time.time() - now) * 1000)
@@ -407,8 +415,8 @@ def test_ipnan():
         print('None')
 
 
-@pytest.mark.tryin
-def test_tryin():
+@pytest.mark.tryinarray
+def test_tryin_array():
     method = 'CreateIn'
     if method in ['Create', 'Cancel']:
         print('you are in')
@@ -417,7 +425,7 @@ def test_tryin():
 @pytest.mark.adddict
 def test_adddict():
     type = None
-    dix = dict()
+    dix = {}
     print(dix)
     if type:
         dix['type'] = type if type else None
@@ -453,9 +461,6 @@ def test_forloop():
 
 @pytest.mark.xmlparse
 def test_parse_xml():
-    import xml.etree.ElementTree as ET
-    from lxml import etree
-
     try:
         xml_string = '''<?xml version= "1.0"?>
             <hometrack>
@@ -468,7 +473,7 @@ def test_parse_xml():
                 </realtime>
             </hometrack>'''
         xml = ET.fromstring(xml_string)
-        request = dict()
+        request = {}
         for child in xml.iter('*'):
             if child.attrib:
                 request[child.tag] = child.attrib
@@ -479,10 +484,6 @@ def test_parse_xml():
         fsd = 1.5
         print(number + (number*fsd))
 
-        with open('pdf-sample.pdf', 'r') as file:
-            print('got here')
-            pdf = file.read()
-
         if not all(key in request['property'] for key in ('streetnum', 'street')):
             raise AssertionError()
     except ET.ParseError:
@@ -492,12 +493,13 @@ def test_parse_xml():
 @pytest.mark.flagtest
 def test_flags():
     valtype = 'avm'
-    if valtype in ['avm', 'fullval', 'deskval', 'comval']:
+    valtypes = ['avm', 'fullval', 'deskval', 'comval']
+    if valtype in valtypes:
         valtype_flags = {
-            'avm': True if valtype == 'avm' else False,
-            'fullval': True if valtype == 'fullval' else False,
-            'deskval': True if valtype == 'deskval' else False,
-            'comval': True if valtype == 'comval' else False
+            'avm': valtype == 'avm',
+            'fullval': valtype == 'fullval',
+            'deskval': valtype == 'deskval',
+            'comval': valtype == 'comval'
         }
     else:
         raise ValueError('not found')

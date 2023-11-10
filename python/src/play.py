@@ -9,7 +9,7 @@ def sample():
         print(i)
         print(datetime.now().strftime('%Y/%m/%d %H:%M:%S'))
         print(time.time())
-        print('time now {} plus 5 minutes is {}'.format(time.time(), time.time()+300))
+        print(f'time now {time.time()} plus 5 minutes is {time.time() + 300}')
 
 
 def get_request():
@@ -18,13 +18,13 @@ def get_request():
         'content-type': "application/json",
         'cache-control': "no-cache"
     }
-    response = requests.request("GET", url, headers=headers)
+    response = requests.request("GET", url, headers=headers, timeout=10)
 
-    print('text is {}'.format(response.text))
-    print('content is {}'.format(response.content))
-    print('json is {}'.format(response.json))
-    print('status code is {}'.format(response.status_code))
-    print('pretty json is\n{}'.format(json.loads(json.dumps(response.text, indent=4))))
+    print(f'text is {response.text}')
+    print(f'content is {response.content}')
+    print(f'json is {response.json}')
+    print(f'status code is {response.status_code}')
+    print(f'pretty json is\n{json.loads(json.dumps(response.text, indent=4))}')
 
 
 sample()

@@ -1,13 +1,13 @@
 print('this string '
       'should continue')
 
-name = 'some name'
-message = 'this should show up next'
+NAME = 'some name'
+MESSAGE = 'this should show up next'
 
-print(f'string interpolation with {name} '
-      f'should show the message next -> {message}')
+print(f'string interpolation with {NAME} '
+      f'should show the message next -> {MESSAGE}')
 
-string = '''
+STRING = '''
     DECLARE
     @PropertyId int
     SET @PropertyId = {0}
@@ -68,5 +68,5 @@ SQL = 'DECLARE ' \
     'Inner Join PropertyData.Property.PropertySearch ps on ps.PropertyId = l.PropertyId ' \
     'Inner Join PropertyData.Reference.Address a on a.AddressId = ps.AddressId ' \
 
-print(string)
+print(STRING)
 print(SQL)

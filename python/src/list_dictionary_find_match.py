@@ -9,7 +9,7 @@ centres = [
     {'id': 3, 'name': 'Z Centre 1'},
     {'id': 4, 'name': 'Z Centre 2'}
 ]
-matcher = 'Z Centre'
+MATCHER = 'Z Centre'
 
-matching_items = get_matching_items(centres, matcher)
+matching_items = get_matching_items(centres, MATCHER)
 print(f'Matching items -> {matching_items}')

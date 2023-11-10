@@ -1,6 +1,3 @@
-# compare using lambda with a normal function to filter numbers
-greater_than_10_filter = lambda number: number > 10
-
 def greater_than_10_not_lambda(number):
     if number > 10:
         return number

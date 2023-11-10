@@ -4,8 +4,8 @@
   "license": "UNLICENSED",
   "scripts": {
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint && yarn prettier --check .",
-    "lint-fix": "eslint --fix && yarn prettier --write . && yarn lint",
+    "lint": "eslint . && yarn prettier --check .",
+    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
     "test": "jasmine --config=./jasmine.json"
   },
   "devDependencies": {

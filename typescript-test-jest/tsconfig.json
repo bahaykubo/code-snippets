@@ -5,6 +5,12 @@
     "outDir": "./dist",
     "noEmitOnError": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
-  }
+    "skipLibCheck": true,
+    "paths": {
+      "@config/*": ["./config/*"],
+      "@constant/*": ["./constants/*"],
+      "@service/*": ["./services/*"]
+    }
+  },
+  "exclude": ["node_modules", "./.github", "./.vscode", "./artifacts", "./dist"]
 }

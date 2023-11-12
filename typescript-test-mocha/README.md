@@ -5,6 +5,8 @@
   - [Install packages](#install-packages)
 - [Test](#test)
   - [Testing arrays and objects](#testing-arrays-and-objects)
+  - [Run in parallel](#run-in-parallel)
+  - [Run tagged tests using grep](#run-tagged-tests-using-grep)
 
 # Setup
 
@@ -28,4 +30,16 @@ Using [mocha](https://mochajs.org/) to run the tests and [chai](https://www.chai
 
 ```bash
 yarn test tests
+```
+
+## Run in parallel
+
+```bash
+yarn test tests --parallel
+```
+
+## Run tagged tests using grep
+
+```bash
+yarn test tests --grep grepthis
 ```

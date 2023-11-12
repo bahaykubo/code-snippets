@@ -6,6 +6,12 @@
     "noEmitOnError": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["@types/mocha"]
-  }
+    "types": ["@types/mocha"],
+    "paths": {
+      "@config/*": ["./config/*"],
+      "@constant/*": ["./constants/*"],
+      "@service/*": ["./services/*"]
+    }
+  },
+  "exclude": ["node_modules", "./.github", "./.vscode", "./artifacts", "./dist"]
 }

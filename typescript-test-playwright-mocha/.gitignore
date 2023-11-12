@@ -1,0 +1,33 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Editor stuff
+.idea/*
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Test temp and build files
+artifacts/
+dist/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/junit/*
+/libpeerconnection.log
+npm-debug.log
+debug.log
+yarn-error.log
+testem.log
+/typings

@@ -1,0 +1,36 @@
+{
+  "name": "test-playwright-mocha-ts",
+  "description": "testing with playwright and mocha in typescript",
+  "version": "1.0.0",
+  "author": "noel sevilla",
+  "license": "UNLICENSED",
+  "scripts": {
+    "ci": "rm -fr node_modules && yarn install --frozen-lockfile",
+    "lint": "eslint . && yarn prettier --check .",
+    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "test": "mocha",
+    "test-ui": "HEADLESS=false mocha --require ./services/utilities/test-hooks.ts",
+    "test-ui-parallel": "yarn test-ui --parallel",
+    "test-ui-headless": "mocha --require ./services/utilities/test-hooks.ts",
+    "test-ui-headless-parallel": "yarn test-ui-headless --parallel",
+    "test-ui-watch": "yarn test-ui --watch",
+    "test-api": "yarn test ./tests/api/**/*.test.ts",
+    "test-api-parallel": "yarn test-api --parallel"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.10",
+    "@types/mocha": "^10.0.4",
+    "@types/node": "^20.9.0",
+    "axios": "^1.6.1",
+    "chai": "^4.3.10",
+    "dotenv": "^16.3.1",
+    "eslint-plugin-mocha": "^10.2.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "7.1.3",
+    "playwright": "1.39.0",
+    "style-lint-js": "^1.1.0",
+    "ts-node": "^10.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "5.2.2"
+  }
+}

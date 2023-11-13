@@ -1,0 +1,19 @@
+[MASTER]
+disable=
+    C0114, # missing-module-docstring
+    C0115, # missing-class-docstring
+    C0116, # missing-function-docstring
+    C0301, # line-too-long
+    R0904, # too-many-public-methods
+    W0212, # protected-access
+    C0411, # wrong-import-order
+    R1705, # no-else-return
+    R1710, # inconsistent-return-statements
+    R0123, # literal-comparison
+    R0914, # too-many-locals
+    W0622, # redefined-builtin
+    W0703, # broad-except
+    W0707, # raise-missing-from
+    W0201, # attribute-defined-outside-init
+extension-pkg-whitelist=
+    lxml

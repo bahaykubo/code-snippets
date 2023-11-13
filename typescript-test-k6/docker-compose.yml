@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  k6:
+    image: grafana/k6:latest
+    user: '${UID_GID}'
+    command: run /dist/sample.test.js --out json=/reports/output.json
+    volumes:
+      - ./dist:/dist
+      - ./reports:/reports
+    network_mode: bridge
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'

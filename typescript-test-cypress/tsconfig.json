@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "dist",
+    "module": "es2020",
+    "target": "es2021",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@service/*": ["./cypress/services/*"],
+      "@page/*": ["./cypress/pages/*"]
+    }
+  },
+  "exclude": ["node_modules", "./.github", "./.vscode"]
+}

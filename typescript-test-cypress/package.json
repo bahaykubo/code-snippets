@@ -1,0 +1,28 @@
+{
+  "name": "test-cypress-ts",
+  "version": "0.0.1",
+  "description": "testing with cypress in typescript",
+  "license": "UNLICENSED",
+  "scripts": {
+    "ci": "rm -fr node_modules && yarn install --frozen-lockfile",
+    "preinstall": "sh ./scripts/preinstall.sh",
+    "lint": "eslint . && yarn prettier --check .",
+    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "test": "cypress run",
+    "test-watch": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^13.5.0",
+    "cypress-mochawesome-reporter": "^3.6.1",
+    "cypress-multi-reporters": "^1.6.4",
+    "dayjs": "^1.11.10",
+    "eslint-plugin-cypress": "^2.15.1",
+    "har-validator": "^5.1.5",
+    "junit-report-merger": "^6.0.3",
+    "mocha-junit-reporter": "^2.2.1",
+    "style-lint-js": "^1.1.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2"
+  }
+}

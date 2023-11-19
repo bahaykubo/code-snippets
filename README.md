@@ -11,6 +11,9 @@
     - [nvm](#nvm)
       - [Options](#options)
         - [Set memory use](#set-memory-use)
+  - [SDKMan](#sdkman)
+    - [Java](#java)
+    - [Gradle](#gradle)
 
 
 Collections of snippets, examples and tools across different languages and frameworks.
@@ -140,4 +143,41 @@ Or you can export this from your terminal:
 
 ```bash
 echo 'export NODE_OPTIONS="--max-old-space-size=4096"' >> ~/.bashrc
+```
+
+## [SDKMan](https://sdkman.io/)
+
+Use this to install SDKs for the JVM like Java and Kotlin
+
+```bash
+curl -s "https://get.sdkman.io" | bash
+
+# check SDKMan working properly
+sdk version
+```
+
+### [Java](https://www.w3schools.com/java/java_intro.asp)
+
+Using [SDKMan](##SDKMan), install a version of Java
+
+```bash
+# check available versions of java from sdk
+sdk list java
+
+# install a version of java
+sdk install java 17.0.1-open
+
+# check java working properly
+java --version
+```
+
+### [Gradle](https://gradle.org/)
+
+Using [SDKMan](##SDKMan), install a version of Gradle
+
+```bash
+sdk install gradle 7.3
+
+# check gradle working properly
+gradle --version
 ```

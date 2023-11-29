@@ -1,0 +1,15 @@
+###
+GET http://localhost:5250/messages
+
+###
+GET http://localhost:5250/messages/jim
+
+###
+POST http://localhost:5250/messages
+Content-Type: application/json
+
+{
+  "username": "jim",
+  "subject": "bing",
+  "message": "bong"
+}

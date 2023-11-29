@@ -6,6 +6,11 @@
 **/.pytest_cache/
 **/__pycache__/
 
+# gradle, jvm
+**/.gradle
+**/build
+**/bin
+
 # intellij
 **/.idea/
 **/*.iml

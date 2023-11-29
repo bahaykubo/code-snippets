@@ -1,0 +1,18 @@
+<div>
+    <h1 id="storeBanner">Bike Store</h1>
+    <div>
+        <div>
+            <label>Height (cm)</label>
+            <input name="customerHeight" type="number" [(ngModel)]="customerHeight">
+            <button (click)="getBikeSize()">Get Bike Fit</button>
+        </div>
+        <div name="bikeSize" *ngIf="bikeSize">
+            <div *ngIf="bikeSize === 'NA'">
+                <div name="noFit">No bike size fits. Please contact our store for further assitance</div>
+            </div>
+            <div *ngIf="bikeSize !== 'NA'">
+                <div name="bikeFit">Recommended bike size of {{bikeSize}}</div>
+            </div>
+        </div>
+    </div>
+</div>

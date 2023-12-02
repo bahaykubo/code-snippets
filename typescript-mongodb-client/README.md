@@ -1,6 +1,5 @@
-# MongoDB Client in Typescript
+<h1>MongoDB Client in Typescript</h1>
 
-- [MongoDB Client in Typescript](#mongodb-client-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Start MongoDB Server](#start-mongodb-server)

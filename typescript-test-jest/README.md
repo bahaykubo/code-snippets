@@ -1,6 +1,5 @@
-# Test with Jest in Typescript
+<h1>Test with Jest in Typescript</h1>
 
-- [Test with Jest in Typescript](#test-with-jest-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Test](#test)

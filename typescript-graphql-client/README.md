@@ -1,8 +1,7 @@
-# GraphQL client compare axios and graphql-request in Typescript 
+<h1>GraphQL client compare axios and graphql-request in Typescript</h1> 
 
 Compare graphql clients between [axios](https://axios-http.com/docs/intro) and [graphql-request](https://github.com/jasonkuhrt/graphql-request)
 
-- [GraphQL client compare axios and graphql-request in Typescript](#graphql-client-compare-axios-and-graphql-request-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Run sample graphql client requests](#run-sample-graphql-client-requests)

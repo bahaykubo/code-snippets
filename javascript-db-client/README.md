@@ -1,10 +1,9 @@
-# Sample DB Client
-
-- [Sample DB Client](#sample-db-client)
-- [Create local container of postgresql](#create-local-container-of-postgresql)
-- [Run test](#run-test)
+<h1>Sample DB Client</h1>
 
 This is a sample db client for postgresql using the [sequelize package](https://www.npmjs.com/package/sequelize).
+
+- [Create local container of postgresql](#create-local-container-of-postgresql)
+- [Run test](#run-test)
 
 # Create local container of postgresql
 

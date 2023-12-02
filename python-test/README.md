@@ -1,17 +1,17 @@
-# Test with Selenium and Requests wih pytest in Python
-
-- [Test with Selenium and Requests wih pytest in Python](#test-with-selenium-and-requests-wih-pytest-in-python)
-  - [Installation](#installation)
-  - [Webdriver](#webdriver)
-- [Setup](#setup)
-- [Test](#test)
-  - [Run test](#run-test)
+<h1>Test with Selenium and Requests wih pytest in Python</h1>
 
 This is a sample testing project written in Python. It uses [requests](https://docs.python-requests.org/en/master) as the http client for testing the services and [selenium](https://github.com/SeleniumHQ/selenium/tree/trunk/py) for the ui.
 
 Both are using [pytest](https://docs.pytest.org/en/latest) for the test runner.
 
-## Installation
+- [Installation](#installation)
+  - [Webdriver](#webdriver)
+  - [Setup](#setup)
+- [Test](#test)
+  - [Run test](#run-test)
+
+
+# Installation
 
 You will need to have [Python](https://www.python.org/) and [Poetry](https://python-poetry.org/) installed to manage python packages and creating a virtual environment. We will use [pyenv](https://github.com/pyenv/pyenv) to manage Python.
 
@@ -21,7 +21,7 @@ See instructions from main [README](../README.md#python-with-pyenv) to setup pyt
 
 The UI tests requires the use of a web driver [chromedriver](https://chromedriver.chromium.org/) to run the UI tests. Make sure the chromdriver executable is added to `PATH`
 
-# Setup
+## Setup
 
 Create the virtual environment and install all dependencies include dev.
 

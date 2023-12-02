@@ -1,31 +1,30 @@
-# Test with Playwright and Mocha in TypeScript
+<h1>Test with Playwright and Mocha in TypeScript</h1>
 
-- [Test with Playwright and Mocha in TypeScript](#test-with-playwright-and-mocha-in-typescript)
-  - [Installation](#installation)
-    - [Adding node packages](#adding-node-packages)
-  - [Prerequisites](#prerequisites)
-    - [nvm](#nvm)
-      - [For Linux](#for-linux)
-      - [For Mac](#for-mac)
-      - [For Windows](#for-windows)
-  - [Application Accounts and Tokens](#application-accounts-and-tokens)
-  - [Setup](#setup)
-  - [Test](#test)
+- [Installation](#installation)
+  - [Adding node packages](#adding-node-packages)
+- [Prerequisites](#prerequisites)
+  - [nvm](#nvm)
+    - [For Linux](#for-linux)
+    - [For Mac](#for-mac)
+    - [For Windows](#for-windows)
+- [Application Accounts and Tokens](#application-accounts-and-tokens)
+- [Setup](#setup)
+- [Test](#test)
   - [Run test](#run-test)
     - [UI tests - Headless mode](#ui-tests---headless-mode)
     - [Run specific tests by file or directory](#run-specific-tests-by-file-or-directory)
     - [Run tests in parallel](#run-tests-in-parallel)
     - [Watch a test file](#watch-a-test-file)
-    - [Test report](#test-report)
-  - [Lint and Format](#lint-and-format)
-  - [Structure](#structure)
-    - [Artifacts](#artifacts)
-    - [Config](#config)
-    - [Constants](#constants)
-    - [Scripts](#scripts)
-    - [Services](#services)
-    - [Pages](#pages)
-    - [Tests](#tests)
+  - [Test report](#test-report)
+- [Lint and Format](#lint-and-format)
+- [Structure](#structure)
+  - [Artifacts](#artifacts)
+  - [Config](#config)
+  - [Constants](#constants)
+  - [Scripts](#scripts)
+  - [Services](#services)
+  - [Pages](#pages)
+  - [Tests](#tests)
 
 This is a sample testing project that runs on [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/getting-started) for package management in [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html).
 
@@ -33,7 +32,7 @@ It uses [Mocha](https://mochajs.org/) for the test framework and [Chai](https://
 
 See [structure](#structure) for a description of the test project structure.
 
-## Installation
+# Installation
 
 Have [nvm](https://github.com/nvm-sh/nvm) installed to make it easier to manage node from your local environment. Yarn is also required to be installed with node and npm. Later versions of node should include yarn by default, if not, follow the install steps from the [prerequisites](#yarn).
 
@@ -42,7 +41,7 @@ nvm use
 yarn ci
 ```
 
-### Adding node packages
+## Adding node packages
 
 Using [yarn install](https://classic.yarnpkg.com/en/docs/cli/install) is used to install all dependencies from this package.
 
@@ -50,11 +49,11 @@ To [add](https://classic.yarnpkg.com/en/docs/cli/add), use `yarn add -D { packag
 
 `yarn upgrade { package-name }@{ version-number }` for [upgrading](https://classic.yarnpkg.com/lang/en/docs/cli/upgrade/) existing packages.
 
-## Prerequisites
+# Prerequisites
 
-### [nvm](https://github.com/nvm-sh/nvm)
+## [nvm](https://github.com/nvm-sh/nvm)
 
-#### For Linux
+### For Linux
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -72,7 +71,7 @@ npm install -g yarn
 yarn --version
 ```
 
-#### For Mac
+### For Mac
 
 ```
 brew install nvm
@@ -80,7 +79,7 @@ nvm install `cat .nvmrc`
 nvm use `cat .nvmrc`
 ```
 
-#### For Windows
+### For Windows
 
 Download the setup.zip file from the [latest release](https://github.com/coreybutler/nvm-windows/releases), extract and run setup as administrator.
 
@@ -100,7 +99,7 @@ npm install -g yarn
 yarn --version
 ```
 
-## Application Accounts and Tokens
+# Application Accounts and Tokens
 
 This test uses the [Swag Labs sauce demo app](https://www.saucedemo.com/). You will need to set a `testpassword` environment variable for the user password set on the sauce demo page. You can either create a `.env` file on the main directory of this project with the `testpassword` environment variable
 
@@ -117,7 +116,7 @@ set this on the terminal when you run the test commands
 testpassword=SETPASSWORDHERE yarn test-ui
 ```
 
-## Setup
+# Setup
 
 To set up the project, install the node packages by running
 
@@ -125,7 +124,7 @@ To set up the project, install the node packages by running
 yarn ci
 ```
 
-## Test
+# Test
 
 ## Run test
 
@@ -204,11 +203,11 @@ You can have a test or sets of tests to automatically rerun after saving your ch
 yarn test-ui-watch test/scenario1/file-1a.test.ts
 ```
 
-### Test report
+## Test report
 
 There is an html report generated after every run of our tests. These are saved under the `artifacts/report` folder. This should provide additional resource for reviewing the test results outside of the test runner from the console.
 
-## Lint and Format
+# Lint and Format
 
 Formatting and linting of source files are enforced by [eslint].
 
@@ -219,7 +218,7 @@ The IDE will highlight issues and errors based on rules that were set in [.eslin
 - `yarn lint` - see if there are linting issues and what files are not formatted correctly.
 - `yarn lint-fix` - try to fix fixable eslint errors and re-format files according to rules.
 
-## Structure
+# Structure
 
 ```
 .
@@ -255,25 +254,25 @@ The IDE will highlight issues and errors based on rules that were set in [.eslin
 |-- *config.json
 ```
 
-### Artifacts
+## Artifacts
 
 - Have all test artifacts save here ie test result reports, error screenshots and logs.
 
-### Config
+## Config
 
 - All test related configurations should live here. Do not confuse with configs for node packages and dependencies like eslint, mocha configs on the main directory.
 
-### Constants
+## Constants
 
 - Contains constants to use for test and function arguments.
 - **Example** http response status codes.
 
-### Scripts
+## Scripts
 
 - Any scripts we need to run adjacent to our test suite like hooks or running build pipelines.
 - Exceptions could be when a build tool requires their scripts on a specific directory eg: github actions requires them to be on a .github directory from the main directory.
 
-### Services
+## Services
 
 - All services under test and utilities for the test suite are here. If you need to get data from a web service or a configuration or secret from a key store, create a service folder for that resource or purpose here.
 - **Example** if you want to read a json file from aws s3, create an aws utility folder here and have an s3.ts file that contains methods for getting files from s3 etc.
@@ -329,7 +328,7 @@ export * from './blog-post-helper';
 import { blogPostFunction, blogPostFunctionHelper } from './services/blog-post';
 ```
 
-### Pages
+## Pages
 
 - Similar to services, all page objects are here. Have each pages represent the tree map of the application.
 - Each page is composed of the element selectors and the page actions.
@@ -357,7 +356,7 @@ export class SamplePage extends BasePage {
 }
 ```
 
-### Tests
+## Tests
 
 - All tests for your application are here. Suffix the test files with .test.ts. Try grouping them by logical parts of the application or service.
 

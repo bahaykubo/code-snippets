@@ -1,6 +1,5 @@
-# Test with Jasmine in Typescript
+<h1>Test with Jasmine in Typescript</h1>
 
-- [Test with Jasmine in Typescript](#test-with-jasmine-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Test](#test)

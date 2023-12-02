@@ -1,6 +1,5 @@
-# XML Parser and Builder in Typescript
+<h1>XML Parser and Builder in Typescript</h1>
 
-- [XML Parser and Builder in Typescript](#xml-parser-and-builder-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Test](#test)

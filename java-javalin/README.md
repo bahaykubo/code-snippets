@@ -1,8 +1,7 @@
-# Example service with javalin and truth test assertions
+<h1>Example service with javalin and truth test assertions</h1>
 
 Example java service using [javalin](https://javalin.io/) and test assertions using [google truth](https://truth.dev/).
 
-- [Example service with javalin and truth test assertions](#example-service-with-javalin-and-truth-test-assertions)
 - [Setup](#setup)
 
 # Setup

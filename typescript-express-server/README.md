@@ -1,14 +1,13 @@
-# App Service
+<h1>App Service</h1>
 
-- [App Service](#app-service)
 - [Main app](#main-app)
   - [Service routers](#service-routers)
   - [Data store](#data-store)
     - [Seed data](#seed-data)
   - [Middleware](#middleware)
   - [Utilities](#utilities)
-  - [Send http requests to app](#send-http-requests-to-app)
   - [Test](#test)
+    - [Send http requests to app](#send-http-requests-to-app)
 
 This mock service runs on nodejs with [express](https://expressjs.com/) and [Nedb](https://www.npmjs.com/package/@seald-io/nedb) as a data store.
 
@@ -127,10 +126,6 @@ app.listen(5250, () => {});
 
 If there are any functions that are shared across the app, add them to the [utilities](./app/utilities/) directory. When you add a utility, add and export if from the [index file](./app/utilities/index.ts) so it can be imported from `utilities`.
 
-## Send http requests to app
-
-There is a .http file on [test directory](./test) that you can use to send http requests to the app. You would need the [rest client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension in vs code to use this.
-
 ## Test
 
 To run the tests, we need to run a script that would start a container of the service first:
@@ -146,3 +141,7 @@ yarn test
 ./scripts/docker/stop.sh
 
 ```
+
+### Send http requests to app
+
+There is n .http file on [test directory](./test) that you can use to send http requests to the app. You would need the [rest client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) extension in vs code to use this.

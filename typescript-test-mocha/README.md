@@ -1,6 +1,5 @@
-# Test with Mocha and Chai in Typescript
+<h1>Test with Mocha and Chai in Typescript</h1>
 
-- [Test with Mocha and Chai in Typescript](#test-with-mocha-and-chai-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Test](#test)

@@ -1,6 +1,5 @@
-# Python Code Snippets
+<h1>Python Code Snippets</h1>
 
-- [Python Code Snippets](#python-code-snippets)
 - [Setup](#setup)
   - [Install packages create virtual environment](#install-packages-create-virtual-environment)
   - [Run python module or test](#run-python-module-or-test)

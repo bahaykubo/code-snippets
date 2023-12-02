@@ -1,8 +1,7 @@
-# Kafka Client in Typescript
+<h1>Kafka Client in Typescript</h1>
 
 This kafka client runs on nodejs with [kafkajs](https://www.npmjs.com/package/kafkajs).
 
-- [Kafka Client in Typescript](#kafka-client-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Main app](#main-app)

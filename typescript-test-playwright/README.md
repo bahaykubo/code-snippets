@@ -1,6 +1,5 @@
-# Test with Playwright in Typescript
+<h1>Test with Playwright in Typescript</h1>
 
-- [Test with Playwright in Typescript](#test-with-playwright-in-typescript)
 - [Setup](#setup)
   - [Install packages](#install-packages)
 - [Test](#test)

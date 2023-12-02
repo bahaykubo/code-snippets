@@ -1,4 +1,12 @@
-# Sample Angular Bike Shop
+<h1>Sample Angular Bike Shop</h1>
+
+- [Development server](#development-server)
+- [Code scaffolding](#code-scaffolding)
+- [Build](#build)
+- [Running unit tests](#running-unit-tests)
+- [Running end-to-end tests](#running-end-to-end-tests)
+  - [Running end-to-end tests with Playwirght](#running-end-to-end-tests-with-playwirght)
+- [Further help](#further-help)
 
 ## Development server
 
@@ -19,6 +27,24 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+### Running end-to-end tests with Playwirght
+
+To run e2e tests with playwright, use the webServer property from the PlaywrightTestConfig to start the angular app
+
+```javascript
+import { PlaywrightTestConfig } from '@playwright/test';
+
+const config: PlaywrightTestConfig = {
+  webServer: {
+    command: 'yarn ng serve',
+    port: 4200,
+    timeout: 60000, // Default value
+  },
+};
+
+export default config;
+```
 
 ## Further help
 

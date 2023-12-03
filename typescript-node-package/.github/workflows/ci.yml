@@ -1,0 +1,28 @@
+name: Sample npm package ts
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  Test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v3
+
+      - name: Use Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Install npm packages
+        run: yarn ci
+
+      - name: Lint project
+        if: always()
+        run: yarn lint
+
+      - name: Run tests
+        if: always()
+        run: yarn test

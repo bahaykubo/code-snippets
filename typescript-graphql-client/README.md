@@ -1,4 +1,4 @@
-<h1>GraphQL client compare axios and graphql-request in Typescript</h1> 
+<h1>GraphQL client compare axios and graphql-request in Typescript</h1>
 
 Compare graphql clients between [axios](https://axios-http.com/docs/intro) and [graphql-request](https://github.com/jasonkuhrt/graphql-request)
 

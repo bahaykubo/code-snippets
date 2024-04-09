@@ -16,4 +16,4 @@ module.exports = {
   retries: 0,
   'inline-diffs': true,
   'watch-files': ['**/*.js'],
-}
+};

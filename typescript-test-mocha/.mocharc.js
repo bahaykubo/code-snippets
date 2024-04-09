@@ -14,6 +14,6 @@ module.exports = {
     'html=true',
     'json=true',
     'time-out=false',
-    'timestamp=yyyymmdd_HHMMss'
+    'timestamp=yyyymmdd_HHMMss',
   ],
 };

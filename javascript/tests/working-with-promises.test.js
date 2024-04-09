@@ -46,15 +46,15 @@ describe('working with promises', function () {
 
   context('that just resolves', function () {
     it('should resolve given a valid name', async function () {
-      await namePromise('bing').then((response) => expect(response).to.contain('hello'));
+      await nameNewPromise('bing').then((response) => expect(response).to.contain('hello'));
     });
 
     it('should reject given an error name', async function () {
-      await namePromise('error').then((response) => expect(response).to.equal('error'));
+      await nameNewPromise('error').catch((response) => expect(response).to.equal('error'));
     });
 
     it('should reject given name is undefined', async function () {
-      await namePromise('error').then((response) => expect(response).to.equal('error'));
+      await nameNewPromise('error').catch((response) => expect(response).to.equal('error'));
     });
   });
 

@@ -33,13 +33,13 @@ There is an [example test](./test/kafka.test.ts) that uses these two clients.
 
 The sample tests uses a local instance of kafka.
 
-You can start these by running the start script in [./script/start.sh](./script/start.sh). 
+You can start these by running the start script in [./script/start.sh](./script/start.sh).
 
 Kakfa is then accessible from `loclahost:29092`. This is the default broker url set from the [config](./app/config.ts).
 
 # Utilities
 
-If there are any functions that are shared across the app, add them to the [utilities](./app/utilities/) directory. 
+If there are any functions that are shared across the app, add them to the [utilities](./app/utilities/) directory.
 
 When you add a utility, add and export it from the [index file](./app/utilities/index.ts) so it can be imported directly from `utilities`.
 

@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
     "module": "commonjs",
     "target": "es2021",
-    "types": ["@wdio/globals/types"]
+    "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework"]
   }
 }

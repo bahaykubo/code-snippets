@@ -14,6 +14,8 @@
   - [SDKMan](#sdkman)
     - [Java](#java)
     - [Gradle](#gradle)
+  - [asdf](#asdf)
+    - [Go](#go)
 
 
 Collections of snippets, examples and tools across different languages and frameworks.
@@ -180,4 +182,37 @@ sdk install gradle 7.3
 
 # check gradle working properly
 gradle --version
+```
+
+## [asdf](https://github.com/asdf-vm/asdf)
+
+Use this to install tools and runtimes like go
+
+```bash
+# add asdf and asdf completions to .bashrc
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.1 && \
+echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc && \
+echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
+
+# reload shell
+exec $SHELL
+
+# check asdf is working correctly
+asdf --version
+```
+
+### [Go](https://go.dev/)
+
+Using asdf to manage go
+
+```bash
+asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
+
+# check available versions
+asdf list all golangrw
+
+asdf install golang 1.17.6 && \
+asdf global golang 1.17.6
+
+go version
 ```

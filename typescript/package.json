@@ -12,6 +12,7 @@
     "@types/node": "^20.8.10",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
+    "dayjs": "^1.11.13",
     "moment": "^2.29.4",
     "nodemon": "^3.0.1",
     "style-lint-js": "^1.1.0",

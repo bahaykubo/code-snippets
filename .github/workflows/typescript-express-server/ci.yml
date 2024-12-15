@@ -1,0 +1,36 @@
+name: Typescript - Express Server - CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: ./typescript-express-server
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Use Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '22.x'
+
+      - name: Install npm packages
+        run: yarn ci
+
+      - name: Lint app
+        if: always()
+        run: yarn lint
+
+      - name: Build app
+        run: |
+          yarn build
+          yarn refresh-data
+
+      - name: Start app and run integration tests
+        run: |
+          ./scripts/docker/run.sh
+          yarn test

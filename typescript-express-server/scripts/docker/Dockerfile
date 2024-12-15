@@ -1,4 +1,4 @@
-FROM node:16.14.0-alpine3.15
+FROM node:22.12.0-alpine3.21
 
 RUN mkdir src
 COPY ./package.json src

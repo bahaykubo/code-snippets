@@ -1,20 +1,17 @@
-name: Cypress in Typescript
+name: Typescript - Test - Playwright Mocha
 
 env:
   PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'ts/**'
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
     defaults:
       run:
-        working-directory: ./ts
+        working-directory: ./typescript-test-playwright-mocha
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
@@ -22,7 +19,7 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '22.x'
 
       - name: Install npm packages
         run: yarn ci
@@ -33,4 +30,8 @@ jobs:
 
       - name: Run API tests
         if: always()
-        run: yarn test
+        run: yarn test-api
+
+      - name: Run UI tests
+        if: always()
+        run: ${{ env.PASSWORDS }} yarn test-ui-headless tests/ui

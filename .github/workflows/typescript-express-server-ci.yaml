@@ -8,7 +8,7 @@ jobs:
     defaults:
       run:
         working-directory: ./typescript-express-server
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v2

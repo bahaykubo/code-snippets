@@ -1,20 +1,17 @@
-name: Playwright in Typescript
+name: Typescript - Test - WebdriverIO
 
 env:
   PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'ts/**'
 
 jobs:
   test:
-    runs-on: ubuntu-22.04
     defaults:
       run:
-        working-directory: ./ts
+        working-directory: ./typescript-test-webdriverio
+    runs-on: ubuntu-latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v3
@@ -22,7 +19,7 @@ jobs:
       - name: Use Node
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '22.x'
 
       - name: Install npm packages
         run: yarn ci
@@ -33,8 +30,15 @@ jobs:
 
       - name: Run API tests
         if: always()
-        run: yarn test-api
+        run: ${{ env.PASSWORDS }} yarn test-api
 
       - name: Run UI tests
         if: always()
-        run: ${{ env.PASSWORDS }} yarn test-ui-headless tests/ui
+        run: ${{ env.PASSWORDS }} yarn test-ui-headless
+
+      - name: Publish Test Report
+        if: always()
+        uses: mikepenz/action-junit-report@v2
+        with:
+          report_paths: 'junit/*.xml'
+          github_token: ${{ secrets.GITHUB_TOKEN }}

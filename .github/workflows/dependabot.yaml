@@ -1,0 +1,39 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directories:
+      - '/javascript'
+      - '/javascript-db-client'
+      - '/typescript'
+      - '/typescript-angular'
+      - '/typescript-express-server'
+      - '/typescript-graphql-client'
+      - '/typescript-kafka-client'
+      - '/typescript-mongodb-client'
+      - '/typescript-node-package'
+      - '/typescript-test-cypress'
+      - '/typescript-test-jest'
+      - '/typescript-test-k6'
+      - '/typescript-test-mocha'
+      - '/typescript-test-playwright'
+      - '/typescript-test-playwright-mocha'
+      - '/typescript-test-webdriverio'
+      - '/typescript-xml'
+    schedule:
+      interval: monthly
+      time: '05:30'
+      day: 'monday'
+      timezone: 'Pacific/Auckland'
+    open-pull-requests-limit: 5
+    ignore:
+      - dependency-name: chromedriver
+  - package-ecosystem: 'pip'
+    directories:
+      - '/python'
+      - '/python-test'
+    schedule:
+      interval: monthly
+      time: '05:30'
+      day: 'monday'
+      timezone: 'Pacific/Auckland'
+    open-pull-requests-limit: 5

@@ -15,7 +15,7 @@
     "cypress": "^13.5.0",
     "cypress-mochawesome-reporter": "^3.6.1",
     "cypress-multi-reporters": "^1.6.4",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.13",
     "eslint-plugin-cypress": "^2.15.1",
     "har-validator": "^5.1.5",
     "junit-report-merger": "^6.0.3",

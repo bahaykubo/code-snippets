@@ -20,7 +20,7 @@ pytest-sugar = "^0.9.7"
 pytest-xdist = "^3.4.0"
 selenium = "^4.15.2"
 pytest = "^7.4.3"
-pylint = "^3.0.2"
+pylint = "^3.3.2"
 
 [build-system]
 requires = ["poetry-core"]

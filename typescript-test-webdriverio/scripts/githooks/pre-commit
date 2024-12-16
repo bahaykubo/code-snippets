@@ -7,8 +7,8 @@ NC='\033[0m'
 BOLD='\033[1m'
 NORMAL='\033[0m'
 
-STAGED_FILES_LINT=$(git diff --diff-filter=d --cached --name-only . |  grep -E '.*.(js)$')
-STAGED_FILES_PRETTY=$(git diff --diff-filter=d --cached --name-only . |  grep -E '.*.(js|md|json|yml)$')
+STAGED_FILES_LINT=$(git diff --diff-filter=d --cached --name-only . |  grep -E '.*.(ts|js)$')
+STAGED_FILES_PRETTY=$(git diff --diff-filter=d --cached --name-only . |  grep -E '.*.(ts|js|md|json|yml)$')
 
 if [ -z "$STAGED_FILES_LINT" ] && [ -z "$STAGED_FILES_PRETTY" ]; then
   printf "${GREEN}None of the staged files are required to be checked for format and lint issues.\n${NC}"

@@ -9,11 +9,13 @@
     "watch": "yarn run nodemon"
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.8.10",
     "currency.js": "^2.0.4",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "dayjs": "^1.11.13",
+    "jest": "^30.3.0",
     "moment": "^2.29.4",
     "nodemon": "^3.0.1",
     "style-lint-js": "^1.1.0",

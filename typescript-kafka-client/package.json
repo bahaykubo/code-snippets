@@ -14,7 +14,7 @@
     "refresh-data": "rm -rf data && yarn ts-node app/utilities/data-seed.ts"
   },
   "dependencies": {
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11.13",
     "kafkajs": "^2.2.4"
   },
   "devDependencies": {

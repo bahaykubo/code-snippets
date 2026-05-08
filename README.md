@@ -18,6 +18,8 @@
 
 Collections of snippets, examples and tools across different languages and frameworks.
 
+BINGO
+
 Follow instructions on how to setup and run a project from the setup sections below and each project directory's README. 
 
 # Setup

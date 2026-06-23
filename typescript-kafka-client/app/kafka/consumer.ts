@@ -47,7 +47,7 @@ export class KafkaConsumer {
       await this.subscribeToTopics(topics);
       await this.startListening();
     } catch (error) {
-      throw new Error(`Failed to subscribe and listen for messages. ${error}`);
+      throw new Error(`Failed to subscribe and listen for messages.`, { cause: error });
     }
   }
 
@@ -77,14 +77,14 @@ export class KafkaConsumer {
             if (message.value) {
               value = JSON.parse(message.value?.toString());
             }
-          } catch (error) {
+          } catch {
             value = message.value?.toString() ?? '';
           }
           this._messages.push(value);
         },
       });
     } catch (error) {
-      throw new Error(`Failed to listen for messages. ${error}`);
+      throw new Error(`Failed to listen for messages.`, { cause: error });
     }
   }
 
@@ -130,7 +130,7 @@ export class KafkaConsumer {
         break;
       } catch (error: any) {
         if (retry >= retries) {
-          throw new Error(error.message);
+          throw new Error(error.message, { cause: error });
         }
         await pause(retryInterval);
       }

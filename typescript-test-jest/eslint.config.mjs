@@ -1,7 +1,8 @@
-const jest = require('eslint-plugin-jest');
+import jest from 'eslint-plugin-jest';
+import styleLintJs from 'style-lint-js/eslint.config-ts.js';
 
-module.exports = [
-  ...require('style-lint-js/eslint.config-ts.js'),
+export default [
+  ...styleLintJs,
   jest.configs['flat/recommended'],
   {
     languageOptions: {

@@ -1,8 +1,9 @@
-const mocha = require('eslint-plugin-mocha').default;
-const wdio = require('eslint-plugin-wdio');
+import mocha from 'eslint-plugin-mocha';
+import wdio from 'eslint-plugin-wdio';
+import styleLintJs from 'style-lint-js/eslint.config-ts.js';
 
-module.exports = [
-  ...require('style-lint-js/eslint.config-ts.js'),
+export default [
+  ...styleLintJs,
   mocha.configs.recommended,
   wdio.configs['flat/recommended'],
   {

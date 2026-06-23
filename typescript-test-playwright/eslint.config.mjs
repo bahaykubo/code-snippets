@@ -1,7 +1,8 @@
-const playwright = require('eslint-plugin-playwright').default;
+import playwright from 'eslint-plugin-playwright';
+import styleLintJs from 'style-lint-js/eslint.config-ts.js';
 
-module.exports = [
-  ...require('style-lint-js/eslint.config-ts.js'),
+export default [
+  ...styleLintJs,
   playwright.configs['flat/recommended'],
   {
     rules: {

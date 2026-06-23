@@ -1,4 +1,4 @@
-import { describe } from 'mocha';
+import { describe, before, after } from 'mocha';
 import { expect } from 'chai';
 import { SubsriptionType, Users } from '../app/data-store';
 
@@ -17,7 +17,7 @@ describe('Messenger Users', function () {
 
   it('should create a new user with a subscription successfully', async function () {
     await users.add({ name: newUser, subscription: SubsriptionType.Premium }).then((result) => {
-      expect(result.insertedId).to.not.be.null;
+      expect(result.insertedId).to.not.equal(null);
     });
   });
 

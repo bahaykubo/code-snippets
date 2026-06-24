@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { ConsoleColor } from '../config';
+import { ConsoleColor } from './config';
 
 // we are going to compare the use of 'promise all' against looping through promises
 // to see how much time we can save from using promise all compared to a for loop

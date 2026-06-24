@@ -54,7 +54,7 @@ describe('Get blog posts', function () {
     await blogPosts.getPostsByUser('error').then((response) => {
       const posts = response.data;
       expect(posts).to.be.an('Array');
-      expect(posts).to.be.empty;
+      expect(posts).to.have.lengthOf(0);
     });
   });
 });

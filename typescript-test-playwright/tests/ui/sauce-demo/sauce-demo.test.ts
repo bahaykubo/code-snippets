@@ -36,7 +36,7 @@ test.describe('Swag Labs demo app', () => {
       expect(
         items.find((item) => item.name.includes(itemToAdd)),
         `Expected to find ${itemToAdd} from cart items`,
-      ).toBeTruthy;
+      ).toBeTruthy();
     });
   });
 });

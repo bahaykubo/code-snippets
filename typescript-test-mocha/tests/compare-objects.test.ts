@@ -24,7 +24,7 @@ describe('Compare Test', function () {
     expect(
       arays.some((aray) => aray.includes('ok')),
       `Did not find jo in ${arays}`,
-    ).to.be.true;
+    ).to.equal(true);
   });
 
   it('should match object with nested array', function () {

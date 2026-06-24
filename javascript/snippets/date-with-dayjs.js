@@ -1,8 +1,9 @@
-const dayjs = require('dayjs');
-const utc = require('dayjs/plugin/utc');
-const timezone = require('dayjs/plugin/timezone');
-dayjs.extend(utc);
-dayjs.extend(timezone);
+import dayjs, { extend } from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+
+extend(utc);
+extend(timezone);
 
 const dateTimeFormat = 'YYYY-MM-DDTHH:mm:ssZ';
 

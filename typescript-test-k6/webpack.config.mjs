@@ -1,15 +1,16 @@
-/* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/no-var-requires */
-const path = require('path');
-const GlobEntries = require('webpack-glob-entries');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
+import GlobEntries from 'webpack-glob-entries';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 
-module.exports = {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export default {
   mode: 'production',
   entry: GlobEntries('./tests/*.test.ts'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs',
     filename: '[name].js',
   },
@@ -37,7 +38,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'files'),
+          from: resolve(__dirname, 'files'),
           noErrorOnMissing: true,
         },
       ],

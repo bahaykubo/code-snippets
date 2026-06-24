@@ -1,4 +1,5 @@
 import { defineConfig } from 'cypress';
+import setupPlugin from './cypress/plugins/index';
 
 export default defineConfig({
   viewportWidth: 1440,
@@ -23,8 +24,7 @@ export default defineConfig({
   },
   e2e: {
     setupNodeEvents(on, config) {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires
-      return require('./cypress/plugins/index.ts')(on, config);
+      return setupPlugin(on, config);
     },
     baseUrl: 'https://jsonplaceholder.typicode.com',
   },

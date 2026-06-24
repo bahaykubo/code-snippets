@@ -115,7 +115,7 @@ describe('Basic blog', () => {
         .its('body')
         .then((posts) => {
           expect(posts).to.be.an('Array');
-          expect(posts).to.be.empty;
+          expect(posts).to.have.lengthOf(0);
         });
     });
   });

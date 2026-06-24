@@ -21,7 +21,7 @@ const getPassword = (): string => {
   if (process.env.testpassword) {
     return process.env.testpassword;
   } else {
-    console.warn('No password was set for the test role. Add environment variable testpassword');
+    throw new Error('No password was set for the test role. Add environment variable testpassword');
   }
 };
 

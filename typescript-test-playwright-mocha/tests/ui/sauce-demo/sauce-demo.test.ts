@@ -29,7 +29,8 @@ describe('Swag Labs demo app', function () {
         // item.name.includes(itemToAdd)).addToCart();
       });
     });
-    await item.addToCart();
+    expect(item).to.not.equal(undefined);
+    await item?.addToCart();
     await inventoryPage.header.openShoppingCart();
     await shoppingCartPage.getCartItems().then((items: CartItems[]) => {
       expect(

@@ -5,7 +5,6 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "baseUrl": "./",
     "lib": ["es2017", "dom"],
     "module": "commonjs",
     "outDir": "dist",

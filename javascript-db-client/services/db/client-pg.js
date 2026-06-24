@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { Customers } from './models/customers';
-/* eslint-enable no-unused-vars */
 import { Client } from 'pg';
 import { Config } from '@config/config';
 

@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { Model, Sequelize } from 'sequelize';
 import { CustomerAttributes, Customers } from './models/customers';
-/* eslint-enable no-unused-vars */
 import { Config } from '@config/config';
 
 export class DBClient {

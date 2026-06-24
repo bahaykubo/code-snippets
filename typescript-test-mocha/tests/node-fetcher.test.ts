@@ -1,10 +1,9 @@
 import { pause } from '@service/utils';
-import fetch, { Response } from 'node-fetch';
 
 const sendRequest = async (
   options: {
-    retries?: number;
-    retryIntervalInSeconds?: number;
+    retries: number;
+    retryIntervalInSeconds: number;
   } = { retries: 3, retryIntervalInSeconds: 2 },
 ): Promise<Response> => {
   const request = async () => {

@@ -1,4 +1,5 @@
 import { BlogPosts } from '@service/blog-posts';
+import { BlogPost } from '../../../cypress/types/blog-post';
 
 describe('Basic blog', () => {
   const blogPosts = new BlogPosts();
@@ -71,7 +72,7 @@ describe('Basic blog', () => {
       blogPosts
         .getAllPosts()
         .its('body')
-        .then((posts) => {
+        .then((posts: BlogPost[]) => {
           expect(posts).to.be.an('Array');
           posts.forEach((post) => {
             expect(post).to.have.all.keys(['id', 'title', 'body', 'userId']);
@@ -100,7 +101,7 @@ describe('Basic blog', () => {
       blogPosts
         .getPostsByUser(this.blogPost.userId)
         .its('body')
-        .then((posts) => {
+        .then((posts: BlogPost[]) => {
           expect(posts).to.be.an('Array');
           posts.forEach((post) => {
             expect(post).property('userId').to.eq(this.blogPost.userId);
@@ -115,7 +116,7 @@ describe('Basic blog', () => {
         .its('body')
         .then((posts) => {
           expect(posts).to.be.an('Array');
-          expect(posts).to.be.empty;
+          expect(posts).to.have.lengthOf(0);
         });
     });
   });

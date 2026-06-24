@@ -34,7 +34,7 @@ export class KafkaProducer {
       });
       await this.disconnect();
     } catch (error) {
-      throw new Error(`Failed to send message. ${error}`);
+      throw new Error(`Failed to send message.`, { cause: error });
     }
   }
 

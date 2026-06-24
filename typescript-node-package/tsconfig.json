@@ -5,7 +5,6 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "baseUrl": "./",
     "lib": ["es2017", "dom"],
     "module": "commonjs",
     "outDir": "dist",
@@ -14,8 +13,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": true,
-    "moduleResolution": "Node",
-    "allowSyntheticDefaultImports": true
+    "moduleResolution": "node",
+    "ignoreDeprecations": "6.0",
+    "allowSyntheticDefaultImports": true,
+    "types": ["mocha", "chai"]
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*.ts", "test/**/*.ts"]
 }

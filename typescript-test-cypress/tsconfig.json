@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "dist",
     "module": "es2020",
     "target": "es2021",
@@ -8,7 +7,7 @@
     "allowSyntheticDefaultImports": true,
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {
       "@service/*": ["./cypress/services/*"],
       "@page/*": ["./cypress/pages/*"]

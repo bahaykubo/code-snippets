@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import { DataTypes, Sequelize } from 'sequelize';
-/* eslint-enable no-unused-vars */
 
 /**
  * @typedef CustomerAttributes

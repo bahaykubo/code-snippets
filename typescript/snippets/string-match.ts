@@ -1,3 +1,8 @@
+type Item = {
+  itemId?: string;
+  thingId?: string;
+};
+
 /**
  *  Extract item and thing Ids from givenRegex to get UUID between "item/" and "/thing" off the given url
  *  i.e.
@@ -7,11 +12,10 @@
  */
 const getItemDetailsFromUrl = (url: string): any => {
   const matchErrors = [];
-  const itemDetails = {};
+  const itemDetails: Item = {};
   const itemId = url.match(/(?<=item\/).*(?=\/thing)/g); // Gets the UUID between "item/" and "/thing"
   if (!itemId) {
     matchErrors.push('item Id');
-    itemDetails['itemId'] = null;
   } else {
     itemDetails['itemId'] = itemId[0];
   }
@@ -19,7 +23,6 @@ const getItemDetailsFromUrl = (url: string): any => {
   const thingId = url.match(/(?<=thing\/).*$/g); // Gets the UUID after "thing/"
   if (!thingId) {
     matchErrors.push('thing Id');
-    itemDetails['thingId'] = null;
   } else {
     itemDetails['thingId'] = thingId[0];
   }

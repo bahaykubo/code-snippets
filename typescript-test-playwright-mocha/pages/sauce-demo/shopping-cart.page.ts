@@ -40,11 +40,11 @@ export class ShoppingCartPage {
       const index = item[0];
       items.push({
         index,
-        quantity: parseInt((await (await this.page.$$(this.itemsQuantity))[index].textContent()).trim()),
-        name: (await (await this.page.$$(this.itemsName))[index].textContent()).trim(),
-        price: (await (await this.page.$$(this.itemsPrice))[index].textContent()).trim(),
+        quantity: parseInt(((await (await this.page.$$(this.itemsQuantity))[index].textContent()) ?? '').trim()),
+        name: ((await (await this.page.$$(this.itemsName))[index].textContent()) ?? '').trim(),
+        price: ((await (await this.page.$$(this.itemsPrice))[index].textContent()) ?? '').trim(),
         removeFromCart: async () => {
-          await this.page.$$(this.itemsRemoveFromCart)[index].click();
+          await (await this.page.$$(this.itemsRemoveFromCart))[index].click();
         },
       });
     }

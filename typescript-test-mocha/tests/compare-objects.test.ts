@@ -2,12 +2,12 @@ import { expect } from 'chai';
 
 describe('Compare Test', function () {
   it('compare two objects', function () {
-    const list = {
+    const list: Record<string, unknown> = {
       name: 'me',
       id: 1,
       grade: 50,
     };
-    const list2 = {
+    const list2: Record<string, unknown> = {
       name: 'me',
       id: 1,
       average: 10,
@@ -24,7 +24,7 @@ describe('Compare Test', function () {
     expect(
       arays.some((aray) => aray.includes('ok')),
       `Did not find jo in ${arays}`,
-    ).to.be.true;
+    ).to.equal(true);
   });
 
   it('should match object with nested array', function () {

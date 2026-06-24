@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "dist",
     "module": "commonjs",
     "target": "es2021",
+    "skipLibCheck": true,
     "types": ["node", "@wdio/globals/types", "@wdio/mocha-framework"]
   }
 }

@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const filterList = require('../snippets/array-filter');
+import { expect } from 'chai';
+import { filterList } from '../snippets/array-filter';
 
 describe('array filter', function () {
   it('should filter by name value', function () {

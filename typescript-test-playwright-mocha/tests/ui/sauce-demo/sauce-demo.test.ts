@@ -29,13 +29,14 @@ describe('Swag Labs demo app', function () {
         // item.name.includes(itemToAdd)).addToCart();
       });
     });
-    await item.addToCart();
+    expect(item).to.not.equal(undefined);
+    await item?.addToCart();
     await inventoryPage.header.openShoppingCart();
     await shoppingCartPage.getCartItems().then((items: CartItems[]) => {
       expect(
         items.find((item) => item.name.includes(itemToAdd)),
         `Expected to find ${itemToAdd} from cart items`,
-      ).to.not.be.undefined;
+      ).to.not.equal(undefined);
     });
   });
 });

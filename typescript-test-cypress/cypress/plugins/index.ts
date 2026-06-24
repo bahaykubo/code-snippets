@@ -1,8 +1,8 @@
 import 'tsconfig-paths/register';
+import mochawesomePlugin from 'cypress-mochawesome-reporter/plugin';
 
-module.exports = (on) => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  require('cypress-mochawesome-reporter/plugin')(on);
+export default (on: any) => {
+  mochawesomePlugin(on);
 
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config

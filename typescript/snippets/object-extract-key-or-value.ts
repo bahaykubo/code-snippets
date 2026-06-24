@@ -4,12 +4,12 @@ const me = {
   phone: 'bang',
 };
 
-const keys = [];
+const keys: string[] = [];
 Object.keys(me).map((key) => keys.push(key));
 console.log('Object keys ->');
 console.log(keys);
 
-const values = [];
+const values: string[] = [];
 Object.values(me).map((value) => values.push(value));
 console.log('Object values ->');
 console.log(values);
@@ -20,7 +20,7 @@ const keyString = Object.keys(me)
 console.log('Object keys string ->');
 console.log(keyString);
 
-const keyValue = [];
+const keyValue: { [x: string]: string }[] = [];
 Object.entries(me).map((entry) => keyValue.push({ [entry[0]]: entry[1] }));
 console.log('Object key value property array ->');
 console.log(keyValue);

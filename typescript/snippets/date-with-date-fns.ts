@@ -1,7 +1,6 @@
 import { addDays, startOfDay } from 'date-fns';
 import { format, utcToZonedTime } from 'date-fns-tz';
 
-// eslint-disable-next-line
 const dateTimeFormat = "yyyy-MM-dd'T'HH:mmXXX";
 
 const newDate = new Date('2020-08-15T00:00');

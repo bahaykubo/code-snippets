@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const { sortListByDate, sortListByNumber } = require('../snippets/working-with-arrays');
+import { expect } from 'chai';
+import { sortListByDate, sortListByNumber } from '../snippets/working-with-arrays';
 
 describe('working with arrays', function () {
   describe('sort', function () {

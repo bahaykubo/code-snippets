@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const { searchStateByIndexOf, searchStateByStringSearch } = require('../snippets/string-search');
+import { expect } from 'chai';
+import { searchStateByIndexOf, searchStateByStringSearch } from '../snippets/string-search';
 
 describe('search', function () {
   const addresses = [

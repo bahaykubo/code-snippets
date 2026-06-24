@@ -9,6 +9,7 @@ module.exports = {
     'time-out=false',
     'timestamp=yyyymmdd_HHMMss',
   ],
+  spec: 'tests',
   recursive: true,
   require: ['@babel/register', 'mochawesome/register'],
   extension: ['.test.js'],

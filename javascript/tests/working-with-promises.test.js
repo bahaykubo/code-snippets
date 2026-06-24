@@ -1,5 +1,5 @@
-const { expect } = require('chai');
-const { nameNewPromise, namePromise, promise1, promise2 } = require('../snippets/working-with-promises');
+import { expect } from 'chai';
+import { nameNewPromise, namePromise, promise1, promise2 } from '../snippets/working-with-promises';
 
 describe('working with promises', function () {
   context('that resolves and rejects', function () {

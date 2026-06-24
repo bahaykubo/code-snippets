@@ -1,4 +1,4 @@
-const { Say, Ask } = require('../../snippets/export-module/speech');
+import { Say, Ask } from '../../snippets/export-module/speech';
 
 describe('use speech', function () {
   it('should say and ask', function () {

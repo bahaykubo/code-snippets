@@ -30,9 +30,4 @@ const promise2 = () => {
   });
 };
 
-module.exports = {
-  nameNewPromise,
-  namePromise,
-  promise1,
-  promise2,
-};
+export { nameNewPromise, namePromise, promise1, promise2 };

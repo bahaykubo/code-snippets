@@ -23,9 +23,9 @@ const checkArray = (list) => {
     console.log(`check array "${list}" -> nothing in the array`);
   }
 };
-// checkArray(['bing', 'bong']);
-// checkArray([]);
-// checkArray();
+checkArray(['bing', 'bong']);
+checkArray([]);
+checkArray();
 
 const modifyArray = (list) => {
   const result = [];
@@ -34,7 +34,7 @@ const modifyArray = (list) => {
   });
   return result;
 };
-// modifyArray(['bing', 'bong']).forEach(item => console.log(`modify array -> ${JSON.stringify(item)}`));
+modifyArray(['bing', 'bong']).forEach((item) => console.log(`modify array -> ${JSON.stringify(item)}`));
 
 module.exports = {
   sortListByDate,

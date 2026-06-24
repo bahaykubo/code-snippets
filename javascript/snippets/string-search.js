@@ -24,7 +24,4 @@ function doThis() {
 
 doThis();
 
-module.exports = {
-  searchStateByStringSearch,
-  searchStateByIndexOf,
-};
+export { searchStateByStringSearch, searchStateByIndexOf };

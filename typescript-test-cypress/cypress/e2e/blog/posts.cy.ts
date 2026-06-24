@@ -1,5 +1,5 @@
 import { BlogPosts } from '@service/blog-posts';
-import { BlogPost } from 'cypress/types/blog-post';
+import { BlogPost } from '../../../cypress/types/blog-post';
 
 describe('Basic blog', () => {
   const blogPosts = new BlogPosts();

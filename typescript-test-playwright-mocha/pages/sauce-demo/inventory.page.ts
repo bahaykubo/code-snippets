@@ -29,10 +29,10 @@ export class InventoryPage {
     const itemEntries = await this.page.$$(this.itemsList);
     for (const item of itemEntries) {
       items.push({
-        name: (await (await item.$(this.itemsName)).textContent()).trim(),
-        price: (await (await item.$(this.itemsPrice)).textContent()).trim(),
+        name: (await (await item.$(this.itemsName))?.textContent())?.trim() ?? '',
+        price: (await (await item.$(this.itemsPrice))?.textContent())?.trim() ?? '',
         async addToCart() {
-          await (await item.$('button[id*="add-to-cart"]')).click();
+          await (await item.$('button[id*="add-to-cart"]'))?.click();
         },
       });
     }

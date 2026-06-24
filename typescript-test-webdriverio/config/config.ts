@@ -9,7 +9,7 @@ const getPassword = (): string => {
   if (process.env.testpassword) {
     return process.env.testpassword;
   } else {
-    console.warn('No password was set for the user. Add environment variable testpassword');
+    throw new Error('No password was set for the user. Add environment variable testpassword');
   }
 };
 

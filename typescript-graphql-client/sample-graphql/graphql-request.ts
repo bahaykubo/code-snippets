@@ -1,6 +1,7 @@
 import { gql, rawRequest } from 'graphql-request';
 import { graphqlURL } from './config';
-import { GraphQLClientResponse } from 'graphql-request/build/esm/types';
+
+type GraphQLClientResponse<T> = Awaited<ReturnType<typeof rawRequest<T>>>;
 
 export const getFilmsWithGraphQL = async (): Promise<GraphQLClientResponse<any>> => {
   const query = gql`

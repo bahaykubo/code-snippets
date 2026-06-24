@@ -23,8 +23,8 @@ export default defineConfig({
     },
   },
   e2e: {
-    setupNodeEvents(on, config) {
-      return setupPlugin(on, config);
+    setupNodeEvents(on) {
+      return setupPlugin(on);
     },
     baseUrl: 'https://jsonplaceholder.typicode.com',
   },

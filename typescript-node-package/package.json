@@ -10,7 +10,7 @@
     "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
     "lint": "eslint . && prettier --check .",
     "lint-fix": "eslint . --fix && prettier --write . && yarn lint",
-    "build": "rm -rf dist && yarn tsc && yarn pack",
+    "build": "rm -rf dist && yarn tsc -p tsconfig.build.json && yarn pack",
     "test": "mocha"
   },
   "devDependencies": {

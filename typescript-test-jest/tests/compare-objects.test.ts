@@ -1,12 +1,12 @@
 describe('Compare Test', () => {
   it('compare two objects', () => {
-    const list = {
+    const list: Record<string, unknown> = {
       name: 'me',
       id: 1,
       grade: 50,
     };
 
-    const list2 = {
+    const list2: Record<string, unknown> = {
       name: 'me',
       id: 1,
       average: 10,

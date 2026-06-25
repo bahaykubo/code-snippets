@@ -20,7 +20,7 @@
     "har-validator": "^5.1.5",
     "junit-report-merger": "^6.0.3",
     "mocha-junit-reporter": "^2.2.1",
-    "style-lint-js": "^2.0.0",
+    "style-lint-js": "^3.0.2",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"

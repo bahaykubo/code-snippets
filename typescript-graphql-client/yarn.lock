@@ -779,10 +779,10 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-style-lint-js@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-2.0.0.tgz#afbab244b8e9f23a287411da98566d8f4350ffb0"
-  integrity sha512-bwu9qGqh/lGx5YMF+0FaleZpbrhUWDe1TIJCn05bHcY6t9aUSN8cTDD9EBK37kMoQtYpop8I/5wfiSW9YNe4MA==
+style-lint-js@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-3.0.2.tgz#dfe83147bb85b84e94007a5cb505d6b904ae714a"
+  integrity sha512-f8cEm9xk4Id/Y4/6+/r/RyUcp5zRMSspyaq8rNrUgoR8EhLkg6knDPK3YMrUKst22pcSjmeTjUSQ03SOLrXMlg==
   dependencies:
     "@eslint/js" "^10.0.1"
     "@typescript-eslint/eslint-plugin" "^8.61.1"

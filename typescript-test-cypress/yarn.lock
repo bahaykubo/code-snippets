@@ -2250,10 +2250,10 @@ strip-final-newline@^2.0.0:
   resolved "https://registry.yarnpkg.com/strip-final-newline/-/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
   integrity sha512-BrpvfNAE3dcvq7ll3xVumzjKjZQ5tI1sEUIKr3Uoks0XUl45St3FlatVqef9prk4jRDzhW6WZg+3bk93y6pLjA==
 
-style-lint-js@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-2.0.0.tgz#afbab244b8e9f23a287411da98566d8f4350ffb0"
-  integrity sha512-bwu9qGqh/lGx5YMF+0FaleZpbrhUWDe1TIJCn05bHcY6t9aUSN8cTDD9EBK37kMoQtYpop8I/5wfiSW9YNe4MA==
+style-lint-js@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-3.0.2.tgz#dfe83147bb85b84e94007a5cb505d6b904ae714a"
+  integrity sha512-f8cEm9xk4Id/Y4/6+/r/RyUcp5zRMSspyaq8rNrUgoR8EhLkg6knDPK3YMrUKst22pcSjmeTjUSQ03SOLrXMlg==
   dependencies:
     "@eslint/js" "^10.0.1"
     "@typescript-eslint/eslint-plugin" "^8.61.1"

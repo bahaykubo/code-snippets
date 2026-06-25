@@ -4,14 +4,14 @@
   "main": "./dist/app/main.js",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -rf node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "build": "tsc",
     "test": "mocha",
-    "start-dev": "nodemon --ext ts --exec 'yarn build --incremental && yarn start'",
+    "start-dev": "nodemon --ext ts --exec 'npm run build -- --incremental && npm start'",
     "start": "node .",
-    "setup-data-store": "yarn ts-node ./app/utils/data-store-init.ts"
+    "setup-data-store": "ts-node ./app/utils/data-store-init.ts"
   },
   "dependencies": {
     "mongodb": "^6.2.0"

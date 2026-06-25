@@ -21,7 +21,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -29,5 +29,5 @@ yarn ci
 Run test comparing building and parsing xml with the different xml parsing and builder libraries:
 
 ```bash
-yarn test
+npm test
 ```

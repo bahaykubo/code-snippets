@@ -4,14 +4,14 @@
   "main": "./dist/app/main.js",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -rf node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "build": "tsc",
     "test": "mocha",
-    "start-dev": "nodemon --ext ts --exec 'yarn build --incremental && yarn start'",
+    "start-dev": "nodemon --ext ts --exec 'npm run build -- --incremental && npm start'",
     "start": "node .",
-    "refresh-data": "rm -rf data && yarn ts-node app/utilities/data-seed.ts"
+    "refresh-data": "rm -rf data && ts-node app/utilities/data-seed.ts"
   },
   "dependencies": {
     "dayjs": "^1.11.10",

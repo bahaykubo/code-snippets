@@ -26,7 +26,7 @@
   - [Pages](#pages)
   - [Tests](#tests)
 
-This is a sample testing project that runs on [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/getting-started) for package management in [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html).
+This is a sample testing project that runs on [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) for package management in [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html).
 
 It uses [Mocha](https://mochajs.org/) for the test framework and [Chai](https://mochajs.org/) to perform test assertions, [playwright](https://playwright.dev/docs/intro) for ui testing and [axios](https://axios-http.com/) as an http client for making http or service requests to test.
 
@@ -34,20 +34,20 @@ See [structure](#structure) for a description of the test project structure.
 
 # Installation
 
-Have [nvm](https://github.com/nvm-sh/nvm) installed to make it easier to manage node from your local environment. Yarn is also required to be installed with node and npm. Later versions of node should include yarn by default, if not, follow the install steps from the [prerequisites](#yarn).
+Have [nvm](https://github.com/nvm-sh/nvm) installed to make it easier to manage node from your local environment. npm is included with node.
 
 ```bash
 nvm use
-yarn ci
+npm ci
 ```
 
 ## Adding node packages
 
-Using [yarn install](https://classic.yarnpkg.com/en/docs/cli/install) is used to install all dependencies from this package.
+Use `npm install` to install all dependencies from this package.
 
-To [add](https://classic.yarnpkg.com/en/docs/cli/add), use `yarn add -D { package-name }` for adding new packages and;
+To add new packages, use `npm install --save-dev { package-name }` and;
 
-`yarn upgrade { package-name }@{ version-number }` for [upgrading](https://classic.yarnpkg.com/lang/en/docs/cli/upgrade/) existing packages.
+`npm install { package-name }@{ version-number }` for upgrading existing packages.
 
 # Prerequisites
 
@@ -63,12 +63,6 @@ nvm
 
 # install node
 nvm install 16.13.0
-
-# install yarn globally
-npm install -g yarn
-
-# check yarn working properly
-yarn --version
 ```
 
 ### For Mac
@@ -91,12 +85,6 @@ nvm
 
 # install node
 nvm install 16.13.0
-
-# install yarn globally
-npm install -g yarn
-
-# check yarn working properly
-yarn --version
 ```
 
 # Application Accounts and Tokens
@@ -113,7 +101,7 @@ OR
 set this on the terminal when you run the test commands
 
 ```
-testpassword=SETPASSWORDHERE yarn test-ui
+testpassword=SETPASSWORDHERE npm run test-ui
 ```
 
 # Setup
@@ -121,7 +109,7 @@ testpassword=SETPASSWORDHERE yarn test-ui
 To set up the project, install the node packages by running
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -131,33 +119,33 @@ yarn ci
 For running the ui tests, use:
 
 ```bash
-yarn test-ui tests/ui
+npm run test-ui -- tests/ui
 ```
 
 **to include the required environment variables from the command line:**
 
 ```bash
-testpassword=**REPLACEWITHuserpassword** yarn test-ui tests/ui
+testpassword=**REPLACEWITHuserpassword** npm run test-ui -- tests/ui
 ```
 
 For running the api tests, use:
 
 ```bash
-yarn test-api
+npm run test-api
 ```
 
 **to include the required environment variables from the command line:**
 
 ```bash
-testpassword=**REPLACEWITHuserpassword** yarn test-api
+testpassword=**REPLACEWITHuserpassword** npm run test-api
 ```
 
 ### UI tests - Headless mode
 
-By default, UI tests are running on browsers in non-headless mode (browser visible). To have the tests running in headless mode (no browser visible), use the `headless` suffixed yarn scripts. ie
+By default, UI tests are running on browsers in non-headless mode (browser visible). To have the tests running in headless mode (no browser visible), use the `headless` suffixed npm scripts. ie
 
 ```bash
-yarn test-ui-headless tests/ui
+npm run test-ui-headless -- tests/ui
 ```
 
 ### Run specific tests by file or directory
@@ -177,21 +165,21 @@ If you have a test structure like:
 
 ```bash
 # running test-ui script passing a directory
-yarn test-ui test/scenario1
+npm run test-ui -- test/scenario1
 # will run file-1a and file-1b tests
 
 # running test-ui script passing a file
-yarn test-ui test/scenario2/file-2a.test.ts
+npm run test-ui -- test/scenario2/file-2a.test.ts
 # will run file-2a test
 ```
 
 ### Run tests in parallel
 
-You can run all the tests in parallel by using the parallel script. Other scripts have a parallel variant if you need to run specific test files or directory with test:ui by adding parallel `yarn test-ui-parallel`.
+You can run all the tests in parallel by using the parallel script. Other scripts have a parallel variant if you need to run specific test files or directory with test:ui by adding parallel `npm run test-ui-parallel`.
 
 ```bash
 # adding -parallel to test-ui will run all tests under test/scenario1 in parallel
-yarn test-ui-parallel test/scenario1
+npm run test-ui-parallel -- test/scenario1
 
 ```
 
@@ -200,7 +188,7 @@ yarn test-ui-parallel test/scenario1
 You can have a test or sets of tests to automatically rerun after saving your changes by providing a directory, file or list of both to the watch option.
 
 ```bash
-yarn test-ui-watch test/scenario1/file-1a.test.ts
+npm run test-ui-watch -- test/scenario1/file-1a.test.ts
 ```
 
 ## Test report
@@ -215,8 +203,8 @@ Most editors can integrate directly with these tools, so that files will be chec
 
 The IDE will highlight issues and errors based on rules that were set in [.eslintrc.json](.eslintrc.json) to be fixed, see eslint [rules](https://eslint.org/docs/rules/). Here are the npm scripts to lint and check formatting:
 
-- `yarn lint` - see if there are linting issues and what files are not formatted correctly.
-- `yarn lint-fix` - try to fix fixable eslint errors and re-format files according to rules.
+- `npm run lint` - see if there are linting issues and what files are not formatted correctly.
+- `npm run lint-fix` - try to fix fixable eslint errors and re-format files according to rules.
 
 # Structure
 

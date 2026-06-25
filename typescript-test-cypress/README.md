@@ -21,7 +21,7 @@
   - [Pages](#pages)
   - [Tests](#tests)
 
-This is a sample testing project that runs on [node](https://nodejs.org/en/) and [yarn](https://yarnpkg.com/getting-started) for package management in [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html).
+This is a sample testing project that runs on [node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) for package management in [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html).
 
 It uses [Cypress](https://www.cypress.io/) for the test framework and for testing services and ui.
 
@@ -29,20 +29,20 @@ See [structure](#structure) for a description of the test project structure.
 
 # Installation
 
-Have [nvm](https://github.com/nvm-sh/nvm) installed to make it easier to manage node from your local environment. Yarn is also required to be installed with node and npm. Later versions of node should include yarn by default, if not, follow the install steps from the [prerequisites](#yarn).
+Have [nvm](https://github.com/nvm-sh/nvm) installed to make it easier to manage node from your local environment. npm is included with node.
 
 ```bash
 nvm use
-yarn ci
+npm ci
 ```
 
 ## Adding node packages
 
-Using [yarn install](https://classic.yarnpkg.com/en/docs/cli/install) is used to install all dependencies from this package.
+Use `npm install` to install all dependencies from this package.
 
-To [add](https://classic.yarnpkg.com/en/docs/cli/add), use `yarn add -D { package-name }` for adding new packages and;
+To add new packages, use `npm install --save-dev { package-name }` and;
 
-`yarn upgrade { package-name }@{ version-number }` for [upgrading](https://classic.yarnpkg.com/lang/en/docs/cli/upgrade/) existing packages.
+`npm install { package-name }@{ version-number }` for upgrading existing packages.
 
 # Prerequisites
 
@@ -58,12 +58,6 @@ nvm
 
 # install node
 nvm install 16.13.0
-
-# install yarn globally
-npm install -g yarn
-
-# check yarn working properly
-yarn --version
 ```
 
 ### For Mac
@@ -86,12 +80,6 @@ nvm
 
 # install node
 nvm install 16.13.0
-
-# install yarn globally
-npm install -g yarn
-
-# check yarn working properly
-yarn --version
 ```
 
 # Setup
@@ -99,7 +87,7 @@ yarn --version
 To set up the project, install the node packages by running:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -107,7 +95,7 @@ yarn ci
 To run the tests:
 
 ```bash
-yarn test
+npm test
 ```
 
 ## Watch Test
@@ -115,7 +103,7 @@ yarn test
 To run the test with the cypress gui:
 
 ```bash
-yarn test-watch
+npm run test-watch
 ```
 
 ## Test Report
@@ -128,15 +116,15 @@ Formatting and linting of source files are enforced by [eslint](https://eslint.o
 
 Most editors can integrate directly with these tools, so that files will be checked and formatted.
 
-> On install of local dependencies `yarn install`, a git pre-commit hook will be added from [githooks](scripts/githooks/pre-commit).
-> This will run steps similar to `yarn lint-pretty` for the files to be committed.
+> On install of local dependencies `npm install`, a git pre-commit hook will be added from [githooks](scripts/githooks/pre-commit).
+> This will run steps similar to `npm run lint-pretty` for the files to be committed.
 
 > **WARNING**: You can add **--no-verify** on your git commit to bypass the pre-commit hook... If you don't use it, that will be the end of it. I will not look for you, I will not pursue you... but if you do, I will look for you, I will find you... and I will kill you.
 
 Before then, the IDE will highlight issues and errors based on rules that were set in [.eslintrc.json](.eslintrc.json) to be fixed, see eslint [rules](https://eslint.org/docs/rules/). Here are the npm scripts to lint and check formatting:
 
-- `yarn lint-pretty` - see if there are linting issues and what files are not formatted correctly.
-- `yarn lint-fix-pretty` - try to fix fixable eslint errors and re-format files in place according to the prettier rules.
+- `npm run lint-pretty` - see if there are linting issues and what files are not formatted correctly.
+- `npm run lint-fix-pretty` - try to fix fixable eslint errors and re-format files in place according to the prettier rules.
 
 # Structure
 

@@ -20,7 +20,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Main app
@@ -48,5 +48,5 @@ When you add a utility, add and export it from the [index file](./app/utilities/
 Run the kafka test by running the script:
 
 ```bash
-yarn test tests/kafka.test.ts
+npm test -- tests/kafka.test.ts
 ```

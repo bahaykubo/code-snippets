@@ -24,7 +24,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -40,17 +40,17 @@ Either create a `.env` file with this or set the env var from your cli command b
 testpassword='SETPASSWORDHERE'
 
 # OR
-testpassword=SETPASSWORDHERE yarn test-ui
+testpassword=SETPASSWORDHERE npm run test-ui
 ```
 
 ## Run UI Tests
 
 ```bash
-yarn test-ui
+npm run test-ui
 ```
 
 ## Run API Tests
 
 ```bash
-yarn test-api
+npm run test-api
 ```

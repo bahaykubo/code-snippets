@@ -28,7 +28,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -36,12 +36,12 @@ yarn ci
 To run all tests:
 
 ```bash
-yarn test
+npm test
 ```
 
 ## Run specific tests
 
-You can run a specific test by passing a test file or folder to the test script ie `yarn test $ANY_TEST_DIRECTORY_OR_FILENAME`.
+You can run a specific test by passing a test file or folder to the test script ie `npm test -- $ANY_TEST_DIRECTORY_OR_FILENAME`.
 
 If you have a test structure like:
 
@@ -56,21 +56,21 @@ If you have a test structure like:
 
 ```bash
 # running test script passing a directory
-yarn test test/scenario1
+npm test -- test/scenario1
 # will run file-1a and file-1b tests
 
 # running test-file script passing a file
-yarn test test/scenario2/file-2a.test.ts
+npm test -- test/scenario2/file-2a.test.ts
 # will run file-2a test
 ```
 
 ## Run specific tests using grep
 
-You can run a specific test by using the grep option of the test framework. You can specify any string from the describe, context, it blocks of the tests in the format of `yarn test-grep $ANY_STRING_FROM_TEST_BLOCKS` eg:
+You can run a specific test by using the grep option of the test framework. You can specify any string from the describe, context, it blocks of the tests in the format of `npm run test-grep -- $ANY_STRING_FROM_TEST_BLOCKS` eg:
 
 ```bash
 # if you have a describe block with a string 'Sample test'
-yarn test-grep Sample
+npm run test-grep -- Sample
 ```
 
 ## Run tests in parallel
@@ -78,13 +78,13 @@ yarn test-grep Sample
 Jest runs tests in parallel by default. You can however specify the number of processes to run tests in parallel with
 
 ```bash
-yarn test --maxWorkers=2
+npm test -- --maxWorkers=2
 ```
 
 or run tests in series.
 
 ```bash
-yarn test -i
+npm test -- -i
 ```
 
 ## Watch a test file
@@ -92,7 +92,7 @@ yarn test -i
 You can have a test or sets of tests to automatically rerun after saving your changes by providing a directory, file or list of both to the watch option.
 
 ```bash
-yarn test-watch tests/blog-posts/delete.test.ts
+npm run test-watch -- tests/blog-posts/delete.test.ts
 ```
 
 ## Test tagging
@@ -103,7 +103,7 @@ If we have a smoke test file for each service under test and there are numbers o
 
 ```bash
 # this will only run tests where @smoke is in the describe or test string
-yarn test-grep @smoke
+npm run test-grep -- @smoke
 ```
 
 # Lint and Format
@@ -112,15 +112,15 @@ Formatting and linting of source files are enforced by [eslint](https://eslint.o
 
 Most editors can integrate directly with these tools, so that files will be checked and formatted.
 
-> On install of local dependencies `yarn install`, a git pre-commit hook will be added from [githooks](scripts/githooks/pre-commit).
-> This will run steps similar to `yarn lint` for the files to be committed.
+> On install of local dependencies `npm install`, a git pre-commit hook will be added from [githooks](scripts/githooks/pre-commit).
+> This will run steps similar to `npm run lint` for the files to be committed.
 
 > **WARNING**: You can add **--no-verify** on your git commit to bypass the pre-commit hook... If you don't use it, that will be the end of it. I will not look for you, I will not pursue you... but if you do, I will look for you, I will find you... and I will kill you.
 
 Before then, the IDE will highlight issues and errors based on rules that were set in [.eslintrc.js](.eslintrc.js) to be fixed, see eslint [rules](https://eslint.org/docs/rules/). Here are the npm scripts to lint and check formatting:
 
-- `yarn lint` - see if there are linting issues and what files are not formatted correctly.
-- `yarn lint-fix` - try to fix fixable eslint errors and re-format files in place according to the prettier rules.
+- `npm run lint` - see if there are linting issues and what files are not formatted correctly.
+- `npm run lint-fix` - try to fix fixable eslint errors and re-format files in place according to the prettier rules.
 
 # Structure
 

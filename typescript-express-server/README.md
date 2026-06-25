@@ -67,7 +67,7 @@ sampleRouter.get('/', async (req, res) => {
 
 ### Seed data
 
-We populate db files so services can send back data on request. We do this by using a `refresh-data` script and running it with yarn by running the command `yarn refresh-data`.
+We populate db files so services can send back data on request. We do this by using a `refresh-data` script and running the command `npm run refresh-data`.
 
 This runs the [data-seed.ts](./app/utilities/data-seed.ts) file which will create `.db` files on the `/data` directory containing seed data.
 
@@ -135,7 +135,7 @@ To run the tests, we need to run a script that would start a container of the se
 ./scripts/docker/run.sh
 
 # now we can run the tests
-yarn test
+npm test
 
 # stop and remove the container when finished
 ./scripts/docker/stop.sh

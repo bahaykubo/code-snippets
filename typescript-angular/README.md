@@ -37,7 +37,7 @@ import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
   webServer: {
-    command: 'yarn ng serve',
+    command: 'npm run ng -- serve',
     port: 4200,
     timeout: 60000, // Default value
   },

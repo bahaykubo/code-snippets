@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "testing with webdriverio and mocha in typescript",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -rf node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test-ui": "wdio run ./wdio.config.ts",
     "test-ui-headless": "HEADLESS=true wdio run ./wdio.config.ts",
     "test-api": "mocha tests/api"

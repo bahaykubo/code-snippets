@@ -7,10 +7,10 @@
     "dist"
   ],
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "ci": "rm -rf node_modules && npm ci",
     "lint": "eslint . && prettier --check .",
-    "lint-fix": "eslint . --fix && prettier --write . && yarn lint",
-    "build": "rm -rf dist && yarn tsc -p tsconfig.build.json && yarn pack",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && npm pack",
     "test": "mocha"
   },
   "devDependencies": {

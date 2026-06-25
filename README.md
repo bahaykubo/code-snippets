@@ -120,11 +120,7 @@ nvm ls-remote
 # install latest LTS version
 nvm install --lts
 
-# install yarn globally
-npm install -g yarn
 
-# check yarn working properly
-yarn --version
 ```
 
 #### Options

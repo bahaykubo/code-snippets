@@ -17,11 +17,11 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Run sample graphql client requests
 
 ```bash
-yarn ts-node sample-graphql/test.ts
+npx ts-node sample-graphql/test.ts
 ```

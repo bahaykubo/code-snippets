@@ -5,9 +5,9 @@
   "author": "noel sevilla",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -fr node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -fr node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "playwright test",
     "test-ui": "playwright test --project=ui",
     "test-api": "playwright test --project=api",

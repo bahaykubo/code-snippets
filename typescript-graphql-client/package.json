@@ -4,9 +4,9 @@
   "description": "Comparing graphql clients between axios and graphql-request",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -rf node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "ts-node sample-graphql/test.ts"
   },
   "devDependencies": {

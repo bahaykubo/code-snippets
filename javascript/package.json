@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -rf node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "mocha",
-    "test-watch-file": "yarn test --watch ",
-    "test-watch": "yarn test-watch-file 'snippets'",
-    "watch-file": "yarn run nodemon"
+    "test-watch-file": "npm test -- --watch ",
+    "test-watch": "npm run test-watch-file -- 'snippets'",
+    "watch-file": "nodemon"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",

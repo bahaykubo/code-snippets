@@ -16,7 +16,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Run
@@ -24,7 +24,7 @@ yarn ci
 To run a script, run with:
 
 ```bash
-yarn node snippets/date-with-dayjs.js
+node snippets/date-with-dayjs.js
 ```
 
 # Test
@@ -32,5 +32,5 @@ yarn node snippets/date-with-dayjs.js
 Using [mocha](https://mochajs.org/) to run the tests and [chai](https://www.chaijs.com/) for performing assertions, run with:
 
 ```bash
-yarn test tests/array-filter.test.js
+npm test -- tests/array-filter.test.js
 ```

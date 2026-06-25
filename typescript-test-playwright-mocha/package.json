@@ -5,17 +5,17 @@
   "author": "noel sevilla",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -fr node_modules && yarn install --frozen-lockfile",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "ci": "rm -fr node_modules && npm ci",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "mocha",
     "test-ui": "HEADLESS=false mocha --require ./services/utilities/test-hooks.ts",
-    "test-ui-parallel": "yarn test-ui --parallel",
+    "test-ui-parallel": "npm run test-ui -- --parallel",
     "test-ui-headless": "mocha --require ./services/utilities/test-hooks.ts",
-    "test-ui-headless-parallel": "yarn test-ui-headless --parallel",
-    "test-ui-watch": "yarn test-ui --watch",
-    "test-api": "yarn test ./tests/api/**/*.test.ts",
-    "test-api-parallel": "yarn test-api --parallel"
+    "test-ui-headless-parallel": "npm run test-ui-headless -- --parallel",
+    "test-ui-watch": "npm run test-ui -- --watch",
+    "test-api": "npm test -- ./tests/api/**/*.test.ts",
+    "test-api-parallel": "npm run test-api -- --parallel"
   },
   "devDependencies": {
     "@types/chai": "^4.3.10",

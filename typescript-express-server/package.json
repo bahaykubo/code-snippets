@@ -4,14 +4,14 @@
   "main": "./dist/app/main.js",
   "license": "MIT",
   "scripts": {
-    "ci": "rm -rf node_modules && yarn install --frozen-lockfile",
+    "ci": "rm -rf node_modules && npm ci",
     "lint": "eslint . && prettier --check .",
-    "lint-fix": "eslint . --fix && prettier --write . && yarn lint",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "build": "tsc",
     "test": "mocha test",
-    "start-dev": "nodemon --ext ts --exec 'yarn build --incremental && yarn start'",
+    "start-dev": "nodemon --ext ts --exec 'npm run build -- --incremental && npm start'",
     "start": "node .",
-    "refresh-data": "rm -rf data && yarn ts-node app/utilities/data-seed.ts"
+    "refresh-data": "rm -rf data && ts-node app/utilities/data-seed.ts"
   },
   "dependencies": {
     "@seald-io/nedb": "^4.0.2",

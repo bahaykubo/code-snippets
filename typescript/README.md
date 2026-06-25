@@ -15,7 +15,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Run
@@ -23,5 +23,5 @@ yarn ci
 To run a script, run with:
 
 ```bash
-yarn ts-node snippets/array-new-set.ts
+npx ts-node snippets/array-new-set.ts
 ```

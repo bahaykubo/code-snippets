@@ -4,10 +4,10 @@
   "description": "testing with cypress in typescript",
   "license": "UNLICENSED",
   "scripts": {
-    "ci": "rm -fr node_modules && yarn install --frozen-lockfile",
+    "ci": "rm -fr node_modules && npm ci",
     "preinstall": "sh ./scripts/preinstall.sh",
-    "lint": "eslint . && yarn prettier --check .",
-    "lint-fix": "eslint . --fix && yarn prettier --write . && yarn lint",
+    "lint": "eslint . && prettier --check .",
+    "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "cypress run",
     "test-watch": "cypress open"
   },

@@ -17,7 +17,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Start MongoDB Server
@@ -31,7 +31,7 @@ The test in this project is configured to communicate with this container. See [
 Configure mongodb to create store collection by runing the script:
 
 ```bash
-yarn setup-data-store
+npm run setup-data-store
 ```
 
 # Test
@@ -39,5 +39,5 @@ yarn setup-data-store
 Run the mongodb test by running the script:
 
 ```bash
-yarn test tests/messenter-users.test.ts
+npm test -- tests/messenter-users.test.ts
 ```

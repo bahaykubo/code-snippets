@@ -18,7 +18,7 @@ See instructions from main [README](../README.md#node-with-nvm) to setup node wi
 To install packages, run with:
 
 ```bash
-yarn ci
+npm ci
 ```
 
 # Test
@@ -28,17 +28,17 @@ yarn ci
 Using [mocha](https://mochajs.org/) to run the tests and [chai](https://www.chaijs.com/) for performing assertions, run with:
 
 ```bash
-yarn test tests
+npm test -- tests
 ```
 
 ## Run in parallel
 
 ```bash
-yarn test tests --parallel
+npm test -- tests --parallel
 ```
 
 ## Run tagged tests using grep
 
 ```bash
-yarn test tests --grep grepthis
+npm test -- tests --grep grepthis
 ```

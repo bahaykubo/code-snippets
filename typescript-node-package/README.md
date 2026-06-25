@@ -1,6 +1,6 @@
 <h1>Sample NPM Package</h1>
 
-This builds and yarn pack the src directory to a .tgz that can be used to install as an npm package in other projects.
+This builds and npm packs the src directory to a .tgz that can be used to install as an npm package in other projects.
 
 - [Build project](#build-project)
 - [Create package locally](#create-package-locally)
@@ -13,7 +13,7 @@ This builds and yarn pack the src directory to a .tgz that can be used to instal
 Before creating the package to install, we need to build the project first by running:
 
 ```bash
-yarn build
+npm run build
 ```
 
 This will transpile the `src` directory to a `dist` directory which the package will include.
@@ -26,16 +26,12 @@ Two ways to try this package locally.
 
 Preferred creating package locally to install in another project instead of a symlink
 
-Create a package locally using [yarn pack](https://classic.yarnpkg.com/en/docs/cli/pack). This will create a `*.tgz` file of the package that can be installed in another project.
+Create a package locally using [npm pack](https://docs.npmjs.com/cli/v10/commands/npm-pack). This will create a `*.tgz` file of the package that can be installed in another project.
 
-From another project, install this package using `yarn add` or `npm install`.
+From another project, install this package using `npm install`.
 
 ```bash
-# Using yarn
-yarn add ../../path/to/tgz/file.tgz
-
-# Using npm
-npm install ../../path/to/tgz/file/tgz
+npm install ../../path/to/tgz/file.tgz
 ```
 
 ## Check content of local package
@@ -46,14 +42,14 @@ tar -tvf style-lint-js-v1.tgz
 
 # Link package
 
-Run [yarn link](https://classic.yarnpkg.com/lang/en/docs/cli/link/) from this directory
+Run `npm link` from this directory
 
-And then run `yarn link style-lint-js` from another project using this package.
+And then run `npm link style-lint-js` from another project using this package.
 
 ## Unlink package
 
 Reverse the link procedure.
 
-Run `yarn unlink style-lint-js` from the project using this package.
+Run `npm unlink style-lint-js` from the project using this package.
 
-Run `yarn unlink` from this directory.
+Run `npm unlink` from this directory.

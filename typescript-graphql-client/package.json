@@ -14,7 +14,7 @@
     "graphql": "^16.6.0",
     "graphql-request": "^6.1.0",
     "moment": "^2.29.1",
-    "style-lint-js": "^2.0.0",
+    "style-lint-js": "^3.0.2",
     "ts-node": "^10.2.1",
     "typescript": "^5.2.2"
   }

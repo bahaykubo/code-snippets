@@ -977,10 +977,6 @@ axios@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.1.tgz#76550d644bf0a2d469a01f9244db6753208397d7"
   integrity sha512-vfBmhDpKafglh0EldBEbVuoe7DyAavGSLWhuSm5ZSEKQnHhBf0xAAwybbNH1IkrJNGnS/VG4I5yxig1pCEXE4g==
-  dependencies:
-    follow-redirects "^1.15.0"
-    form-data "^4.0.0"
-    proxy-from-env "^1.1.0"
 
 babel-jest@^29.7.0:
   version "29.7.0"
@@ -2688,10 +2684,10 @@ strip-json-comments@^3.1.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
-style-lint-js@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-2.0.0.tgz#afbab244b8e9f23a287411da98566d8f4350ffb0"
-  integrity sha512-bwu9qGqh/lGx5YMF+0FaleZpbrhUWDe1TIJCn05bHcY6t9aUSN8cTDD9EBK37kMoQtYpop8I/5wfiSW9YNe4MA==
+style-lint-js@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/style-lint-js/-/style-lint-js-3.0.2.tgz#dfe83147bb85b84e94007a5cb505d6b904ae714a"
+  integrity sha512-f8cEm9xk4Id/Y4/6+/r/RyUcp5zRMSspyaq8rNrUgoR8EhLkg6knDPK3YMrUKst22pcSjmeTjUSQ03SOLrXMlg==
   dependencies:
     "@eslint/js" "^10.0.1"
     "@typescript-eslint/eslint-plugin" "^8.61.1"

@@ -1,0 +1,52 @@
+[
+    {
+        "PropertyId": 1001,
+        "Address": "10 Sample Street",
+        "Suburb": "Thorndon",
+        "City": "Wellington",
+        "PostCode": 6011,
+        "Price": 750000,
+        "Bedrooms": 3,
+        "Bathrooms": 2
+    },
+    {
+        "PropertyId": 1002,
+        "Address": "25 Example Avenue",
+        "Suburb": "Karori",
+        "City": "Wellington",
+        "PostCode": 6012,
+        "Price": 620000,
+        "Bedrooms": 2,
+        "Bathrooms": 1
+    },
+    {
+        "PropertyId": 1003,
+        "Address": "7 Test Lane",
+        "Suburb": "Newtown",
+        "City": "Wellington",
+        "PostCode": 6021,
+        "Price": 890000,
+        "Bedrooms": 4,
+        "Bathrooms": 2
+    },
+    {
+        "PropertyId": 1004,
+        "Address": "42 Demo Road",
+        "Suburb": "Miramar",
+        "City": "Wellington",
+        "PostCode": 6022,
+        "Price": 540000,
+        "Bedrooms": 2,
+        "Bathrooms": 1
+    },
+    {
+        "PropertyId": 1005,
+        "Address": "88 Mock Place",
+        "Suburb": "Johnsonville",
+        "City": "Wellington",
+        "PostCode": 6037,
+        "Price": 480000,
+        "Bedrooms": 3,
+        "Bathrooms": 1
+    }
+]

@@ -9,7 +9,7 @@
 
 # Setup
 
-You will need at least [Python version 3.9](https://www.python.org/downloads/release/python-397/) with [poetry](https://python-poetry.org/) installed to manage the dependencies and for creating a virtual environment.
+You will need at least [Python version 3.14](https://www.python.org/downloads/release/python-3140/) with [poetry](https://python-poetry.org/) installed to manage the dependencies and for creating a virtual environment.
 
 See instructions from main [README](../README.md#python-with-pyenv) to setup python with pyenv and poetry.
 

@@ -49,10 +49,10 @@ eval "$(pyenv virtualenv-init -)"
 pyenv install -l
 
 # install a python version
-pyenv install 3.9.7
+pyenv install 3.14.6
 
 # set a default python version thru pyenv
-echo "3.9.7" >> ~/.pyenv/version
+echo "3.14.6" >> ~/.pyenv/version
 ```
 
 #### For Windows
@@ -82,10 +82,10 @@ add user path variable
 pyenv install --list
 
 # install a version of python
-pyenv install 3.9.3
+pyenv install 3.14.6
 
 # set a global python version
-pyenv global 3.9.3
+pyenv global 3.14.6
 pyenv rehash
 ```
 

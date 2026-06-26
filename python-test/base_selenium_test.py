@@ -3,7 +3,7 @@ from selenium import webdriver
 # from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.chrome.options import Options
 
-class Browser(object):
+class Browser:
 
     def __new__(cls):
         if not hasattr(cls, 'instance'):

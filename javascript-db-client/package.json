@@ -14,7 +14,7 @@
     "start-seed-db": "./scripts/start-db.sh && node -r @babel/register ./services/utilities/seed-db.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.3",
+    "@babel/core": "^8.0.1",
     "@babel/preset-env": "^7.23.3",
     "@babel/register": "^7.17.7",
     "@types/chai": "^4.3.1",

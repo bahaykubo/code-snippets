@@ -15,7 +15,7 @@
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/register": "^7.22.15",
-    "@types/chai": "^4.3.9",
+    "@types/chai": "^5.2.3",
     "@types/mocha": "^10.0.3",
     "@types/node": "^20.8.10",
     "babel-plugin-module-resolver": "^5.0.0",

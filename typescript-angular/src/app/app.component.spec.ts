@@ -1,5 +1,6 @@
 import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 describe('App Component', () => {
@@ -85,6 +86,9 @@ describe('App Component', () => {
         TestBed.configureTestingModule({
           declarations: [
             AppComponent
+          ],
+          imports: [
+            FormsModule
           ],
         })
         .compileComponents()

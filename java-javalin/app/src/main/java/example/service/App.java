@@ -6,10 +6,14 @@ import org.slf4j.LoggerFactory;
 
 public class App {
     public static void main(String[] args) {
+        start(7000);
+    }
+
+    public static Javalin start(int port) {
         Logger logger = LoggerFactory.getLogger(App.class);
         BlogPostService blogPostService = new BlogPostServiceImpl();
 
-        Javalin app = Javalin.create().start(7000);
+        Javalin app = Javalin.create();
         app.get("/posts", ctx -> {
             logger.info("Fetching all blog posts");
             ctx.json(blogPostService.getBlogPosts());
@@ -19,6 +23,7 @@ public class App {
             logger.info("Fetching blog posts from user id " + userId);
             ctx.json(blogPostService.findUserBlogPosts(userId));
         });
+        return app.start(port);
     }
 }
 

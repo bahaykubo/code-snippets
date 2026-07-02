@@ -1,4 +1,4 @@
-import { Roles } from '@type/credentials';
+import { Credentials, Roles } from '@type/credentials';
 import { Sites } from '@type/sites';
 import { TestConfig } from '@type/config';
 import { config } from 'dotenv';
@@ -33,8 +33,10 @@ const getPassword = (): string => {
 };
 
 export const roles: Roles = {
-  sauceDemoRole: {
-    username: 'standard_user',
-    password: getPassword(),
+  get sauceDemoRole(): Credentials {
+    return {
+      username: 'standard_user',
+      password: getPassword(),
+    };
   },
 };

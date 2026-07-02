@@ -34,9 +34,12 @@ STRING = '''
     t.Agency AS name,
     t.Portal AS url
     From #Temp t WITH(NOLOCK)
-    Inner Join PropertyDataHistory.Property.Listing l on l.ListingId = t.Id
-    Inner Join PropertyData.Property.PropertySearch ps on ps.PropertyId = l.PropertyId
-    Inner Join PropertyData.Reference.Address a on a.AddressId = ps.AddressId
+    Inner Join PropertyDataHistory.Property.Listing l
+        on l.ListingId = t.Id
+    Inner Join PropertyData.Property.PropertySearch ps
+        on ps.PropertyId = l.PropertyId
+    Inner Join PropertyData.Reference.Address a
+        on a.AddressId = ps.AddressId
 '''
 SQL = 'DECLARE ' \
     '@PropertyId int ' \
@@ -64,9 +67,12 @@ SQL = 'DECLARE ' \
     't.Agency AS name, '\
     't.Portal AS url '\
     'From #Temp t WITH(NOLOCK)' \
-    'Inner Join PropertyDataHistory.Property.Listing l on l.ListingId = t.Id ' \
-    'Inner Join PropertyData.Property.PropertySearch ps on ps.PropertyId = l.PropertyId ' \
-    'Inner Join PropertyData.Reference.Address a on a.AddressId = ps.AddressId ' \
+    'Inner Join PropertyDataHistory.Property.Listing l ' \
+    'on l.ListingId = t.Id ' \
+    'Inner Join PropertyData.Property.PropertySearch ps ' \
+    'on ps.PropertyId = l.PropertyId ' \
+    'Inner Join PropertyData.Reference.Address a ' \
+    'on a.AddressId = ps.AddressId ' \
 
 print(STRING)
 print(SQL)

@@ -14,8 +14,10 @@ const getPassword = (): string => {
 };
 
 export const roles: Roles = {
-  sauceDemoRole: {
-    username: 'standard_user',
-    password: getPassword(),
+  get sauceDemoRole() {
+    return {
+      username: 'standard_user',
+      password: getPassword(),
+    };
   },
 };

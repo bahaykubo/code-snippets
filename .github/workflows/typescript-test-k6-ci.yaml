@@ -1,21 +1,17 @@
-name: Typescript - Test - Cypress
-
-env:
-  PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
+name: Typescript - Test - k6
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
-      - 'typescript-test-cypress/**'
-      - '.github/workflows/typescript-test-cypress-ci.yaml'
+      - 'typescript-test-k6/**'
+      - '.github/workflows/typescript-test-k6-ci.yaml'
 
 jobs:
-  test:
+  lint-and-build:
     defaults:
       run:
-        working-directory: ./typescript-test-cypress
+        working-directory: ./typescript-test-k6
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -33,6 +29,5 @@ jobs:
         if: always()
         run: npm run lint
 
-      - name: Run API tests
-        if: always()
-        run: ${{ env.PASSWORDS }} npm test
+      - name: Build test bundles
+        run: npm run build

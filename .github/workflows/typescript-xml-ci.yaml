@@ -1,21 +1,17 @@
-name: Typescript - Test - Cypress
-
-env:
-  PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
+name: Typescript - XML - CI
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
-      - 'typescript-test-cypress/**'
-      - '.github/workflows/typescript-test-cypress-ci.yaml'
+      - 'typescript-xml/**'
+      - '.github/workflows/typescript-xml-ci.yaml'
 
 jobs:
   test:
     defaults:
       run:
-        working-directory: ./typescript-test-cypress
+        working-directory: ./typescript-xml
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -33,6 +29,6 @@ jobs:
         if: always()
         run: npm run lint
 
-      - name: Run API tests
+      - name: Run tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm test
+        run: npm test

@@ -2,6 +2,7 @@ def greater_than_10_not_lambda(number):
     if number > 10:
         return number
 
+
 number_list = [15, 5, 20, 1]
 
 more_than_10_list = list(filter(greater_than_10_not_lambda, number_list))

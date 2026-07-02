@@ -1,0 +1,41 @@
+name: Python - CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'python/**'
+      - '.github/workflows/python-ci.yaml'
+
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: ./python
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - name: Install packages
+        run: poetry install
+
+      - name: Lint with pylint
+        if: always()
+        run: poetry run pylint --recursive=y .
+
+      - name: Check style with pycodestyle
+        if: always()
+        run: poetry run pycodestyle .
+
+      - name: Run tests
+        if: always()
+        run: poetry run pytest

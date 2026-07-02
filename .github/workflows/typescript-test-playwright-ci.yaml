@@ -1,21 +1,20 @@
-name: Typescript - Test - Playwright Mocha
+name: Typescript - Test - Playwright
 
 env:
   PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
-      - 'typescript-test-playwright-mocha/**'
-      - '.github/workflows/typescript-test-playwright-mocha-ci.yaml'
+      - 'typescript-test-playwright/**'
+      - '.github/workflows/typescript-test-playwright-ci.yaml'
 
 jobs:
   test:
     defaults:
       run:
-        working-directory: ./typescript-test-playwright-mocha
+        working-directory: ./typescript-test-playwright
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -39,4 +38,4 @@ jobs:
 
       - name: Run UI tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run test-ui-headless -- tests/ui
+        run: ${{ env.PASSWORDS }} npm run test-ui

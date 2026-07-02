@@ -2,6 +2,11 @@ name: Typescript - Express Server - CI
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'typescript-express-server/**'
+      - '.github/workflows/typescript-express-server-ci.yaml'
 
 jobs:
   test:
@@ -11,26 +16,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use Node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: '22.x'
 
       - name: Install npm packages
-        run: yarn ci
+        run: npm run ci
 
       - name: Lint app
         if: always()
-        run: yarn lint
+        run: npm run lint
 
       - name: Build app
         run: |
-          yarn build
-          yarn refresh-data
+          npm run build
+          npm run refresh-data
 
       - name: Start app and run integration tests
         run: |
           ./scripts/docker/run.sh
-          yarn test
+          npm test

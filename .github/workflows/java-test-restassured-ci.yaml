@@ -1,0 +1,27 @@
+name: Java - Test - RestAssured - CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'java-test-restassured/**'
+      - '.github/workflows/java-test-restassured-ci.yaml'
+
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: ./java-test-restassured
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Use Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build and test
+        run: ./gradlew build --no-daemon

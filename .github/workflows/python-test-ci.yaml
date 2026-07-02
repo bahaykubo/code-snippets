@@ -1,0 +1,44 @@
+name: Python - Test - CI
+
+env:
+  CREDENTIALS: testuser=${{ secrets.TESTUSER }} testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'python-test/**'
+      - '.github/workflows/python-test-ci.yaml'
+
+jobs:
+  test:
+    defaults:
+      run:
+        working-directory: ./python-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Use Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+
+      - name: Install poetry
+        run: pipx install poetry
+
+      - name: Install packages
+        run: poetry install
+
+      - name: Lint with pylint
+        if: always()
+        run: poetry run pylint --recursive=y .
+
+      - name: Run API tests
+        if: always()
+        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m api
+
+      - name: Run UI tests
+        if: always()
+        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m ui

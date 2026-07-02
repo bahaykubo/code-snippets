@@ -2,6 +2,9 @@ package example.service;
 
 import example.service.client.BlogPostClient;
 import example.service.records.BlogPost;
+import io.javalin.Javalin;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.net.http.HttpResponse;
@@ -12,7 +15,19 @@ import static com.google.common.truth.Truth.assertThat;
 
 
 class AppTest {
+    static Javalin app;
+
     BlogPostClient blogPostClient = new BlogPostClient();
+
+    @BeforeAll
+    public static void startServer() {
+        app = App.start(7000);
+    }
+
+    @AfterAll
+    public static void stopServer() {
+        app.stop();
+    }
 
     @Test
     public void should_return_blog_posts() throws Exception {

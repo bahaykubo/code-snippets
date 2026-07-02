@@ -1,21 +1,17 @@
-name: Typescript - Test - Playwright Mocha
-
-env:
-  PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
+name: Typescript - Kafka Client - CI
 
 on:
-  workflow_dispatch:
   pull_request:
     branches: [main]
     paths:
-      - 'typescript-test-playwright-mocha/**'
-      - '.github/workflows/typescript-test-playwright-mocha-ci.yaml'
+      - 'typescript-kafka-client/**'
+      - '.github/workflows/typescript-kafka-client-ci.yaml'
 
 jobs:
   test:
     defaults:
       run:
-        working-directory: ./typescript-test-playwright-mocha
+        working-directory: ./typescript-kafka-client
     runs-on: ubuntu-latest
     steps:
       - name: Check out repo
@@ -33,10 +29,17 @@ jobs:
         if: always()
         run: npm run lint
 
-      - name: Run API tests
+      - name: Build project
         if: always()
-        run: npm run test-api
+        run: npm run build
 
-      - name: Run UI tests
+      - name: Start kafka
+        run: ./script/start.sh
+
+      - name: Run tests
         if: always()
-        run: ${{ env.PASSWORDS }} npm run test-ui-headless -- tests/ui
+        run: npm test
+
+      - name: Stop kafka
+        if: always()
+        run: ./script/stop.sh

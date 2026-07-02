@@ -14,7 +14,6 @@
     "emitDecoratorMetadata": true,
     "declaration": true,
     "moduleResolution": "node",
-    "ignoreDeprecations": "6.0",
     "allowSyntheticDefaultImports": true,
     "types": ["mocha", "chai"]
   },

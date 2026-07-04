@@ -37,8 +37,8 @@ jobs:
 
       - name: Run API tests
         if: always()
-        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m api
+        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m blogpost
 
       - name: Run UI tests
         if: always()
-        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m ui
+        run: ${{ env.CREDENTIALS }} poetry run python -m pytest -s --disable-warnings -v -n 2 -m saucedemo

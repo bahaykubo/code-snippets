@@ -30,8 +30,9 @@ jobs:
         run: npm run lint
 
       - name: Start postgresql
-        run: ./scripts/start-db.sh
+        if: always()
+        run: npm run start-seed-db
 
       - name: Run tests
         if: always()
-        run: npm test
+        run: npm run start-seed-db && npm test

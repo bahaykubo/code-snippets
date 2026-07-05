@@ -1,4 +1,5 @@
 import { Header } from './header';
+import { domClick } from './dom-click';
 
 export type InventoryItem = {
   index: number;
@@ -41,7 +42,8 @@ export class InventoryPage {
         name: await (await this.itemsName[index].getText()).trim(),
         price: await (await this.itemsPrice[index].getText()).trim(),
         addToCart: async () => {
-          await this.itemsAddToCart[index].click();
+          const id = await this.itemsAddToCart[index].getAttribute('id');
+          await domClick(`#${id}`);
         },
       });
     }

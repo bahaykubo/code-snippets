@@ -9,8 +9,11 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "paths": {
-      "@service/*": ["./cypress/services/*"],
-      "@page/*": ["./cypress/pages/*"]
+      "@config/*": ["./config/*"],
+      "@constant/*": ["./constants/*"],
+      "@page/*": ["./pages/*"],
+      "@service/*": ["./services/*"],
+      "@type/*": ["./types/*"]
     }
   },
   "exclude": ["node_modules", "./.github", "./.vscode"]

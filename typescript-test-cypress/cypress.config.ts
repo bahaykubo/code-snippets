@@ -22,10 +22,12 @@ export default defineConfig({
       mochaFile: 'cypress/artifacts/reports/junit/results.xml',
     },
   },
+  env: {
+    testpassword: process.env.testpassword,
+  },
   e2e: {
     setupNodeEvents(on) {
       return setupPlugin(on);
     },
-    baseUrl: 'https://jsonplaceholder.typicode.com',
   },
 });

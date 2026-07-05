@@ -9,6 +9,8 @@
     "lint": "eslint . && prettier --check .",
     "lint-fix": "eslint . --fix && prettier --write . && npm run lint",
     "test": "cypress run",
+    "test-api": "cypress run --spec \"cypress/e2e/api/**/*.cy.ts\"",
+    "test-ui": "cypress run --spec \"cypress/e2e/ui/**/*.cy.ts\"",
     "test-watch": "cypress open"
   },
   "devDependencies": {

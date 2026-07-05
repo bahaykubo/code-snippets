@@ -3,12 +3,19 @@ name: Typescript - MongoDB Client - CI
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'typescript-mongodb-client/**'
-      - '.github/workflows/typescript-mongodb-client-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-mongodb-client/**'
+          - '.github/workflows/typescript-mongodb-client-ci.yaml'
+
   test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./typescript-mongodb-client

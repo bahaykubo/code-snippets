@@ -3,12 +3,19 @@ name: Typescript - Test - k6
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'typescript-test-k6/**'
-      - '.github/workflows/typescript-test-k6-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-test-k6/**'
+          - '.github/workflows/typescript-test-k6-ci.yaml'
+
   lint-and-build:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./typescript-test-k6

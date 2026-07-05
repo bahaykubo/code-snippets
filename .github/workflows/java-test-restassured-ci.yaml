@@ -3,12 +3,19 @@ name: Java - Test - RestAssured - CI
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'java-test-restassured/**'
-      - '.github/workflows/java-test-restassured-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'java-test-restassured/**'
+          - '.github/workflows/java-test-restassured-ci.yaml'
+
   test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./java-test-restassured

@@ -7,12 +7,19 @@ on:
   workflow_dispatch:
   pull_request:
     branches: [main]
-    paths:
-      - 'typescript-test-webdriverio/**'
-      - '.github/workflows/typescript-test-webdriverio-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-test-webdriverio/**'
+          - '.github/workflows/typescript-test-webdriverio-ci.yaml'
+
   test:
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./typescript-test-webdriverio

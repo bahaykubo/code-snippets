@@ -13,15 +13,16 @@ public class App {
         Logger logger = LoggerFactory.getLogger(App.class);
         BlogPostService blogPostService = new BlogPostServiceImpl();
 
-        Javalin app = Javalin.create();
-        app.get("/posts", ctx -> {
-            logger.info("Fetching all blog posts");
-            ctx.json(blogPostService.getBlogPosts());
-        });
-        app.get("/posts/{userId}", ctx -> {
-            Integer userId = ctx.pathParamAsClass("userId", Integer.class).get();
-            logger.info("Fetching blog posts from user id " + userId);
-            ctx.json(blogPostService.findUserBlogPosts(userId));
+        Javalin app = Javalin.create(config -> {
+            config.routes.get("/posts", ctx -> {
+                logger.info("Fetching all blog posts");
+                ctx.json(blogPostService.getBlogPosts());
+            });
+            config.routes.get("/posts/{userId}", ctx -> {
+                Integer userId = ctx.pathParamAsClass("userId", Integer.class).get();
+                logger.info("Fetching blog posts from user id {}", userId);
+                ctx.json(blogPostService.findUserBlogPosts(userId));
+            });
         });
         return app.start(port);
     }

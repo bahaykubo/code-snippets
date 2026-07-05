@@ -3,12 +3,19 @@ name: Python - CI
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'python/**'
-      - '.github/workflows/python-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'python/**'
+          - '.github/workflows/python-ci.yaml'
+
   test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./python

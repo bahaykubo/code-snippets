@@ -1,0 +1,25 @@
+name: Check for relevant changes
+
+on:
+  workflow_call:
+    inputs:
+      filters:
+        description: 'dorny/paths-filter filter rules that define the requires-check output'
+        required: true
+        type: string
+    outputs:
+      requires-check:
+        description: 'Whether the changed files match the given filters'
+        value: ${{ jobs.changes.outputs.requires-check }}
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      requires-check: ${{ steps.filter.outputs.requires-check }}
+    steps:
+      - name: Check for relevant changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: ${{ inputs.filters }}

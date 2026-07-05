@@ -3,12 +3,19 @@ name: Typescript - Angular - CI
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'typescript-angular/**'
-      - '.github/workflows/typescript-angular-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-angular/**'
+          - '.github/workflows/typescript-angular-ci.yaml'
+
   test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./typescript-angular

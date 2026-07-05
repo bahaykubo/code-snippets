@@ -3,12 +3,19 @@ name: Typescript - Kafka Client - CI
 on:
   pull_request:
     branches: [main]
-    paths:
-      - 'typescript-kafka-client/**'
-      - '.github/workflows/typescript-kafka-client-ci.yaml'
 
 jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-kafka-client/**'
+          - '.github/workflows/typescript-kafka-client-ci.yaml'
+
   test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
         working-directory: ./typescript-kafka-client

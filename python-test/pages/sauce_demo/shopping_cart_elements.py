@@ -1,4 +1,4 @@
-from base_selenium_element import Element, Elements
+from base_element import Element, Elements
 
 class ShoppingCartElements(Elements):
 

@@ -1,5 +1,5 @@
-from base_selenium_browser import Browser
-from base_selenium_element import Elements
+from base_browser import Browser
+from base_element import Elements
 
 
 class BasePage(Browser):
@@ -11,4 +11,4 @@ class BasePage(Browser):
                 value.set_browser(browser)
 
     def open_url(self, url):
-        self.browser.get(url)
+        self.browser.goto(url)

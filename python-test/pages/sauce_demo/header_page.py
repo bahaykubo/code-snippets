@@ -1,5 +1,5 @@
 from time import sleep
-from base_selenium_page import BasePage
+from base_page import BasePage
 from pages.sauce_demo.header_elements import HeaderElements
 
 class HeaderPage(BasePage):
@@ -17,5 +17,4 @@ class HeaderPage(BasePage):
 
     def logout(self) -> None:
         self.open_menu()
-        # sleep(5)
         self.home_elements.logout_button.click()

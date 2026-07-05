@@ -25,7 +25,7 @@ dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.1-jre")
     implementation("io.javalin:javalin:7.2.2")
-    implementation("org.slf4j:slf4j-simple:2.0.7")
+    implementation("org.slf4j:slf4j-simple:2.0.18")
     implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
 }
 

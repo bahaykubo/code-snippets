@@ -35,7 +35,7 @@ export const config: WebdriverIO.Config = {
   waitforTimeout: 15000,
   connectionRetryTimeout: 60000,
   connectionRetryCount: 3,
-  services: ['chromedriver', [TimelineService, {}]],
+  services: [[TimelineService, {}]],
   framework: 'mocha',
   reporters: [
     'spec',

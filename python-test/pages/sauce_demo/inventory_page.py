@@ -1,6 +1,6 @@
 from typing import NamedTuple
 
-from base_selenium_page import BasePage
+from base_page import BasePage
 from pages.sauce_demo.header_page import HeaderPage
 from pages.sauce_demo.inventory_elements import InventoryElements
 
@@ -23,9 +23,9 @@ class InventoryPage(BasePage):
         for index, _ in enumerate(item_entries):
             items.append(
                 InventoryItem(
-                    name = self.inventory_elements.items_name()[index].text,
-                    price = self.inventory_elements.items_price()[index].text,
-                    add_to_cart = self.inventory_elements.add_to_card()[index].click,
+                    name = self.inventory_elements.items_name()[index].text_content(),
+                    price = self.inventory_elements.items_price()[index].text_content(),
+                    add_to_cart = lambda index=index: self.inventory_elements.add_to_card.click(index),
                 )
             )
         return items

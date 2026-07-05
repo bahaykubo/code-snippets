@@ -1,0 +1,30 @@
+name: Typescript - CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'typescript/**'
+      - '.github/workflows/typescript-ci.yaml'
+
+jobs:
+  lint:
+    defaults:
+      run:
+        working-directory: ./typescript
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install npm packages
+        run: npm run ci
+
+      - name: Lint project
+        run: npm run lint

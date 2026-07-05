@@ -1,11 +1,10 @@
-<h1>Test with Selenium and Requests wih pytest in Python</h1>
+<h1>Test with Playwright and Requests wih pytest in Python</h1>
 
-This is a sample testing project written in Python. It uses [requests](https://docs.python-requests.org/en/master) as the http client for testing the services and [selenium](https://github.com/SeleniumHQ/selenium/tree/trunk/py) for the ui.
+This is a sample testing project written in Python. It uses [requests](https://docs.python-requests.org/en/master) as the http client for testing the services and [playwright](https://playwright.dev/python/) for the ui.
 
 Both are using [pytest](https://docs.pytest.org/en/latest) for the test runner.
 
 - [Installation](#installation)
-  - [Webdriver](#webdriver)
   - [Setup](#setup)
 - [Test](#test)
   - [Run test](#run-test)
@@ -17,16 +16,18 @@ You will need to have [Python](https://www.python.org/) and [Poetry](https://pyt
 
 See instructions from main [README](../README.md#python-with-pyenv) to setup python with pyenv and poetry.
 
-## Webdriver
-
-The UI tests requires the use of a web driver [chromedriver](https://chromedriver.chromium.org/) to run the UI tests. Make sure the chromdriver executable is added to `PATH`
-
 ## Setup
 
 Create the virtual environment and install all dependencies include dev.
 
 ```bash
 poetry install
+```
+
+The UI tests use Playwright's bundled Chromium browser. Install it once with:
+
+```bash
+poetry run playwright install chromium
 ```
 
 # Test

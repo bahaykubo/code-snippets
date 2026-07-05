@@ -1,5 +1,5 @@
 import pytest
-from base_selenium_test import BrowserTestCase
+from base_test import BrowserTestCase
 from pages.sauce_demo.home_page import HomePage
 from pages.sauce_demo.inventory_page import InventoryPage
 from pages.sauce_demo.shopping_cart_page import ShoppingCartPage

@@ -23,13 +23,14 @@ describe('Swag Labs demo app', function () {
   it('Add item to shopping cart', async function () {
     const itemToAdd = 'Backpack';
 
-    await accessibilityTest.analyzePage('inventory');
-
     await inventoryPage.getAllItems().then(async (items: InventoryItem[]) => {
       const item = items.find((item) => item.name.includes(itemToAdd));
       expect(item).to.not.equal(undefined);
       await items.find((item) => item.name.includes(itemToAdd))?.addToCart();
     });
+
+    await accessibilityTest.analyzePage('inventory');
+
     await inventoryPage.header.openShoppingCart();
     await shoppingCartPage.getCartItems().then((items: CartItems[]) => {
       expect(

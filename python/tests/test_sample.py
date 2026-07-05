@@ -10,6 +10,7 @@ import json
 import time
 import xml.etree.ElementTree as ET
 
+
 @pytest.mark.action
 def test_action_checking():
     actions = [
@@ -66,10 +67,20 @@ def test_por_zip():
     check_queue(
         order_number,
         message_queue=[
-            {'message': [order_number, 'Inward', 'ReassignValuer', 'SOME_VALUER', 'Processed'],
-             'lixi': [None]},
-            {'message': [order_number, 'Inward', 'ReassignValuer', 'SOME_VALUER', 'Processed'],
-             'lixi': ['This']}
+            {
+                'message': [
+                    order_number, 'Inward', 'ReassignValuer',
+                    'SOME_VALUER', 'Processed',
+                ],
+                'lixi': [None],
+            },
+            {
+                'message': [
+                    order_number, 'Inward', 'ReassignValuer',
+                    'SOME_VALUER', 'Processed',
+                ],
+                'lixi': ['This'],
+            },
         ]
     )
 
@@ -77,7 +88,9 @@ def test_por_zip():
 def check_queue(order_number, message_queue):
     print(f'order_number: {order_number}')
     for _ in enumerate(message_queue):
-        print(f'message: {message_queue[1]["message"]} lixi: {message_queue[1]["lixi"]}')
+        message = message_queue[1]["message"]
+        lixi = message_queue[1]["lixi"]
+        print(f'message: {message} lixi: {lixi}')
 
 
 @pytest.mark.feestring
@@ -153,10 +166,7 @@ def test_lahat_true():
 
 
 def check_tama_existed(tama):
-    if tama:
-        return True
-    else:
-        return False
+    return bool(tama)
 
 
 @pytest.mark.trylist
@@ -185,7 +195,8 @@ def test_date_formatting():
     overdue_date = due_date.shift(days=1).format('DD/MM/YYYY HH:mm')
     just_date = due_date.format('YYYY-MM-DD')
     just_time = due_date.format('HH:mm:ss')
-    print(f'due: {due_date} \n before: {before_date} \n overdue: {overdue_date} \n date: {just_date} '
+    print(f'due: {due_date} \n before: {before_date} \n '
+          f'overdue: {overdue_date} \n date: {just_date} '
           f'\n time: {just_time}')
 
 
@@ -193,9 +204,14 @@ def test_date_formatting():
 def test_sample_dictionary():
     test_server_address = 'test1.'
 
-    support_email = 'support-test@email.com' if 'test1.' in test_server_address else (
-        'support-test@email.com' if 'test.' in test_server_address else (
-            'support-uat@email.com' if 'uat.' in test_server_address else None))
+    support_email = (
+        'support-test@email.com' if 'test1.' in test_server_address else (
+            'support-test@email.com' if 'test.' in test_server_address else (
+                'support-uat@email.com' if 'uat.' in test_server_address
+                else None
+            )
+        )
+    )
 
     print(support_email)
 
@@ -236,7 +252,9 @@ def test_two_greater():
 @pytest.mark.dating
 def test_dates():
     date = '01/12/2020 08:16'
-    new_date = arrow.get(date, 'DD/MM/YYYY HH:mm').format('DD MMM YYYY hh:mm:ss A')
+    new_date = arrow.get(date, 'DD/MM/YYYY HH:mm').format(
+        'DD MMM YYYY hh:mm:ss A'
+    )
 
     print(new_date)
 
@@ -263,7 +281,9 @@ def test_and_or():
     valuation_type = 'deskval'
     valuation_method = 'accept'
 
-    if not address and (valuation_method == 'creation' or valuation_type == 'avm'):
+    if not address and (
+        valuation_method == 'creation' or valuation_type == 'avm'
+    ):
         print('on if')
     else:
         print('on else')
@@ -297,11 +317,15 @@ def test_jsonlist():
 
 @pytest.mark.zipper
 def test_zipper():
-    valuers = ({'name': 'bing'}, {'name': 'bong'}, {'name': 'ping'}, {'name': 'pong'})
+    valuers = (
+        {'name': 'bing'}, {'name': 'bong'},
+        {'name': 'ping'}, {'name': 'pong'},
+    )
     quotes = ('100', '200', '300')
     completion_days = (1, 1, 1)
 
-    for id, (valuer, quote, completion_day) in enumerate(itertools.zip_longest(valuers, quotes, completion_days)):
+    zipped = itertools.zip_longest(valuers, quotes, completion_days)
+    for id, (valuer, quote, completion_day) in enumerate(zipped):
         print(f'INDEX {id}')
         print(f'Quote: {quote if quote else "999"}')
         print(f'Days: {completion_day if completion_day else 9}')
@@ -321,15 +345,17 @@ def test_add_to_list():
 
 @pytest.mark.extendlist
 def test_extendlist():
-    new_list = list()
-    new_dict = dict()
+    new_list = []
+    new_dict = {}
 
     new_dict.update({'name': 'noel'})
     new_list.append(new_dict)
 
     print(f'\nLIST: {new_list}\nSET: {new_dict}')
 
-    valuers_list = [{'number': 'one'}, {'number': 'two'}, {'number': 'three'}]
+    valuers_list = [
+        {'number': 'one'}, {'number': 'two'}, {'number': 'three'}
+    ]
     valuers_list.extend([
         {'number': 'four'}, {'number': 'five'}
     ])
@@ -339,7 +365,9 @@ def test_extendlist():
 @pytest.mark.randomer
 def test_randomise():
     for _ in range(4):
-        user = (f'automation{random.choice(["01", "02"])}.{random.choice(["demo", "test"])}'
+        prefix = random.choice(["01", "02"])
+        env = random.choice(["demo", "test"])
+        user = (f'automation{prefix}.{env}'
                 f'company{random.randint(1, 4)}@email.com')
         print(user)
 
@@ -466,8 +494,11 @@ def test_parse_xml():
             <hometrack>
                 <realtime accountid="123456">
                     <valuationrequest>
-                        <property propertytype="3" unitnum="" streetnum="86" street="Name" streettype="RSTREETOAD"
-                            suburb="IVANSUBURBHOE" postcode="3079" state="STE" bedrooms="" bathrooms="0"
+                        <property
+                            propertytype="3" unitnum="" streetnum="86"
+                            street="Name" streettype="RSTREETOAD"
+                            suburb="IVANSUBURBHOE" postcode="3079"
+                            state="STE" bedrooms="" bathrooms="0"
                             estimatedvalue="1000000" garages="" />
                     </valuationrequest>
                 </realtime>
@@ -484,7 +515,8 @@ def test_parse_xml():
         fsd = 1.5
         print(number + (number*fsd))
 
-        if not all(key in request['property'] for key in ('streetnum', 'street')):
+        required_keys = ('streetnum', 'street')
+        if not all(key in request['property'] for key in required_keys):
             raise AssertionError()
     except ET.ParseError:
         print('ding')
@@ -504,6 +536,8 @@ def test_flags():
     else:
         raise ValueError('not found')
     print(valtype_flags.items())
-    value = [valtype for valtype, flag in valtype_flags.items() if flag is True][0]
+    value = [
+        valtype for valtype, flag in valtype_flags.items() if flag is True
+    ][0]
     print(value)
     print(valtype_flags)

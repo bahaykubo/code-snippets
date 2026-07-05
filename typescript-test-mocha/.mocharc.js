@@ -1,4 +1,5 @@
 module.exports = {
+  spec: 'tests',
   recursive: true,
   timeout: 30000,
   retries: 0,

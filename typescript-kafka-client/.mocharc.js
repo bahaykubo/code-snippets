@@ -8,6 +8,7 @@ module.exports = {
     'json=true',
     'time-out=false',
   ],
+  spec: 'tests',
   recursive: true,
   require: ['ts-node/register'],
   extension: ['.test.ts'],

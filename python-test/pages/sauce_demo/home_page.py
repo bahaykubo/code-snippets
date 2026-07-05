@@ -1,4 +1,4 @@
-from base_selenium_page import BasePage
+from base_page import BasePage
 from pages.sauce_demo.home_elements import HomeElements
 from config import SITE_URL
 

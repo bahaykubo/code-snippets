@@ -11,6 +11,9 @@ export class HomePage {
   private get loginButton() {
     return $('#login-button');
   }
+  private get inventoryItem() {
+    return $('.inventory_item');
+  }
 
   async open(): Promise<void> {
     await browser.url(siteUrl.sauceDemo);
@@ -20,5 +23,6 @@ export class HomePage {
     await this.usernameInput.setValue(account.username);
     await this.passwordInput.setValue(account.password);
     await this.loginButton.click();
+    await this.inventoryItem.waitForExist();
   }
 }

@@ -1,4 +1,5 @@
 import { Header } from './header';
+import { domClick } from './dom-click';
 
 export type CartItems = {
   index: number;
@@ -19,9 +20,9 @@ export class ShoppingCartPage {
     return this._header;
   }
 
-  private get continueShoppingButton() {
-    return $('#continue-shopping');
-  }
+  private readonly continueShoppingSelector = '#continue-shopping';
+  private readonly cartListSelector = '.cart_list';
+
   private get itemsList() {
     return $$('.cart_item');
   }
@@ -39,10 +40,11 @@ export class ShoppingCartPage {
   }
 
   async continueShopping() {
-    await this.continueShoppingButton.click();
+    await domClick(this.continueShoppingSelector);
   }
 
   async getCartItems(): Promise<CartItems[]> {
+    await $(this.cartListSelector).waitForExist();
     const items: CartItems[] = [];
     const itemEntries = await (await this.itemsList).entries();
     for (const item of itemEntries) {
@@ -53,7 +55,8 @@ export class ShoppingCartPage {
         name: await (await this.itemsName[index].getText()).trim(),
         price: await (await this.itemsPrice[index].getText()).trim(),
         removeFromCart: async () => {
-          await this.itemsRemoveFromCart[index].click();
+          const id = await this.itemsRemoveFromCart[index].getAttribute('id');
+          await domClick(`#${id}`);
         },
       });
     }

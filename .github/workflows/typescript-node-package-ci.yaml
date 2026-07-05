@@ -2,6 +2,11 @@ name: Typescript - Sample NPM Package - CI
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'typescript-node-package/**'
+      - '.github/workflows/typescript-node-package-ci.yaml'
 
 jobs:
   test:
@@ -9,22 +14,27 @@ jobs:
       run:
         working-directory: ./typescript-node-package
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Use Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '22.x'
 
       - name: Install npm packages
-        run: yarn ci
+        run: npm run ci
 
       - name: Lint project
         if: always()
-        run: yarn lint
+        run: npm run lint
+
+      - name: Build project
+        if: always()
+        run: npm run build
 
       - name: Run tests
         if: always()
-        run: yarn test
+        run: npm test

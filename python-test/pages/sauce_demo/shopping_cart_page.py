@@ -1,6 +1,6 @@
 from typing import NamedTuple
 
-from base_selenium_page import BasePage
+from base_page import BasePage
 from pages.sauce_demo.header_page import HeaderPage
 from pages.sauce_demo.shopping_cart_elements import ShoppingCartElements
 
@@ -29,10 +29,10 @@ class ShoppingCartPage(BasePage):
             items.append(
                 ShoppingCartItem(
                     index,
-                    quantity = int(self.shopping_cart_elements.items_quantity()[index].text),
-                    name = self.shopping_cart_elements.items_name()[index].text,
-                    price = self.shopping_cart_elements.items_price()[index].text,
-                    remove_from_cart = self.shopping_cart_elements.items_remove_from_cart()[index].click
+                    quantity = int(self.shopping_cart_elements.items_quantity()[index].text_content()),
+                    name = self.shopping_cart_elements.items_name()[index].text_content(),
+                    price = self.shopping_cart_elements.items_price()[index].text_content(),
+                    remove_from_cart = lambda index=index: self.shopping_cart_elements.items_remove_from_cart.click(index)
                 )
             )
         return items

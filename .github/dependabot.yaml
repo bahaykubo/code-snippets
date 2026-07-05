@@ -20,11 +20,11 @@ updates:
       - '/typescript-test-webdriverio'
       - '/typescript-xml'
     schedule:
-      interval: monthly
-      time: '05:30'
+      interval: weekly
+      time: '06:00'
       day: 'monday'
       timezone: 'Pacific/Auckland'
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
     ignore:
       - dependency-name: chromedriver
   - package-ecosystem: 'pip'
@@ -32,8 +32,26 @@ updates:
       - '/python'
       - '/python-test'
     schedule:
-      interval: monthly
-      time: '05:30'
-      day: 'monday'
+      interval: weekly
+      time: '06:00'
+      day: 'tuesday'
       timezone: 'Pacific/Auckland'
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 10
+  - package-ecosystem: 'gradle'
+    directories:
+      - '/java-javalin'
+      - '/java-test-restassured'
+    schedule:
+      interval: weekly
+      time: '06:00'
+      day: 'wednesday'
+      timezone: 'Pacific/Auckland'
+    open-pull-requests-limit: 10
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: weekly
+      time: '06:00'
+      day: 'thursday'
+      timezone: 'Pacific/Auckland'
+    open-pull-requests-limit: 10

@@ -1,0 +1,56 @@
+name: Typescript - MongoDB Client - CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-mongodb-client/**'
+          - '.github/workflows/typescript-mongodb-client-ci.yaml'
+
+  test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
+    defaults:
+      run:
+        working-directory: ./typescript-mongodb-client
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v7
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install npm packages
+        run: npm run ci
+
+      - name: Lint project
+        if: always()
+        run: npm run lint
+
+      - name: Build project
+        if: always()
+        run: npm run build
+
+      - name: Start mongodb
+        run: ./script/start.sh
+
+      - name: Initialize mongodb
+        run: npm run setup-data-store
+
+      - name: Run tests
+        if: always()
+        run: npm test
+
+      - name: Stop mongodb
+        if: always()
+        run: ./script/stop.sh

@@ -1,0 +1,35 @@
+name: Java - Test - RestAssured - CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'java-test-restassured/**'
+          - '.github/workflows/java-test-restassured-ci.yaml'
+
+  test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
+    defaults:
+      run:
+        working-directory: ./java-test-restassured
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v7
+
+      - name: Use Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Build and test
+        run: ./gradlew build --no-daemon

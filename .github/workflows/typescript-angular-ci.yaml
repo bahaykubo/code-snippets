@@ -1,0 +1,46 @@
+name: Typescript - Angular - CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript-angular/**'
+          - '.github/workflows/typescript-angular-ci.yaml'
+
+  test:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
+    defaults:
+      run:
+        working-directory: ./typescript-angular
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v7
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install npm packages
+        run: npm ci
+
+      - name: Lint project
+        if: always()
+        run: npm run lint
+
+      - name: Build project
+        if: always()
+        run: npm run build
+
+      - name: Run tests
+        if: always()
+        run: npm test -- --no-watch --no-progress --browsers=ChromeHeadless

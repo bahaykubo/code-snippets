@@ -1,25 +1,25 @@
+import { domClick } from './dom-click';
+
 export class Header {
-  private get shoppingcartButton() {
-    return $('.shopping_cart_link');
-  }
-  private get menuButton() {
-    return $('#react-burger-menu-btn');
-  }
+  private readonly shoppingCartSelector = '.shopping_cart_link';
+  private readonly menuButtonSelector = '#react-burger-menu-btn';
+  private readonly logoutButtonSelector = '#logout_sidebar_link';
   private get logoutButton() {
-    return $('#logout_sidebar_link');
+    return $(this.logoutButtonSelector);
   }
 
   async openShoppingCart() {
-    await this.shoppingcartButton.click();
+    await domClick(this.shoppingCartSelector);
+    await browser.waitUntil(async () => (await browser.getUrl()).includes('cart.html'));
   }
 
   async logout() {
     await this.openMenu();
     await this.logoutButton.waitForClickable();
-    await this.logoutButton.click();
+    await domClick(this.logoutButtonSelector);
   }
 
   async openMenu() {
-    await this.menuButton.click();
+    await domClick(this.menuButtonSelector);
   }
 }

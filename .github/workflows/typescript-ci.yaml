@@ -1,0 +1,37 @@
+name: Typescript - CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  changes:
+    uses: ./.github/workflows/check-for-changes.yaml
+    with:
+      filters: |
+        requires-check:
+          - 'typescript/**'
+          - '.github/workflows/typescript-ci.yaml'
+
+  lint:
+    needs: changes
+    if: needs.changes.outputs.requires-check == 'true'
+    defaults:
+      run:
+        working-directory: ./typescript
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v7
+
+      - name: Use Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Install npm packages
+        run: npm run ci
+
+      - name: Lint project
+        run: npm run lint

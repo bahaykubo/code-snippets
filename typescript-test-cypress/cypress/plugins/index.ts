@@ -1,7 +1,29 @@
-import 'tsconfig-paths/register';
+import webpackPreprocessor from '@cypress/webpack-preprocessor';
+import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import mochawesomePlugin from 'cypress-mochawesome-reporter/plugin';
 
 export default (on: any) => {
+  on(
+    'file:preprocessor',
+    webpackPreprocessor({
+      webpackOptions: {
+        resolve: {
+          extensions: ['.ts', '.js'],
+          plugins: [new TsconfigPathsPlugin({ configFile: './tsconfig.json' })],
+        },
+        module: {
+          rules: [
+            {
+              test: /\.ts$/,
+              exclude: [/node_modules/],
+              use: [{ loader: 'ts-loader' }],
+            },
+          ],
+        },
+      },
+    }),
+  );
+
   mochawesomePlugin(on);
 
   // `on` is used to hook into various events Cypress emits

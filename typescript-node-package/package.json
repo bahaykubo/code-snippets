@@ -17,7 +17,7 @@
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
     "chai": "^4.3.10",
-    "mocha": "^10.2.0",
+    "mocha": "^11.7.6",
     "moment-timezone": "^0.5.43",
     "style-lint-js": "^3.0.2",
     "ts-node": "^10.9.1",

@@ -13,6 +13,7 @@ jobs:
       run:
         working-directory: ./javascript
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out repo
         uses: actions/checkout@v4

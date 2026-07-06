@@ -3,9 +3,9 @@ updates:
   - package-ecosystem: 'npm'
     directories:
       - '/javascript'
-      - '/javascript-db-client'
       - '/typescript'
       - '/typescript-angular'
+      - '/typescript-db-client'
       - '/typescript-express-server'
       - '/typescript-graphql-client'
       - '/typescript-kafka-client'

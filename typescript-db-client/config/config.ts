@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/naming-convention
 export const Config = {
   postgresURI: 'postgresql://user:userpass@localhost:6432/postgres',
   postgresClient: {

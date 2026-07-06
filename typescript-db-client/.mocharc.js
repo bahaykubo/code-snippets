@@ -1,0 +1,20 @@
+module.exports = {
+  reporter: 'mochawesome',
+  'reporter-option': [
+    'reportDir=artifacts/report/',
+    'quiet=true',
+    'overwrite=true',
+    'html=true',
+    'json=false',
+    'time-out=false',
+    'timestamp=yyyymmdd_HHMMss',
+  ],
+  spec: 'tests',
+  recursive: true,
+  require: ['ts-node/register', 'tsconfig-paths/register', 'mochawesome/register'],
+  extension: ['.test.ts'],
+  timeout: 120000,
+  retries: 0,
+  'inline-diffs': true,
+  'watch-files': ['**/*.ts'],
+};

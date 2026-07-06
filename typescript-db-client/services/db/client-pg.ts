@@ -1,43 +1,32 @@
-import { Customers } from './models/customers';
-import { Client } from 'pg';
+import { Client, ClientConfig } from 'pg';
+import { CustomerAttributes } from './models/customers';
 import { Config } from '@config/config';
 
 export class DBClientPG {
-  /** @type {Client} */
-  #client;
+  #client: Client;
 
   /**
    * Kafka Bridge Database client using PG.
    * We are using a client instead of a pool due to the nature of how we interact with the db
    *
-   * @constructor
-   * @param {object} [connection] - Set the client connection details. Default to Config.postgresClient
-   * @param {string} connection.user
-   * @param {string} connection.host
-   * @param {string} connection.database
-   * @param {string} connection.password
-   * @param {number} connection.port
+   * @param connectionDetails - Set the client connection details. Default to Config.postgresClient
    */
-  constructor(clientConnectionDetails) {
-    this.#client = new Client(clientConnectionDetails ?? Config.postgresClient);
+  constructor(connectionDetails?: ClientConfig) {
+    this.#client = new Client(connectionDetails ?? Config.postgresClient);
   }
 
-  async connect() {
+  async connect(): Promise<void> {
     await this.#client.connect();
   }
 
-  async closeConnection() {
+  async closeConnection(): Promise<void> {
     await this.#client.end();
   }
 
   /**
    * Add a list of customer(s)
-   *
-   * @param {import('./models/customers').CustomerAttributes[]} customers
-   *
-   * @returns {Promise<void>}
    */
-  async addCustomers(customers) {
+  async addCustomers(customers: CustomerAttributes[]): Promise<void> {
     const customersString = this.#convertCustomerListToInsertString(customers);
     await this.#client
       .query(`INSERT INTO customers ("first_name", "last_name", "createdAt", "updatedAt") VALUES ${customersString}`)
@@ -48,13 +37,9 @@ export class DBClientPG {
 
   /**
    * Get a list of customers
-   *
-   * @param {number} limit
-   *
-   * @returns {Promise<import('./models/customers').CustomerAttributes[]>>}
    */
-  async getCustomers(limit) {
-    let queryLimit;
+  async getCustomers(limit?: number): Promise<CustomerAttributes[]> {
+    let queryLimit = '';
 
     if (limit || limit === 0) {
       queryLimit = `LIMIT ${limit}`;
@@ -70,10 +55,8 @@ export class DBClientPG {
 
   /**
    * Convert Customer list to a string for inserting to customer table
-   *
-   * @private
    */
-  #convertCustomerListToInsertString(customers) {
+  #convertCustomerListToInsertString(customers: CustomerAttributes[]): string {
     return customers
       .map((customer) => {
         return `('${customer.first_name}', '${customer.last_name}', NOW(), NOW())`;

@@ -1,8 +1,8 @@
 import mocha from 'eslint-plugin-mocha';
-import styleLintJs from 'style-lint-js/eslint.config.js';
+import styleLintJs from 'style-lint-js/eslint.config-ts.js';
 
 export default [
-  { ignores: ['node_modules/', 'artifacts/'] },
+  { ignores: ['node_modules/', 'artifacts/', 'dist/'] },
   ...styleLintJs,
   mocha.configs.recommended,
   {

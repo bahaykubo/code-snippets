@@ -13,7 +13,7 @@ To run the sample test, we will need to have a local container instance of postg
 npm run start-seed-db
 ```
 
-This will run a [shell script](./scripts/start-db.sh) that will create a postgres container and run [seed-db.js](./services/utilities/seed-db.js) which will create the table if it doesn't exist.
+This will run a [shell script](./scripts/start-db.sh) that will create a postgres container and run [seed-db.ts](./services/utilities/seed-db.ts) which will create the table if it doesn't exist.
 
 # Run test
 

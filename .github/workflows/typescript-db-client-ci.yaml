@@ -1,4 +1,4 @@
-name: Javascript - DB Client - CI
+name: Typescript - DB Client - CI
 
 on:
   pull_request:
@@ -10,15 +10,15 @@ jobs:
     with:
       filters: |
         requires-check:
-          - 'javascript-db-client/**'
-          - '.github/workflows/javascript-db-client-ci.yaml'
+          - 'typescript-db-client/**'
+          - '.github/workflows/typescript-db-client-ci.yaml'
 
   test:
     needs: changes
     if: needs.changes.outputs.requires-check == 'true'
     defaults:
       run:
-        working-directory: ./javascript-db-client
+        working-directory: ./typescript-db-client
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -37,9 +37,9 @@ jobs:
         if: always()
         run: npm run lint
 
-      - name: Start postgresql
+      - name: Build project
         if: always()
-        run: npm run start-seed-db
+        run: npm run build
 
       - name: Run tests
         if: always()

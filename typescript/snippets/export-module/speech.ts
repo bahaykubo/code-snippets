@@ -1,24 +1,21 @@
 class Say {
-  hello() {
+  hello(): void {
     console.log('hello from say!');
   }
 
-  bye() {
+  bye(): void {
     console.log('bye from say!');
   }
 }
 
 class Ask {
-  where() {
+  where(): void {
     console.log('where is this?');
   }
 
-  bye() {
+  bye(): void {
     console.log('bye?');
   }
 }
 
-module.exports = {
-  Say,
-  Ask,
-};
+export { Say, Ask };

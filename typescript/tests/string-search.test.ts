@@ -1,25 +1,24 @@
-import { expect } from 'chai';
 import { searchStateByIndexOf, searchStateByStringSearch } from '../snippets/string-search';
 
-describe('search', function () {
+describe('search', () => {
   const addresses = [
     { address: '1 VICTORIA PARADE, FRANKSTON, VIC, 3199', match: 'Match' },
     { address: '1 TORIA PARADE, FRANKSTON, WA, 3199', match: 'Match' },
     { address: '50A IRVINE STREET, BANKSTOWN, NSW, 2200', match: 'No Match' },
   ];
 
-  context('using string search', function () {
-    it('should match with expected result', function () {
+  describe('using string search', () => {
+    it('should match with expected result', () => {
       addresses.forEach((address) => {
-        expect(address.match).to.equal(searchStateByStringSearch(address.address));
+        expect(address.match).toEqual(searchStateByStringSearch(address.address));
       });
     });
   });
 
-  context('using index of', function () {
-    it('should match with expected result', function () {
+  describe('using index of', () => {
+    it('should match with expected result', () => {
       addresses.forEach((address) => {
-        expect(address.match).to.equal(searchStateByIndexOf(address.address));
+        expect(address.match).toEqual(searchStateByIndexOf(address.address));
       });
     });
   });

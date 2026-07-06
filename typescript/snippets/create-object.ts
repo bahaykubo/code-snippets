@@ -1,50 +1,55 @@
-/**
- * @typedef Basket
- * @type {object}
- * @property {BasketItem[]} [basketItems]
- * @property {CurrencyAmount[]} [totals]
- */
+type Basket = {
+  basketItems?: BasketItem[];
+  totals?: CurrencyAmount[];
+};
 
-/**
- * @typedef BasketItem
- * @type {object}
- * @property {ProductDetails} productDetails
- * @property {number} quantity
- * @property {CurrencyAmount[]} currencyAmounts
- */
+type BasketItem = {
+  productDetails: ProductDetails;
+  quantity: number;
+  currencyAmounts: CurrencyAmount[];
+};
 
-/**
- * @typedef ProductDetails
- * @type {object}
- * @property {string} code
- * @property {string} [name]
- * @property {string} [description]
- */
+type ProductDetails = {
+  code: string;
+  name?: string;
+  description?: string;
+};
 
-/**
- * @typedef CurrencyAmount
- * @type {object}
- * @property {string} currencyCode
- * @property {string} [qualifier]
- * @property {string} amount
- * @property {string} paymentBy
- * @property {EquivalentCurrency} [equivalentCurrency]
- */
+type CurrencyAmount = {
+  currencyCode: string;
+  qualifier?: string;
+  amount: string;
+  paymentBy: string;
+  equivalentCurrency?: EquivalentCurrency;
+};
 
-/**
- * @typedef EquivalentCurrency
- * @type {object}
- * @property {string} currencyCode
- * @property {string} [qualifier]
- * @property {string} [amount]
- */
+type EquivalentCurrency = {
+  currencyCode: string;
+  qualifier?: string;
+  amount?: string;
+};
 
-/**
- * @param {Basket} basket
- */
-const createBasket = (basket) => {
+type BasketItemRecord = {
+  quantity: number;
+  product_id: null;
+  product_code: null;
+  product_data: ProductDetails | null;
+  currency_amounts: CurrencyAmountRecord[] | null;
+};
+
+type CurrencyAmountRecord = {
+  currency_code: string;
+  qualifier: string | null;
+  amount: string;
+  analytics: {
+    payment: { main: { by: string } };
+    equivalents: EquivalentCurrency[] | null;
+  };
+};
+
+const createBasket = (basket: Basket): { items: BasketItemRecord[] | null; totals: CurrencyAmountRecord[] | null } => {
   const { basketItems, totals } = basket;
-  const items = [];
+  const items: BasketItemRecord[] = [];
   basketItems?.forEach((basketItem) => {
     const { productDetails, quantity, currencyAmounts } = basketItem;
     items.push({
@@ -61,11 +66,8 @@ const createBasket = (basket) => {
   };
 };
 
-/**
- * @param {CurrencyAmount[]} currencyAmounts
- */
-const createCurrencyAmounts = (currencyAmounts) => {
-  const amounts = [];
+const createCurrencyAmounts = (currencyAmounts?: CurrencyAmount[]): CurrencyAmountRecord[] | null => {
+  const amounts: CurrencyAmountRecord[] = [];
   currencyAmounts?.forEach((currencyAmount) => {
     const { currencyCode, qualifier, amount, paymentBy, equivalentCurrency } = currencyAmount;
     amounts.push({
@@ -149,5 +151,5 @@ const basket = createBasket({
 });
 
 console.log(JSON.stringify(basket, null, 2));
-console.log(basket.items.length);
-console.log(JSON.stringify(createBasket({ basketItems: null }), null, 2));
+console.log(basket.items?.length);
+console.log(JSON.stringify(createBasket({ basketItems: undefined }), null, 2));

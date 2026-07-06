@@ -1,4 +1,4 @@
-const currentDirectory = () => {
+const currentDirectory = (): string => {
   return process.cwd();
 };
 

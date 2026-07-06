@@ -13,7 +13,7 @@ jobs:
           - 'typescript/**'
           - '.github/workflows/typescript-ci.yaml'
 
-  lint:
+  test:
     needs: changes
     if: needs.changes.outputs.requires-check == 'true'
     defaults:
@@ -34,4 +34,9 @@ jobs:
         run: npm run ci
 
       - name: Lint project
+        if: always()
         run: npm run lint
+
+      - name: Run tests
+        if: always()
+        run: npm test

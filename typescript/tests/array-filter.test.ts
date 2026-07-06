@@ -1,8 +1,7 @@
-import { expect } from 'chai';
 import { filterList } from '../snippets/array-filter';
 
-describe('array filter', function () {
-  it('should filter by name value', function () {
+describe('array filter', () => {
+  it('should filter by name value', () => {
     const list = [
       { name: 'LegalDescription', value: 'Legal Description' },
       { name: 'VolumeFolio', value: 'Volume Folio' },
@@ -14,7 +13,7 @@ describe('array filter', function () {
     const filteredList = filterList(list, nameFilter);
 
     filteredList.forEach((item) => {
-      expect(item.name).to.equal('legaldescription');
+      expect(item.name).toEqual('legaldescription');
     });
   });
 });

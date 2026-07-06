@@ -1,8 +1,7 @@
-import { expect } from 'chai';
 import { sortListByDate, sortListByNumber } from '../snippets/working-with-arrays';
 
-describe('working with arrays', function () {
-  describe('sort', function () {
+describe('working with arrays', () => {
+  describe('sort', () => {
     const valuations = [
       {
         amount: 592000,
@@ -38,35 +37,35 @@ describe('working with arrays', function () {
       },
     ];
 
-    context('by date', function () {
-      let sortedByDate;
+    describe('by date', () => {
+      let sortedByDate: string[];
 
-      before(function () {
+      beforeAll(() => {
         sortedByDate = sortListByDate(valuations);
       });
 
-      it('should have the latest date first', function () {
-        expect(sortedByDate[0]).to.contain('2019');
+      it('should have the latest date first', () => {
+        expect(sortedByDate[0]).toContain('2019');
       });
 
-      it('should have the earliest date last', function () {
-        expect(sortedByDate[sortedByDate.length - 1]).to.contain('2012');
+      it('should have the earliest date last', () => {
+        expect(sortedByDate[sortedByDate.length - 1]).toContain('2012');
       });
     });
 
-    context('by number', function () {
-      let sortedByNumber;
+    describe('by number', () => {
+      let sortedByNumber: number[];
 
-      before(function () {
+      beforeAll(() => {
         sortedByNumber = sortListByNumber(valuations);
       });
 
-      it('should have the smallest number first', function () {
-        expect(sortedByNumber[0]).to.equal(367000);
+      it('should have the smallest number first', () => {
+        expect(sortedByNumber[0]).toEqual(367000);
       });
 
-      it('should have the largest number last', function () {
-        expect(sortedByNumber[sortedByNumber.length - 1]).to.equal(676000);
+      it('should have the largest number last', () => {
+        expect(sortedByNumber[sortedByNumber.length - 1]).toEqual(676000);
       });
     });
   });

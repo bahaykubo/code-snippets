@@ -1,7 +1,7 @@
 import { Say, Ask } from '../../snippets/export-module/speech';
 
-describe('use speech', function () {
-  it('should say and ask', function () {
+describe('use speech', () => {
+  it('should say and ask', () => {
     const say = new Say();
     const ask = new Ask();
 

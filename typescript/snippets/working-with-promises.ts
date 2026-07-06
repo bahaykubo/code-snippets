@@ -1,4 +1,4 @@
-const nameNewPromise = (name) => {
+const nameNewPromise = (name?: string): Promise<string> => {
   return new Promise((resolve, reject) => {
     if (!name || name === 'error') {
       setTimeout(() => reject('error'), 500);
@@ -8,7 +8,7 @@ const nameNewPromise = (name) => {
   });
 };
 
-const namePromise = (name) => {
+const namePromise = (name?: string): string => {
   if (!name || name === 'error') {
     return 'error';
   } else {
@@ -16,14 +16,14 @@ const namePromise = (name) => {
   }
 };
 
-const promise1 = () => {
+const promise1 = (): Promise<string> => {
   let index = 0;
   return new Promise((resolve) => {
     setTimeout(() => resolve(`var 1 ${++index} should be "2"`), 500);
   });
 };
 
-const promise2 = () => {
+const promise2 = (): Promise<string> => {
   let index = 0;
   return new Promise((resolve) => {
     setTimeout(() => resolve(`var 2 ${++index} should be "2"`), 1000);

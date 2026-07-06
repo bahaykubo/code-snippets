@@ -1,6 +1,6 @@
 // Search using string search
-const searchStateByStringSearch = (address) => {
-  if (address.search(', VIC,' | ', WA,') < 0) {
+const searchStateByStringSearch = (address: string): string => {
+  if (address.search(/, VIC,|, WA,/) >= 0) {
     return 'Match';
   } else {
     return 'No Match';
@@ -8,7 +8,7 @@ const searchStateByStringSearch = (address) => {
 };
 
 // Search using index of
-const searchStateByIndexOf = (address) => {
+const searchStateByIndexOf = (address: string): string => {
   switch (true) {
     case address.indexOf(', VIC,') >= 0:
     case address.indexOf(', WA,') >= 0:
@@ -18,7 +18,7 @@ const searchStateByIndexOf = (address) => {
   }
 };
 
-function doThis() {
+function doThis(): void {
   console.log('this');
 }
 

@@ -1,4 +1,4 @@
-const randomString = (numberChars) => {
+const randomString = (numberChars: number): string => {
   const chars = 'abcdefghijklmnopqrstuvwxyz';
   let value = '';
   while (value.length < numberChars) {

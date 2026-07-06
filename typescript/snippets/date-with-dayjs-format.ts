@@ -1,22 +1,22 @@
-import dayjs, { extend } from 'dayjs';
+import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import timezone from 'dayjs/plugin/timezone';
 
-extend(utc);
-extend(timezone);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
 const dateTimeFormat = 'YYYY-MM-DDTHH:mm:ssZ';
 
 const newDate = new Date('2020-08-15T00:00');
 const newDateDaylightSaving = new Date('2020-10-15T00:00');
 
-console.log(`Format dates with date-fns -> ${dayjs(newDate).format(dateTimeFormat)}`);
+console.log(`Format dates with dayjs -> ${dayjs(newDate).format(dateTimeFormat)}`);
 console.log(`Accounts for daylight saving time offset -> ${dayjs(newDateDaylightSaving).format(dateTimeFormat)}`);
 
 console.log(`Set date to start of day -> ${dayjs(newDate).startOf('day').format(dateTimeFormat)}`);
 console.log(`Add days to date -> ${dayjs(newDate).add(1, 'day').format(dateTimeFormat)}`);
 
-console.log('Convert to timezone with date-fns-timezone and format with date-fns');
+console.log('Convert to timezone with dayjs and format with dayjs');
 console.log(dayjs(newDate).tz('Asia/Manila').format(dateTimeFormat));
 console.log(dayjs(newDate).tz('Australia/Sydney').format(dateTimeFormat));
 console.log(dayjs(newDate).tz('Pacific/Auckland').format(dateTimeFormat));

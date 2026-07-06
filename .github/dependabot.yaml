@@ -16,7 +16,6 @@ updates:
       - '/typescript-test-k6'
       - '/typescript-test-mocha'
       - '/typescript-test-playwright'
-      - '/typescript-test-playwright-mocha'
       - '/typescript-test-webdriverio'
       - '/typescript-xml'
     schedule:

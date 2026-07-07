@@ -1,0 +1,115 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  java-javalin:
+    uses: ./.github/workflows/java-javalin-ci.yaml
+    secrets: inherit
+
+  java-test-restassured:
+    uses: ./.github/workflows/java-test-restassured-ci.yaml
+    secrets: inherit
+
+  python:
+    uses: ./.github/workflows/python-ci.yaml
+    secrets: inherit
+
+  python-test:
+    uses: ./.github/workflows/python-test-ci.yaml
+    secrets: inherit
+
+  typescript:
+    uses: ./.github/workflows/typescript-ci.yaml
+    secrets: inherit
+
+  typescript-angular:
+    uses: ./.github/workflows/typescript-angular-ci.yaml
+    secrets: inherit
+
+  typescript-db-client:
+    uses: ./.github/workflows/typescript-db-client-ci.yaml
+    secrets: inherit
+
+  typescript-express-server:
+    uses: ./.github/workflows/typescript-express-server-ci.yaml
+    secrets: inherit
+
+  typescript-graphql-client:
+    uses: ./.github/workflows/typescript-graphql-client-ci.yaml
+    secrets: inherit
+
+  typescript-kafka-client:
+    uses: ./.github/workflows/typescript-kafka-client-ci.yaml
+    secrets: inherit
+
+  typescript-mongodb-client:
+    uses: ./.github/workflows/typescript-mongodb-client-ci.yaml
+    secrets: inherit
+
+  typescript-node-package:
+    uses: ./.github/workflows/typescript-node-package-ci.yaml
+    secrets: inherit
+
+  typescript-test-cypress:
+    uses: ./.github/workflows/typescript-test-cypress-ci.yaml
+    secrets: inherit
+
+  typescript-test-jest:
+    uses: ./.github/workflows/typescript-test-jest-ci.yaml
+    secrets: inherit
+
+  typescript-test-k6:
+    uses: ./.github/workflows/typescript-test-k6-ci.yaml
+    secrets: inherit
+
+  typescript-test-mocha:
+    uses: ./.github/workflows/typescript-test-mocha-ci.yaml
+    secrets: inherit
+
+  typescript-test-playwright:
+    uses: ./.github/workflows/typescript-test-playwright-ci.yaml
+    secrets: inherit
+
+  typescript-test-webdriverio:
+    uses: ./.github/workflows/typescript-test-webdriverio-ci.yaml
+    secrets: inherit
+
+  typescript-xml:
+    uses: ./.github/workflows/typescript-xml-ci.yaml
+    secrets: inherit
+
+  ci-check:
+    name: CI Check
+    if: always()
+    needs:
+      - java-javalin
+      - java-test-restassured
+      - python
+      - python-test
+      - typescript
+      - typescript-angular
+      - typescript-db-client
+      - typescript-express-server
+      - typescript-graphql-client
+      - typescript-kafka-client
+      - typescript-mongodb-client
+      - typescript-node-package
+      - typescript-test-cypress
+      - typescript-test-jest
+      - typescript-test-k6
+      - typescript-test-mocha
+      - typescript-test-playwright
+      - typescript-test-webdriverio
+      - typescript-xml
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check all CI job results
+        run: |
+          if [[ "${{ contains(needs.*.result, 'failure') }}" == "true" || "${{ contains(needs.*.result, 'cancelled') }}" == "true" ]]; then
+            echo "One or more CI jobs failed."
+            exit 1
+          fi
+          echo "All CI jobs passed."

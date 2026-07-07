@@ -4,8 +4,7 @@ env:
   CREDENTIALS: testuser=${{ secrets.TESTUSER }} testpassword=${{ secrets.TESTPASSWORD }} token=${{ secrets.TOKEN }} tokensecret=${{ secrets.TOKENSECRET }} key=${{ secrets.KEY }} keysecret=${{ secrets.KEYSECRET }}
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
   changes:

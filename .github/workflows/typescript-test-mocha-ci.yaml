@@ -1,8 +1,7 @@
 name: Typescript - Test - Mocha
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
   changes:

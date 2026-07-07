@@ -1,8 +1,7 @@
 name: Typescript - GraphQL Client - CI
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
   changes:

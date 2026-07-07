@@ -4,8 +4,7 @@ env:
   PASSWORDS: testpassword=${{ secrets.TESTPASSWORD }}
 
 on:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
   changes:

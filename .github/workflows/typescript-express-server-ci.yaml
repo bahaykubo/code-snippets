@@ -2,8 +2,7 @@ name: Typescript - Express Server - CI
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main]
+  workflow_call:
 
 jobs:
   changes:

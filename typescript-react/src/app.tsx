@@ -1,13 +1,8 @@
 import { useEffect, useState } from 'react';
-import { NewTodoForm } from './new-todo-form';
-import { TodoList } from './todo-list';
-import { Select, SelectOption } from './select';
-
-export type Todo = {
-  id: string;
-  title: string;
-  completed: boolean;
-};
+import { TodoNewForm } from './todo/todo-new-form';
+import { TodoList } from './todo/todo-list';
+import { Select, SelectOption } from './select-items/select';
+import { Todo } from './types/todo';
 
 const selectOptions: SelectOption[] = [
   { label: 'First', value: 1 },
@@ -60,7 +55,7 @@ export default function App() {
 
   return (
     <>
-      <NewTodoForm onSubmit={addTodo} />
+      <TodoNewForm onSubmit={addTodo} />
       <h1 className="header">Todo List</h1>
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       <h1 className="header">Select</h1>

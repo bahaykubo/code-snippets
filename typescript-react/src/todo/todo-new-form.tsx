@@ -4,7 +4,7 @@ interface Props {
   onSubmit: (title: string) => void;
 }
 
-export function NewTodoForm({ onSubmit }: Props) {
+export function TodoNewForm({ onSubmit }: Props) {
   const [newItem, setNewItem] = useState('');
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {

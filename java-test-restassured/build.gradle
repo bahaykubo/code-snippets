@@ -16,7 +16,7 @@ repositories {
 dependencies {
     testImplementation "io.rest-assured:rest-assured:6.0.0"
     testImplementation "org.testng:testng:7.10.2"
-    testImplementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.13.0"
+    testImplementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.22.1"
 }
 
 test {

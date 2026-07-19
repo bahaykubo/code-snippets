@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import styles from './select.module.css';
 
-export type SelectOption = {
+export interface SelectOption {
   label: string;
   value: string | number;
-};
+}
 
-export type SelectProps = {
+export interface SelectProps {
   options: SelectOption[];
   value?: SelectOption;
   onChange: (value?: SelectOption) => void;
-};
+}
 
 export function Select(props: SelectProps) {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,0 +1,15 @@
+.container {
+  width: var(--widget-width);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.5em;
+  margin-bottom: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.header {
+  margin: 0;
+  font-size: 1.1em;
+}

@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.input {
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.25em 0.5em;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-accent);
+}
+
+.btn {
+  align-self: flex-start;
+  background: none;
+  color: var(--color-muted);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.25em 0.75em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--color-text-hover);
+  border-color: var(--color-text-hover);
+}

@@ -1,4 +1,5 @@
 import { Todo } from '../types/todo';
+import styles from './todo-item.module.css';
 
 interface Props {
   todo: Todo;
@@ -8,13 +9,13 @@ interface Props {
 
 export function TodoItem({ todo, toggleTodo, deleteTodo }: Props) {
   return (
-    <li>
-      <label>
+    <li className={styles.item}>
+      <label className={`${styles.label} ${todo.completed ? styles.completed : ''}`}>
         <input type="checkbox" checked={todo.completed} onChange={(e) => toggleTodo(todo.id, e.target.checked)} />
         {todo.title}
       </label>
-      <button className="btn btn-danger" onClick={() => deleteTodo(todo.id)}>
-        Danger
+      <button className={styles['delete-btn']} onClick={() => deleteTodo(todo.id)}>
+        &times;
       </button>
     </li>
   );

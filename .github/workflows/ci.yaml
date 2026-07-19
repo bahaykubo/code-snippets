@@ -83,6 +83,10 @@ jobs:
     uses: ./.github/workflows/typescript-xml-ci.yaml
     secrets: inherit
 
+  typescript-react:
+    uses: ./.github/workflows/typescript-react-ci.yaml
+    secrets: inherit
+
   ci-check:
     name: CI Check
     if: always()
@@ -106,6 +110,7 @@ jobs:
       - typescript-test-playwright
       - typescript-test-webdriverio
       - typescript-xml
+      - typescript-react
     runs-on: ubuntu-latest
     steps:
       - name: Check all CI job results

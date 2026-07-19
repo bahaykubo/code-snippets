@@ -1,0 +1,12 @@
+:root {
+  --color-border: #777;
+  --color-muted: #777;
+  --color-text-hover: #333;
+  --color-accent: hsl(200, 100%, 50%);
+  --color-highlight: hsl(200, 100%, 70%);
+  --border-width: 0.05em;
+  --radius: 0.25em;
+  --widget-width: 20em;
+  --list-max-height: 15em;
+  --gap: 1em;
+}

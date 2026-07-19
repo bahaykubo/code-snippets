@@ -1,0 +1,14 @@
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: var(--list-max-height);
+  overflow-y: auto;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.empty {
+  padding: 0.25em 0.5em;
+  color: var(--color-muted);
+}

@@ -26,7 +26,7 @@ dependencies {
     implementation("com.google.guava:guava:33.6.0-jre")
     implementation("io.javalin:javalin:7.2.2")
     implementation("org.slf4j:slf4j-simple:2.0.18")
-    implementation("com.fasterxml.jackson.core:jackson-databind:2.15.0")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.22.2")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

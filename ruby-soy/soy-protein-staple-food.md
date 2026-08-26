@@ -19,6 +19,11 @@
   - [Bioavailability gaps (present on paper, poorly absorbed in practice)](#bioavailability-gaps-present-on-paper-poorly-absorbed-in-practice)
   - [Lower-certainty gaps](#lower-certainty-gaps)
   - [Bottom line](#bottom-line)
+- [6. Plant-based additions that close the gaps in Section 5](#6-plant-based-additions-that-close-the-gaps-in-section-5)
+  - [Hard deficiencies — what can and can't be closed by plants](#hard-deficiencies--what-can-and-cant-be-closed-by-plants)
+  - [Bioavailability gaps — additions and preparation techniques](#bioavailability-gaps--additions-and-preparation-techniques)
+  - [Lower-certainty gaps — plant/fermentation options](#lower-certainty-gaps--plantfermentation-options)
+  - [Bottom line](#bottom-line-1)
 - [Sources](#sources)
 
 
@@ -147,6 +152,36 @@ Even though corn + soy together cover ~93% of global caloric need and ~176% of g
 ### Bottom line
 
 None of these gaps are exotic — B12 deficiency, iron-deficiency anemia, zinc deficiency, and pellagra are all documented in real populations that shifted toward corn- or soy-dominant diets without deliberate fortification (B12 always; likely D and iodine) and food-processing knowledge (nixtamalization for niacin, fermentation/soaking to reduce phytate and free iron/zinc).
+
+---
+
+## 6. Plant-based additions that close the gaps in Section 5
+
+Section 5's gaps aren't all equally fixable by adding more plants — some have no true plant-food solution and need fortification or microbial/algal supplementation, while others close cleanly with the right crop or preparation added alongside soy and corn.
+
+### Hard deficiencies — what can and can't be closed by plants
+
+- **Vitamin B12:** no plant tissue synthesizes B12 — it's made by bacteria/archaea, not plants. Claims about B12 in tempeh, nori, or spirulina mostly measure inactive B12 analogues that don't work in humans and can even block real B12 uptake. The only reliable non-animal sources are B12-fortified foods (nutritional yeast, fortified plant milks/cereals) or supplements — these are typically produced by bacterial fermentation, so they fit a plant-based diet without requiring animal products.
+- **Vitamin D:** UV-exposed mushrooms (button, shiitake, maitake treated with UV light) generate vitamin D2 and are a genuine whole-food plant source, though D2 is somewhat less potent than the D3 found in animal foods. Fortified plant milks/juices cover the rest; sun exposure remains the other non-food route.
+- **Preformed vitamin A (retinol):** still no plant provides retinol directly. The practical fix is maximizing beta-carotene intake — carrots, sweet potato, pumpkin, dark leafy greens (kale, spinach), and red palm oil are all very high in carotenoids — plus ensuring adequate dietary fat and zinc, since both are needed for the body to convert carotene to retinol efficiently.
+
+### Bioavailability gaps — additions and preparation techniques
+
+- **Iron:** add other legumes (lentils, chickpeas) for more total iron, and pair meals with vitamin C-rich foods (citrus, bell peppers, tomatoes) to substantially boost non-heme absorption. Fermenting soy into tempeh or miso, and soaking/sprouting grains and legumes, breaks down phytic acid and improves how much iron is actually absorbed.
+- **Zinc:** pumpkin seeds, sesame seeds/tahini, and other legumes add meaningful zinc on top of soy and corn. The same soaking/sprouting/fermenting techniques that help iron also reduce the phytate that blocks zinc absorption.
+- **Calcium:** calcium-set tofu (coagulated with calcium sulfate/chloride) is a large, easy calcium source already adjacent to soy; low-oxalate greens (bok choy, kale — unlike high-oxalate spinach, which binds its own calcium) absorb well, and sesame seeds/tahini and fortified plant milks fill the rest.
+- **Niacin (B3):** nixtamalization (already noted in Section 5) is the direct fix for corn specifically. Adding peanuts, other legumes, and whole grains brings more bioavailable niacin and tryptophan (which the body converts to niacin) into the diet.
+- **Iodine:** seaweed (nori, kelp, wakame) is by far the most concentrated plant iodine source — far more effective than trying to compensate through other foods — plus iodized salt as a standard fortification route.
+- **Omega-3 (EPA/DHA):** flaxseed, chia seeds, hemp seeds, and walnuts add ALA, but as in Section 5, ALA-to-EPA/DHA conversion is inefficient. The one genuine direct plant-based EPA/DHA source is algal oil — long-chain omega-3s extracted from cultivated microalgae — which is what most vegan omega-3 supplements are actually made from, bypassing the conversion problem entirely.
+
+### Lower-certainty gaps — plant/fermentation options
+
+- **Taurine, creatine, carnosine:** no meaningful plant food sources exist. Where supplementation is desired, creatine monohydrate and taurine are produced synthetically/via fermentation rather than extracted from animals, so they're compatible with a plant-based diet even though they aren't "food" additions.
+- **Sulfur amino acids (methionine/cysteine):** sesame seeds, sunflower seeds, oats, and quinoa are comparatively higher in methionine among plant foods and pair well with corn and soy to round out a more complete amino acid profile than either crop pairing alone.
+
+### Bottom line
+
+Most of Section 5's gaps close with the right additions — legumes, seeds, seaweed, fortified foods, and preparation techniques like fermentation and nixtamalization. The genuine exceptions are B12 (bacterial fermentation/fortification only) and direct EPA/DHA (algal oil only) — both solvable without animal products, but not through whole-food crops alone.
 
 ---
 

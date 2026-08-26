@@ -1,4 +1,26 @@
-# Could Soy (and Corn) Feed the World if Redirected from Animal Feed?
+<h1>Could Soy (and Corn) Feed the World if Redirected from Animal Feed?</h1>
+
+- [1. The soy case](#1-the-soy-case)
+  - [If 100% of global soy were redirected to direct human food](#if-100-of-global-soy-were-redirected-to-direct-human-food)
+  - [Why soy still wouldn't "feed the world" alone](#why-soy-still-wouldnt-feed-the-world-alone)
+  - [How much of a soybean can actually become human-edible food?](#how-much-of-a-soybean-can-actually-become-human-edible-food)
+- [2. Is corn complementary with soy?](#2-is-corn-complementary-with-soy)
+- [3. The same "redirect to human food" case for corn](#3-the-same-redirect-to-human-food-case-for-corn)
+  - [Combine corn + soy (both fully redirected to food)](#combine-corn--soy-both-fully-redirected-to-food)
+  - [How much of a corn kernel converts to human-edible food?](#how-much-of-a-corn-kernel-converts-to-human-edible-food)
+- [4. What shortages would occur if all soy and corn were redirected to human consumption](#4-what-shortages-would-occur-if-all-soy-and-corn-were-redirected-to-human-consumption)
+  - [Global animal protein supply — the biggest shock by far](#global-animal-protein-supply--the-biggest-shock-by-far)
+  - [Liquid fuel supply — ethanol and biodiesel](#liquid-fuel-supply--ethanol-and-biodiesel)
+  - [Processed-food and industrial inputs](#processed-food-and-industrial-inputs)
+  - [Trade and geopolitical disruption](#trade-and-geopolitical-disruption)
+  - [The core tradeoff](#the-core-tradeoff)
+- [5. Nutrient and vitamin gaps on a soy + corn diet replacing meat](#5-nutrient-and-vitamin-gaps-on-a-soy--corn-diet-replacing-meat)
+  - [Hard deficiencies (not present in either crop)](#hard-deficiencies-not-present-in-either-crop)
+  - [Bioavailability gaps (present on paper, poorly absorbed in practice)](#bioavailability-gaps-present-on-paper-poorly-absorbed-in-practice)
+  - [Lower-certainty gaps](#lower-certainty-gaps)
+  - [Bottom line](#bottom-line)
+- [Sources](#sources)
+
 
 ## 1. The soy case
 

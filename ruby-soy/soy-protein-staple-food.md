@@ -24,6 +24,14 @@
   - [Bioavailability gaps — additions and preparation techniques](#bioavailability-gaps--additions-and-preparation-techniques)
   - [Lower-certainty gaps — plant/fermentation options](#lower-certainty-gaps--plantfermentation-options)
   - [Bottom line](#bottom-line-1)
+- [7. Does current world production of the gap-fillers scale to the whole population?](#7-does-current-world-production-of-the-gap-fillers-scale-to-the-whole-population)
+  - [Not a supply bottleneck — already produced at ample scale](#not-a-supply-bottleneck--already-produced-at-ample-scale)
+  - [Genuine supply bottlenecks](#genuine-supply-bottlenecks)
+  - [Bottom line](#bottom-line-2)
+- [8. Does diversifying the sourcing change the picture?](#8-does-diversifying-the-sourcing-change-the-picture)
+  - [Comparison: narrow single-item sourcing vs. diversified sourcing](#comparison-narrow-single-item-sourcing-vs-diversified-sourcing)
+  - [The one gap that doesn't reclassify](#the-one-gap-that-doesnt-reclassify)
+  - [Bottom line](#bottom-line-3)
 - [Sources](#sources)
 
 
@@ -185,6 +193,59 @@ Most of Section 5's gaps close with the right additions — legumes, seeds, seaw
 
 ---
 
+## 7. Does current world production of the gap-fillers scale to the whole population?
+
+Section 6 named plant-based fixes for each nutrient gap, but naming a fix isn't the same as it existing at scale. This section checks current global production/industrial capacity of each gap-filler against the total annual requirement for ~8.2 billion people at standard RDI, assuming it became a primary source rather than a niche addition.
+
+### Not a supply bottleneck — already produced at ample scale
+
+- **Vitamin B12:** industrial fermentation production is estimated at ~25–100+ metric tonnes/year, against a biological minimum of just **~7.2 tonnes/year** (2.4mcg/day/person × 8.2B). Even the low-end estimate is a **~3.5x surplus**; high-end estimates put it at 10–14x. A large share of current output already goes to livestock feed additives — a diet shift away from meat would free that capacity for human fortification. Population-scale B12 deficiency is a fortification/distribution problem, not a manufacturing-capacity one.
+- **Iodine:** elemental iodine mine production runs ~30,000–34,000 tonnes/year, against a biological minimum of **~449 tonnes/year** (150mcg/day/person × 8.2B) — a **~65–75x surplus**. Global seaweed production (~32–39 million tonnes/year) adds further headroom. Real-world iodine deficiency reflects incomplete iodization-program coverage (mandated in ~130 countries, not universal), not a raw-material shortage.
+
+### Genuine supply bottlenecks
+
+- **Algal oil (EPA/DHA):** current production is only ~45,000 tonnes/year of oil. Supplying the full population with a modest 375mg/day combined EPA+DHA (at ~40–50% concentration in algal oil) requires **~2.2–2.8 million tonnes/year** — current output covers only **~1.6–2%** of that. This is the single most binding constraint of everything in Section 6: fish oil today supplies the overwhelming majority of the world's EPA/DHA, and algal oil production isn't remotely close to replacing it at global scale.
+- **Edible mushrooms (as a UV-treated vitamin D vehicle):** global production is ~18–44 million tonnes/year (sources disagree significantly on the figure), against ~449 million tonnes/year needed for a 150g/day universal UV-treated serving — covering only **~4–10%** of that target. Note this isn't about growing more mushrooms per se, just UV-treating existing supply — but even the full current global harvest, fully treated, falls far short.
+- **Sesame + pumpkin seeds:** combined production is ~8.5 million tonnes/year (sesame ~6.7 Mt, pumpkin seed ~1.8 Mt), against **~29.9 million tonnes/year** needed for a modest 10g/day/person combined serving — covering only **~28%**, roughly a 3.5x production gap.
+- **Flaxseed + chia seed:** combined production is ~2.8 million tonnes/year, against **~44.9 million tonnes/year** needed for a 15g/day/person combined serving — covering only **~6%**. Moot in practice regardless, since (per Section 6) ALA from these seeds doesn't solve the EPA/DHA conversion problem anyway.
+- **Legumes/pulses:** production (~96 million tonnes/year) is the closest of the bottlenecked group — covering **~64%** of a modest universal 50g/day/person supplemental serving (~149.7 Mt/year needed) on top of existing non-supplemental demand. Roughly 50% production growth would close this one, a far smaller lift than algal oil, mushrooms, or seeds.
+
+### Bottom line
+
+The two nutrients most people assume are the hardest to fix on a plant-based diet — B12 and iodine — turn out to have massive production surplus; the real barrier there is fortification and distribution infrastructure, not raw supply. The bottlenecks run the other way: omega-3 EPA/DHA has no plant-based source that scales (algal oil is ~50x short), and several of the "just eat more seeds/mushrooms" fixes from Section 6 would require multi-fold production increases neither currently under way nor trivial to achieve, given land, water, and cultivation-time constraints that apply to seeds and mushrooms just as much as to any other crop. Closing these gaps at true global scale isn't simply a matter of substitution — it requires new production capacity, most acutely for algal-oil omega-3s.
+
+---
+
+## 8. Does diversifying the sourcing change the picture?
+
+Section 7's bottleneck verdicts each rested on testing exactly one narrow food per nutrient — zinc from sesame+pumpkin seeds alone, omega-3 from algal oil alone, vitamin D from mushrooms alone. That's a much stricter test than a real diet would face. Widening each gap to its full realistic sourcing basket — other staple grains and legumes already being eaten for calories, plus industrially manufactured mineral/vitamin fortificants — changes most of the verdicts substantially.
+
+### Comparison: narrow single-item sourcing vs. diversified sourcing
+
+| Nutrient | Section 7 verdict (single item) | Diversified-sourcing verdict |
+|---|---|---|
+| Vitamin B12 | Ample (~3.5–14x surplus, fermentation) | Unchanged — already manufactured-input framing |
+| Iodine | Ample (~65–75x surplus, mined) | Unchanged — already manufactured-input framing |
+| Zinc | Bottleneck — sesame+pumpkin only cover ~28% | **Ample** — wheat germ, cashews, hemp seed, and legumes already in a grain-based diet reach most of the ~10mg/day RDI from foods eaten anyway; zinc sulfate fortificant supply (global zinc mine output ~13.7 Mt/year) is a ~460x surplus over the ~29,900 t/year fortification-scale need. Remaining issue is phytate bioavailability (Section 5/6), not raw quantity. |
+| Vitamin D | Severe bottleneck — mushrooms cover only ~4–10% | **Reclassified as manufactured input, not crop-limited.** Lichen-derived vegan D3 and yeast-derived D2 are extraction/fermentation processes like B12, not tonnage-capped by farmland — the ~45–60 t/year pure-D3 requirement is the same order of magnitude as B12's ~7.2 t/year, which is already produced at large surplus. |
+| Calcium | Not separately quantified in Section 7 | **Ample.** Calcium carbonate fortificant need (~7.5 Mt/year) against global limestone production of **5.4+ billion tonnes/year** — a 700x+ surplus. Flour/salt calcium fortification is already an established practice in many countries. |
+| Iron | Not separately quantified in Section 7 | **Ample.** Fortification-scale need (~44,900 t/year pure iron) against global iron ore production of **~2.6 billion tonnes/year**; the standard fortificant (ferrous sulfate) is a byproduct of steel-pickling and titanium dioxide production — both massive existing industries. |
+| Niacin | Tied to corn nixtamalization specifically | **Ample/non-issue.** Wheat germ and rice supply meaningful niacin without nixtamalization; a full grain+legume+peanut diet (produced at hundreds of millions of tonnes/year each) covers the ~47,900 t/year requirement without corn being load-bearing. |
+| Sulfur amino acids (methionine) | Tied to sesame/sunflower/oats/quinoa specifically | **Non-issue.** ~300g/day of rice alone supplies roughly two-thirds of total daily sulfur-amino-acid need; global wheat (~780Mt/yr) and rice (~520Mt/yr) production dwarf any population-scale requirement — no niche seed crop is actually required. |
+| Legumes/pulses (general iron/zinc/methionine role) | Tight — ~64% of a modest universal serving | Unchanged — this one was already framed as a broad category, and stays a real (if smaller) gap requiring genuine production growth. |
+| Omega-3 EPA/DHA | Severe bottleneck — algal oil covers ~1.6–2% | **Still a bottleneck today.** But GM omega-3 canola/camelina (e.g. Nuseed's Aquaterra™/Nutriterra™) offers a named, technically real path that pure algal bioreactors lack — Nuseed claims the trait "could double the global supply of DHA on less than 5% of current canola acreage," piggybacking on existing oilseed farmland instead of needing new bioreactor capacity. Currently pre-commercial at only ~15,000 acres planted (Montana, 2025); doesn't change today's ~2% figure, but changes the trajectory. |
+| Edible mushrooms (as vitamin D vehicle) | Severe bottleneck — ~4–10% of a universal serving | Superseded — Vitamin D doesn't need mushrooms to be the vehicle once lichen/yeast-derived D2/D3 fortification (above) is counted instead. |
+
+### The one gap that doesn't reclassify
+
+Omega-3 EPA/DHA is the single nutrient that stays a genuine current-day bottleneck no matter how the sourcing basket is widened — there is no broad staple-food category that supplies meaningful EPA/DHA the way grains happen to supply niacin or methionine. Algal oil remains the only direct plant-based source in production today, and it covers a small fraction of what would be needed at population scale. GM omega-3 oilseed crops are the most credible scale-up path precisely because they'd ride on existing canola/camelina farmland rather than requiring new industrial bioreactor buildout, but they remain pre-commercial for human nutrition as of 2025–2026.
+
+### Bottom line
+
+Most of Section 7's "bottlenecks" turn out to be artifacts of testing one narrow food in isolation rather than the nutrient's true availability. Once broadened to (a) the full staple grain/legume supply a corn+soy diet would already include, and (b) industrially manufactured mineral/vitamin fortificants — the same category B12 and iodine already fall into — zinc, calcium, iron, niacin, methionine, and vitamin D all move from "bottleneck" to "ample." Omega-3 EPA/DHA is the exception that survives every reframing: it remains the one real, unsolved supply constraint in the whole gap-filling exercise, with GM oilseed crops as the most plausible (but not yet proven at scale) way to close it.
+
+---
+
 ## Sources
 
 - [Global Soybean Supply and Demand & 2024 Expectations - Feed & Additive Magazine](https://www.feedandadditive.com/global-soybean-supply-and-demand-2024-expectations/)
@@ -202,3 +263,35 @@ Most of Section 5's gaps close with the right additions — legumes, seeds, seaw
 - [Food & Fuel - Clean Fuels Alliance America](https://cleanfuels.org/policy-issues/food-and-fuel/)
 - [Import Dependency and China's Food Security | Geopolitical Monitor](https://www.geopoliticalmonitor.com/import-dependency-and-chinas-food-security/)
 - [Can China Reduce Soybean Import Demand? - farmdoc daily](https://farmdocdaily.illinois.edu/2025/12/can-china-reduce-soybean-import-demand-evaluating-soybean-meal-reduction-efforts.html)
+- [Vitamin B12 Global Market Insights 2025 - Research and Markets](https://www.researchandmarkets.com/reports/5816517/vitamin-b12-global-market-insights-analysis)
+- [Global Vitamin B12 Industry Outlook 2026 - ChemTrade Asia](https://www.chemtradeasia.com/market-insights/vitamin-b12-market-2026-applications-buyers-supply-chain)
+- [Global Vitamin B12 Supply, Demand & Pricing Insights 2026 - Feed Ingredients Asia](https://www.feedingredientsasia.com/en/market-insights/applications-and-buyers/vitamin-b12-market-outlook-2026-trends-demand-growth)
+- [Omega-3 ingredients - The Good Food Institute](https://gfi.org/solutions/omega-3-ingredients/)
+- [DHA Algae Oil Market Size & Share - SkyQuest](https://www.skyquestt.com/report/dha-algae-oil-market)
+- [Global seaweed status - FAO](https://openknowledge.fao.org/server/api/core/bitstreams/5b54da89-75f1-45a2-a2af-2581550fbf78/content)
+- [Salt Market Size 2025 - Towards FnB](https://www.towardsfnb.com/insights/salt-market)
+- [FAO celebrates World Pulses Day 2024](https://www.fao.org/plant-production-protection/news-and-events/news/news-detail/fao-celebrates-world-pulses-day-2024/en)
+- [Global Pulse Crop Supply Update - Saskatchewan Pulse Growers](https://saskpulse.com/resources/global-pulse-crop-supply-update/)
+- [Overview of Sesame Production in 2024 - Grains Clean](https://www.grainsclean.com/overview-of-sesame-production-in-2024.html)
+- [Pumpkin Seed production and top producing countries - Tridge](https://www.tridge.com/intelligences/pumpkin-seed/production)
+- [Global production of mushrooms and truffles - Statista](https://www.statista.com/statistics/1018488/global-mushrooms-and-truffles-production/)
+- [Mushroom Statistics and Facts 2026 - Market.us](https://media.market.us/mushroom-statistics/)
+- [Global tree nut production - Statista](https://www.statista.com/statistics/1030933/tree-nut-global-production/)
+- [Flaxseed Market Update October 2024 - Seedea](https://seedea.pl/flaxseed-market-update-october-2024/)
+- [Chia Seed Market Update January 2025 - Seedea](https://seedea.pl/chia-seeds-market-update-january-2025/)
+- [Cereal germ - Wikipedia](https://en.wikipedia.org/wiki/Cereal_germ)
+- [Top 10 Nuts/Seeds High in Zinc - MyFoodData](https://www.myfooddata.com/articles/high-zinc-nuts-seeds.php)
+- [Hemp - Wikipedia](https://en.wikipedia.org/wiki/Hemp)
+- [World production of zinc metal - Statista](https://www.statista.com/statistics/264878/world-production-of-zinc-metal/)
+- [Vegan Vitamin D3 from Lichen - Nutritional Outlook](https://www.nutritionaloutlook.com/view/vegan-vitamin-d3-products-lichen)
+- [Vegan Vitamin D3 from Lichen Market Report - Dataintelo](https://dataintelo.com/report/vegan-vitamin-d3-from-lichen-market)
+- [Nuseed Omega-3 Canola](https://nuseed.com/us/crop/canola/omega-3/)
+- [USDA approves GM omega-3 canola for US cultivation - Food Dive](https://www.fooddive.com/news/usda-approves-gm-omega-3-canola-for-us-cultivation/531248/)
+- [Nuseed Omega-3 Canola Oil Demand to Double by 2050](https://nuseed.com/us/omega-3-canola-oil-demand-to-double-by-2050/)
+- [Limestone Statistics and Facts - ElectroIQ](https://electroiq.com/stats/limestone-statistics-and-facts/)
+- [Iron Ore Mining Industry Report 2024 - GlobeNewswire](https://www.globenewswire.com/news-release/2024/12/24/3001730/28124/en/)
+- [WHO Guideline: Fortification of Wheat Flour](https://cdn.who.int/media/docs/default-source/micronutrients/publication/guideline/guideline-wheat-fortification-executive-summary.pdf)
+- [Double Fortification: Iron and Zinc in Flour - Springer](https://link.springer.com/chapter/10.1007/978-1-0716-4346-4_7)
+- [Foods High in Niacin - Nutrition Advance](https://www.nutritionadvance.com/foods-high-in-niacin/)
+- [Parboiled rice - Wikipedia](https://en.wikipedia.org/wiki/Parboiled_rice)
+- [Total Amino Acids in Cooked Rice - MyFoodData](https://tools.myfooddata.com/protein-calculator/168878-168875/wt1-wt1/1-1)

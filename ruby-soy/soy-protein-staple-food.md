@@ -98,6 +98,36 @@ This is the flip side of the "could soy/corn feed the world" calculation: the re
 
 ---
 
+## 5. Nutrient and vitamin gaps on a soy + corn diet replacing meat
+
+Even though corn + soy together cover ~93% of global caloric need and ~176% of global protein need by quantity (Section 3), quantity isn't quality. Several nutrients would be absent or poorly absorbed without meat, dairy, and eggs in the diet.
+
+### Hard deficiencies (not present in either crop)
+
+- **Vitamin B12:** absent from all plant foods, including soy and corn. No amount of either crop supplies it — this requires fortification or supplementation regardless of diet composition.
+- **Vitamin D:** neither crop contains meaningful vitamin D (mainly sourced from animal fats, fatty fish, egg yolks, or sun exposure). Losing dairy/eggs removes a major dietary source.
+- **Preformed vitamin A (retinol):** soy and corn supply no retinol, only carotenoid precursors (yellow corn has some beta-carotene). Conversion to retinol is inefficient and genetically variable, raising deficiency risk without other sources.
+
+### Bioavailability gaps (present on paper, poorly absorbed in practice)
+
+- **Iron:** soy's iron is entirely non-heme (absorbed at ~2–10% vs. 15–35% for heme iron from meat), and soy's phytic acid further blocks absorption — raising anemia risk without absorption enhancers like vitamin C or fermentation.
+- **Zinc:** same phytate problem as iron; corn is also inherently low in zinc. Cereal/legume-heavy diets without meat are a well-documented zinc deficiency risk.
+- **Calcium:** corn is low in calcium; soy's calcium is phytate-bound. Losing dairy removes the most bioavailable calcium source most diets rely on (fortified soy milk closes part of this gap, unfortified soy products don't).
+- **Niacin (B3) from corn:** corn's niacin is mostly bound as niacytin, unabsorbable unless the corn is nixtamalized (alkali/lime-treated, as in traditional masa production). Historically, populations adopting corn as a staple without nixtamalization developed pellagra — a real documented case, not a theoretical risk.
+- **Iodine:** not supplied by either crop, and soy contains goitrogens that interfere with thyroid iodine uptake — compounding risk if iodine intake is already marginal (no dairy, no iodized salt, no seafood).
+- **Omega-3 (EPA/DHA):** soybean oil supplies ALA, which humans convert to EPA/DHA very inefficiently (often <10%). Losing fish, meat, and eggs removes the main direct EPA/DHA sources.
+
+### Lower-certainty gaps
+
+- **Taurine, creatine, carnosine:** not essential vitamins (humans synthesize some endogenously), but found almost exclusively in animal tissue. A diet with zero animal input removes them from intake entirely, relying wholly on endogenous synthesis — an active but less settled area of research.
+- **Sulfur amino acids (methionine/cysteine):** the flip side of the lysine complementarity in Section 2 — corn is deficient in lysine/tryptophan (which soy fixes), but soy itself is comparatively low in methionine. Whole grains generally supply more methionine than legumes, so a balanced grain + legume mix matters more than corn+soy specifically.
+
+### Bottom line
+
+None of these gaps are exotic — B12 deficiency, iron-deficiency anemia, zinc deficiency, and pellagra are all documented in real populations that shifted toward corn- or soy-dominant diets without deliberate fortification (B12 always; likely D and iodine) and food-processing knowledge (nixtamalization for niacin, fermentation/soaking to reduce phytate and free iron/zinc).
+
+---
+
 ## Sources
 
 - [Global Soybean Supply and Demand & 2024 Expectations - Feed & Additive Magazine](https://www.feedandadditive.com/global-soybean-supply-and-demand-2024-expectations/)

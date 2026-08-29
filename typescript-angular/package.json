@@ -29,7 +29,7 @@
     "@angular-eslint/eslint-plugin": "17.1.0",
     "@angular-eslint/eslint-plugin-template": "17.1.0",
     "@angular-eslint/schematics": "17.1.0",
-    "@angular-eslint/template-parser": "17.1.0",
+    "@angular-eslint/template-parser": "22.0.0",
     "@angular/cli": "^17.0.3",
     "@angular/compiler-cli": "^17.0.4",
     "@stoplight/prism-cli": "^5.15.11",
